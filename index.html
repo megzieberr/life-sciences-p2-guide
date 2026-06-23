@@ -265,6 +265,98 @@ tr:hover td{background:rgba(99,102,241,.07);}
   *{animation:none!important;}
   .reveal{opacity:1!important;transform:none!important;transition:none!important;}
 }
+
+/* ════════════════════════════════════════════════════════════════
+   ✨ PHASE 2 — diagrams, countdown, flashcards, quiz, marks tracker
+   ════════════════════════════════════════════════════════════════ */
+
+/* ---------- EXAM COUNTDOWN / EDITABLE DATE ---------- */
+.countdown{display:inline-flex;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap;justify-content:center;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:14px 22px;}
+.countdown .cd-num{font-size:34px;font-weight:900;color:#f5b8ff;line-height:1;text-shadow:0 2px 18px rgba(245,184,255,.5);}
+.countdown .cd-txt{text-align:left;}
+.countdown .cd-lbl{font-size:11.5px;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:1.2px;font-weight:700;}
+.countdown .cd-date{font-size:13px;color:#fff;font-weight:700;}
+.cd-edit{background:rgba(255,255,255,.18);border:none;color:#fff;border-radius:10px;padding:9px 14px;font-weight:800;font-size:12px;cursor:pointer;font-family:inherit;transition:background .2s;}
+.cd-edit:hover{background:rgba(255,255,255,.32);}
+.cd-dateinput{font-family:inherit;border:none;border-radius:9px;padding:8px 10px;font-weight:700;font-size:13px;color:#1a1a2e;}
+
+/* ---------- SVG DIAGRAMS ---------- */
+.diagram{background:#fff;border:1px solid #ecebf7;border-radius:18px;padding:18px 18px 14px;margin:16px 0;
+  box-shadow:0 6px 22px rgba(30,27,75,.06);}
+.diagram .dtitle{font-weight:800;font-size:14.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.diagram svg{width:100%;height:auto;display:block;border-radius:12px;background:#fbfbff;}
+.diagram figcaption{margin-top:10px;font-size:12.5px;color:var(--muted);text-align:center;font-style:italic;}
+
+/* ---------- FLASHCARDS ---------- */
+.fc-wrap{max-width:580px;margin:6px auto 0;}
+.fc-decks{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px;}
+.fc-deck{border:2px solid #c7d2fe;background:#eef2ff;color:#3730a3;font-weight:800;font-size:12.5px;
+  padding:8px 14px;border-radius:999px;cursor:pointer;font-family:inherit;transition:all .2s;}
+.fc-deck:hover{transform:translateY(-2px);}
+.fc-deck.active{background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(99,102,241,.3);}
+.fc-card{perspective:1500px;height:290px;cursor:pointer;margin-bottom:18px;}
+.fc-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.fc-card.flipped .fc-inner{transform:rotateY(180deg);}
+.fc-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:22px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;text-align:center;
+  box-shadow:0 14px 36px rgba(30,27,75,.16);}
+.fc-front{background:linear-gradient(150deg,#ffffff,#eef1ff);border:1.5px solid #e1e4f4;}
+.fc-back{background:linear-gradient(150deg,#16a34a,#0f6e34);color:#fff;transform:rotateY(180deg);}
+.fc-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;opacity:.6;margin-bottom:14px;}
+.fc-q{font-size:18.5px;font-weight:700;line-height:1.45;}
+.fc-a{font-size:18.5px;font-weight:800;line-height:1.5;}
+.fc-hint{position:absolute;bottom:16px;font-size:11px;opacity:.55;font-weight:700;}
+.fc-controls{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.fc-btn{border:none;background:#eef2ff;color:#3730a3;font-weight:800;border-radius:12px;padding:11px 18px;
+  cursor:pointer;font-family:inherit;font-size:14px;transition:all .2s;}
+.fc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(99,102,241,.22);}
+.fc-btn.know{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;}
+.fc-btn.again{background:#fef3c7;color:#92400e;}
+.fc-counter{font-weight:800;color:var(--muted);font-size:13px;min-width:72px;text-align:center;}
+.fc-mastery{text-align:center;margin-top:14px;font-weight:800;font-size:13px;color:var(--plant-d);}
+
+/* ---------- QUIZ ---------- */
+.quiz-wrap{max-width:660px;margin:6px auto 0;}
+.quiz-progress{height:10px;border-radius:999px;background:#e8e8f4;overflow:hidden;margin-bottom:10px;}
+.quiz-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#22c55e,#8b5cf6,#ec4899);transition:width .4s;}
+.quiz-meta{display:flex;justify-content:space-between;font-weight:800;font-size:13px;color:var(--muted);margin-bottom:14px;}
+.quiz-q{font-size:18.5px;font-weight:800;line-height:1.45;margin-bottom:18px;}
+.quiz-opt{display:block;width:100%;text-align:left;border:2px solid #e3e5f5;background:#fff;border-radius:14px;
+  padding:14px 18px;margin-bottom:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;}
+.quiz-opt:hover:not(:disabled){border-color:#a5b4fc;transform:translateX(3px);}
+.quiz-opt.correct{background:var(--memo-l);border-color:var(--memo);color:var(--plant-d);font-weight:800;}
+.quiz-opt.wrong{background:var(--trick-l);border-color:var(--trick);color:#991b1b;}
+.quiz-opt:disabled{cursor:default;}
+.quiz-fb{border-radius:14px;padding:14px 18px;margin:4px 0 16px;font-size:14px;display:none;}
+.quiz-fb.show{display:block;}
+.quiz-fb.ok{background:var(--memo-l);border:1px solid #6ee7b7;}
+.quiz-fb.no{background:var(--trick-l);border:1px solid #fca5a5;}
+.quiz-next,.quiz-restart{border:none;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;font-weight:800;
+  border-radius:12px;padding:12px 24px;cursor:pointer;font-family:inherit;font-size:14.5px;transition:transform .2s;}
+.quiz-next:hover,.quiz-restart:hover{transform:translateY(-2px);}
+.quiz-result{text-align:center;padding:10px;}
+.quiz-score{font-size:58px;font-weight:900;background:linear-gradient(135deg,#6366f1,#a855f7);
+  -webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;}
+
+/* ---------- MARKS TRACKER ---------- */
+.marks-form{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;margin-bottom:20px;}
+.marks-form .fld{display:flex;flex-direction:column;gap:5px;}
+.marks-form label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);}
+.marks-form input{font-family:inherit;border:1.5px solid #e3e5f5;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;}
+.marks-form input:focus{outline:none;border-color:#a5b4fc;}
+.marks-form input.tname{min-width:170px;}
+.marks-form input.tnum{width:88px;}
+.marks-add{border:none;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;font-weight:800;
+  border-radius:10px;padding:11px 20px;cursor:pointer;font-family:inherit;font-size:14px;transition:transform .2s;}
+.marks-add:hover{transform:translateY(-2px);}
+.marks-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+@media(max-width:560px){.marks-summary{grid-template-columns:1fr;}}
+.bar{height:10px;border-radius:999px;background:#ececf6;overflow:hidden;min-width:90px;}
+.bar i{display:block;height:100%;border-radius:999px;transition:width .5s;}
+.mk-del{border:none;background:#fee2e2;color:#991b1b;border-radius:8px;padding:6px 10px;cursor:pointer;font-weight:900;font-family:inherit;font-size:12px;}
+.mk-del:hover{background:#fecaca;}
+.empty-state{text-align:center;color:var(--muted);padding:28px;font-style:italic;font-size:14px;}
 </style>
 </head>
 <body>
@@ -277,6 +369,9 @@ tr:hover td{background:rgba(99,102,241,.07);}
   <button class="nav-btn" onclick="show('disorders')">⚠️ Disorders</button>
   <button class="nav-btn" onclick="show('practice')">✏️ Practice Q&amp;A</button>
   <button class="nav-btn" onclick="show('tricks')">🎯 Tricks &amp; Traps</button>
+  <button class="nav-btn" onclick="show('flashcards')">🃏 Flashcards</button>
+  <button class="nav-btn" onclick="show('quiz')">🎮 Quiz Me</button>
+  <button class="nav-btn" onclick="show('marks')">📊 My Marks</button>
 </nav>
 <!-- ═══════════════ PAGE: HOME ═══════════════ -->
 <div id="page-home" class="page active">
@@ -285,11 +380,16 @@ tr:hover td{background:rgba(99,102,241,.07);}
   <h1>Life Sciences <span>Paper 2</span><br>Complete Study Guide</h1>
   <p>Compiled from 10+ years of IEB past papers &amp; marking guidelines · Nothing missed</p>
   <div class="chips">
-    <div class="chip"><small>Date</small>10 June 2026</div>
+    <div class="chip"><small>Exam date</small><span id="examDateChip">—</span></div>
     <div class="chip"><small>Duration</small>1h 20 min</div>
     <div class="chip"><small>Total</small>60 marks</div>
     <div class="chip"><small>Topics</small>3 sections</div>
     <div class="chip"><small>Questions</small>Q1 · Q2 · Q3</div>
+  </div>
+  <div class="countdown" id="countdown">
+    <div class="cd-num" id="cdNum">–</div>
+    <div class="cd-txt"><div class="cd-lbl" id="cdLbl">days to go</div><div class="cd-date" id="cdDate"></div></div>
+    <button class="cd-edit" id="cdEdit" onclick="editExamDate()">📅 Set / change date</button>
   </div>
 </div>
 <div class="container">
@@ -417,6 +517,62 @@ tr:hover td{background:rgba(99,102,241,.07);}
   </div>
   <div class="sh plant">🌺 1. Structure of a Flower (Longitudinal Section)</div>
   <div class="callout exam"><div class="ico">📌</div><div><strong>REPEATEDLY TESTED (IEB 2013, 2014, 2020, 2022):</strong> "Make a longitudinal section (LS) sketch of a flower. Label THREE parts associated with sexual reproduction." The heading "L/S Section Through a Flower" is required for marks. Valid reproductive parts: stigma, anther, filament, style, ovary, ovule. Do NOT say "petal" — it is non-reproductive (it only attracts pollinators).</div></div>
+  <figure class="diagram">
+    <div class="dtitle">🌺 Longitudinal Section (L/S) through a Flower</div>
+    <svg viewBox="0 0 620 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Labelled longitudinal section of a flower">
+      <defs>
+        <linearGradient id="petalG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbcfe8"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+      </defs>
+      <!-- petals (drawn first, behind) -->
+      <path d="M302,356 C220,362 130,302 126,182 C196,202 276,270 296,330 Z" fill="url(#petalG)" stroke="#db2777" stroke-width="1.5"/>
+      <path d="M318,356 C400,362 490,302 494,182 C424,202 344,270 324,330 Z" fill="url(#petalG)" stroke="#db2777" stroke-width="1.5"/>
+      <!-- sepals -->
+      <path d="M300,360 C252,376 214,396 190,410 C232,402 282,386 312,372 Z" fill="#86efac" stroke="#15803d" stroke-width="1.5"/>
+      <path d="M320,360 C368,376 406,396 430,410 C388,402 338,386 308,372 Z" fill="#86efac" stroke="#15803d" stroke-width="1.5"/>
+      <!-- pedicel + receptacle -->
+      <rect x="302" y="400" width="16" height="55" fill="#22c55e"/>
+      <path d="M272,402 L348,402 L334,366 L286,366 Z" fill="#22c55e" stroke="#15803d" stroke-width="1.5"/>
+      <!-- nectary -->
+      <circle cx="288" cy="362" r="6" fill="#fde047" stroke="#ca8a04" stroke-width="1.3"/>
+      <!-- filaments + anthers (male) -->
+      <path d="M298,356 Q250,298 250,206" fill="none" stroke="#b45309" stroke-width="3"/>
+      <path d="M322,356 Q370,298 370,206" fill="none" stroke="#b45309" stroke-width="3"/>
+      <ellipse cx="249" cy="196" rx="13" ry="22" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+      <ellipse cx="371" cy="196" rx="13" ry="22" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+      <!-- pistil: ovary, ovules, style, stigma (female) -->
+      <path d="M302,300 L318,300 L314,176 L306,176 Z" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+      <ellipse cx="310" cy="333" rx="44" ry="40" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5"/>
+      <circle cx="298" cy="328" r="5" fill="#db2777"/><circle cx="310" cy="345" r="5" fill="#db2777"/><circle cx="322" cy="328" r="5" fill="#db2777"/>
+      <ellipse cx="310" cy="168" rx="23" ry="12" fill="#7c3aed"/>
+      <!-- leader lines -->
+      <g stroke="#94a3b8" stroke-width="1.2">
+        <line x1="146" y1="140" x2="236" y2="194"/>
+        <line x1="146" y1="208" x2="262" y2="250"/>
+        <line x1="150" y1="278" x2="190" y2="262"/>
+        <line x1="150" y1="360" x2="220" y2="392"/>
+        <line x1="474" y1="120" x2="332" y2="166"/>
+        <line x1="470" y1="188" x2="318" y2="236"/>
+        <line x1="470" y1="300" x2="352" y2="333"/>
+        <line x1="470" y1="356" x2="322" y2="343"/>
+        <line x1="150" y1="430" x2="300" y2="402"/>
+        <line x1="470" y1="420" x2="294" y2="362"/>
+      </g>
+      <!-- labels: male=amber, female=purple, non-repro=green -->
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700">
+        <text x="12" y="144" fill="#b45309">Anther — makes pollen ♂</text>
+        <text x="12" y="212" fill="#b45309">Filament — holds anther ♂</text>
+        <text x="12" y="282" fill="#15803d">Petal — attracts pollinators</text>
+        <text x="12" y="364" fill="#15803d">Sepal — protects the bud</text>
+        <text x="474" y="124" fill="#7c3aed">Stigma — receives pollen ♀</text>
+        <text x="474" y="192" fill="#7c3aed">Style — pollen tube path ♀</text>
+        <text x="474" y="304" fill="#7c3aed">Ovary → becomes fruit ♀</text>
+        <text x="474" y="360" fill="#7c3aed">Ovule → becomes seed ♀</text>
+        <text x="12" y="434" fill="#15803d">Receptacle</text>
+        <text x="474" y="424" fill="#ca8a04">Nectary — sugary reward</text>
+      </g>
+    </svg>
+    <figcaption>♂ amber = male parts (stamen) · ♀ purple = female parts (carpel) · green = non-reproductive. The exam heading "L/S through a flower" earns a mark on its own.</figcaption>
+  </figure>
   <div class="card plant-l"><h3 class="tcp">📊 All Flower Parts — Type, Function, and Why They Matter</h3>
     <table class="tpl"><thead><tr><th>Part</th><th>♂/♀/Non</th><th>Function</th><th>Exam-relevant detail</th></tr></thead>
     <tbody>
@@ -573,6 +729,54 @@ tr:hover td{background:rgba(99,102,241,.07);}
   </div>
   <div class="sh endo">📊 2. Complete Master Table — All Endocrine Glands</div>
   <div class="callout exam"><div class="ico">📌</div><div><strong>This table is tested EVERY SINGLE YEAR</strong> in Q1. The column match always includes 3–6 of these gland-hormone-function pairs. Memorise all rows completely — location, hormone name, and function.</div></div>
+  <figure class="diagram">
+    <div class="dtitle">🧍 Where the Endocrine Glands Are in the Body</div>
+    <svg viewBox="0 0 620 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of endocrine gland positions in the human body">
+      <!-- body silhouette -->
+      <g fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5">
+        <circle cx="310" cy="64" r="32"/>
+        <path d="M254,126 Q310,112 366,126 L380,250 L352,316 L268,316 L240,250 Z"/>
+        <path d="M256,132 Q230,150 228,222 L243,226 Q250,164 270,148 Z"/>
+        <path d="M364,132 Q390,150 392,222 L377,226 Q370,164 350,148 Z"/>
+        <path d="M268,316 L262,462 L298,462 L307,332 Z"/>
+        <path d="M352,316 L358,462 L322,462 L313,332 Z"/>
+      </g>
+      <!-- gland dots -->
+      <g stroke="#fff" stroke-width="1.6">
+        <circle cx="308" cy="52" r="6" fill="#14b8a6"/>
+        <circle cx="300" cy="70" r="6" fill="#f59e0b"/>
+        <circle cx="320" cy="78" r="6" fill="#2563eb"/>
+        <circle cx="310" cy="120" r="6" fill="#db2777"/>
+        <circle cx="310" cy="168" r="6" fill="#0ea5e9"/>
+        <circle cx="332" cy="226" r="6" fill="#f59e0b"/><circle cx="288" cy="226" r="6" fill="#f59e0b"/>
+        <circle cx="330" cy="250" r="6" fill="#7c3aed"/>
+        <circle cx="306" cy="312" r="6" fill="#be185d"/>
+      </g>
+      <!-- leaders -->
+      <g stroke="#94a3b8" stroke-width="1.2">
+        <line x1="172" y1="46" x2="304" y2="52"/>
+        <line x1="172" y1="84" x2="300" y2="70"/>
+        <line x1="172" y1="122" x2="318" y2="78"/>
+        <line x1="172" y1="166" x2="306" y2="120"/>
+        <line x1="172" y1="210" x2="306" y2="168"/>
+        <line x1="450" y1="214" x2="334" y2="226"/>
+        <line x1="450" y1="252" x2="332" y2="250"/>
+        <line x1="450" y1="312" x2="310" y2="312"/>
+      </g>
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="12.5" font-weight="700">
+        <text x="12" y="50" fill="#0f766e">Pineal — melatonin (sleep)</text>
+        <text x="12" y="88" fill="#b45309">Hypothalamus — controls pituitary</text>
+        <text x="12" y="126" fill="#1d4ed8">Pituitary — the "master gland"</text>
+        <text x="12" y="170" fill="#be185d">Thyroid + parathyroids</text>
+        <text x="12" y="214" fill="#0369a1">Thymus — thymosin (immunity)</text>
+        <text x="452" y="218" fill="#b45309">Adrenals — adrenalin / cortisol</text>
+        <text x="452" y="256" fill="#6d28d9">Pancreas — insulin &amp; glucagon</text>
+        <text x="452" y="308" fill="#be185d">Ovaries ♀ / Testes ♂</text>
+        <text x="452" y="324" fill="#be185d">— sex hormones</text>
+      </g>
+    </svg>
+    <figcaption>The hypothalamus and pituitary sit in the brain; the thyroid wraps the trachea in the neck; the adrenals sit on top of each kidney; the pancreas is behind the stomach.</figcaption>
+  </figure>
   <div class="card endo-l">
     <table class="ten"><thead><tr><th>Gland</th><th>Location in body</th><th>Hormone(s) secreted</th><th>Main function(s)</th><th>What stimulates it</th></tr></thead>
     <tbody>
@@ -603,6 +807,47 @@ tr:hover td{background:rgba(99,102,241,.07);}
     <div class="callout memo" style="margin-top:14px;"><div class="ico">📋</div><div><strong>IEB 2014 column match:</strong> "The control mechanism that illustrates the relationship between glucagon and blood sugar" = <strong>negative feedback</strong>.</div></div>
   </div>
   <div class="sh endo">🩸 4. Blood Glucose Regulation — In Full Detail</div>
+  <figure class="diagram">
+    <div class="dtitle">🔄 Negative Feedback Control of Blood Glucose</div>
+    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Negative feedback loop showing insulin lowering and glucagon raising blood glucose">
+      <defs>
+        <marker id="arrG" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/></marker>
+        <marker id="arrB" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker>
+      </defs>
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-weight="800" text-anchor="middle">
+        <!-- arrows: green (insulin, top) -->
+        <g fill="none" stroke="#16a34a" stroke-width="2.4">
+          <line x1="300" y1="170" x2="196" y2="122" marker-end="url(#arrG)"/>
+          <line x1="232" y1="82" x2="260" y2="70" marker-end="url(#arrG)"/>
+          <line x1="440" y1="66" x2="468" y2="82" marker-end="url(#arrG)"/>
+          <line x1="560" y1="124" x2="436" y2="168" marker-end="url(#arrG)"/>
+        </g>
+        <!-- arrows: blue (glucagon, bottom) -->
+        <g fill="none" stroke="#2563eb" stroke-width="2.4">
+          <line x1="300" y1="228" x2="196" y2="278" marker-end="url(#arrB)"/>
+          <line x1="232" y1="316" x2="260" y2="330" marker-end="url(#arrB)"/>
+          <line x1="440" y1="334" x2="468" y2="318" marker-end="url(#arrB)"/>
+          <line x1="560" y1="276" x2="436" y2="230" marker-end="url(#arrB)"/>
+        </g>
+        <!-- boxes -->
+        <rect x="250" y="168" width="200" height="62" rx="13" fill="#eef2ff" stroke="#6366f1" stroke-width="2.2"/>
+        <text font-size="13.5" fill="#3730a3"><tspan x="350" y="193">SET POINT</tspan><tspan x="350" y="213" font-size="12" font-weight="700">blood glucose 4–8 mmol/L</tspan></text>
+        <rect x="55" y="66" width="175" height="54" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+        <text font-size="13" fill="#92400e"><tspan x="142" y="89">Glucose RISES</tspan><tspan x="142" y="107" font-size="11.5" font-weight="700">(after a meal)</tspan></text>
+        <rect x="262" y="40" width="176" height="52" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+        <text font-size="13" fill="#15803d"><tspan x="350" y="62">β-cells release</tspan><tspan x="350" y="80" font-size="13.5">INSULIN</tspan></text>
+        <rect x="470" y="64" width="182" height="58" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+        <text font-size="11.5" fill="#15803d"><tspan x="561" y="86">Liver: glucose → glycogen;</tspan><tspan x="561" y="104">cells take up glucose</tspan></text>
+        <rect x="55" y="280" width="175" height="54" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+        <text font-size="13" fill="#1d4ed8"><tspan x="142" y="303">Glucose FALLS</tspan><tspan x="142" y="321" font-size="11.5" font-weight="700">(fasting / exercise)</tspan></text>
+        <rect x="262" y="308" width="176" height="52" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+        <text font-size="13" fill="#1d4ed8"><tspan x="350" y="330">α-cells release</tspan><tspan x="350" y="348" font-size="13.5">GLUCAGON</tspan></text>
+        <rect x="470" y="278" width="182" height="58" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+        <text font-size="11.5" fill="#1d4ed8"><tspan x="561" y="300">Liver: glycogen → glucose</tspan><tspan x="561" y="318">released into blood</tspan></text>
+      </g>
+    </svg>
+    <figcaption>Green loop = glucose too high → <strong>insulin</strong> lowers it. Blue loop = glucose too low → <strong>glucagon</strong> raises it. Each response switches off once the set point returns — that is negative feedback.</figcaption>
+  </figure>
   <div class="card endo-l"><h3 class="tce">Insulin and glucagon — how they work together</h3>
     <p>Blood glucose must stay within approximately 4–8 mmol/L. Too high (hyperglycaemia) = diabetes complications — blood vessels and nerves are damaged. Too low (hypoglycaemia) = the brain is starved of fuel and you lose consciousness. The pancreas monitors blood glucose levels minute-by-minute and releases the correct hormone. This is one of the most precisely controlled systems in the body.</p>
     <div class="g2">
@@ -705,6 +950,36 @@ tr:hover td{background:rgba(99,102,241,.07);}
     </tbody></table>
   </div>
   <div class="sh repro">🔬 2. Sperm Cell Structure and Function</div>
+  <figure class="diagram">
+    <div class="dtitle">🔬 Structure of a Sperm Cell (spermatozoon)</div>
+    <svg viewBox="0 0 660 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Labelled diagram of a sperm cell">
+      <!-- tail (flagellum) -->
+      <path d="M300,140 C330,108 362,108 388,140 C414,172 446,172 472,140 C498,108 530,108 556,140 C582,172 612,172 628,150" fill="none" stroke="#9333ea" stroke-width="4" stroke-linecap="round"/>
+      <!-- midpiece -->
+      <rect x="216" y="125" width="88" height="30" rx="12" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5"/>
+      <path d="M224,140 q9,-13 18,0 t18,0 t18,0 t14,0" fill="none" stroke="#b91c1c" stroke-width="1.6"/>
+      <!-- head -->
+      <ellipse cx="150" cy="140" rx="70" ry="46" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+      <!-- acrosome cap (front crescent) -->
+      <path d="M150,94 A70,46 0 0 0 150,186 A50,42 0 0 1 150,94 Z" fill="#3b82f6"/>
+      <!-- nucleus -->
+      <ellipse cx="168" cy="140" rx="36" ry="30" fill="#1e3a8a"/>
+      <!-- leader lines -->
+      <g stroke="#94a3b8" stroke-width="1.2">
+        <line x1="92" y1="52" x2="120" y2="112"/>
+        <line x1="262" y1="56" x2="260" y2="123"/>
+        <line x1="168" y1="232" x2="168" y2="172"/>
+        <line x1="470" y1="236" x2="472" y2="160"/>
+      </g>
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700">
+        <text x="12" y="44" fill="#1d4ed8">Acrosome — enzymes digest the egg coat</text>
+        <text x="196" y="48" fill="#b91c1c">Midpiece — mitochondria make ATP</text>
+        <text x="60" y="252" fill="#1e3a8a">Nucleus — haploid DNA (n = 23)</text>
+        <text x="360" y="252" fill="#7e22ce">Tail (flagellum) — propels the sperm</text>
+      </g>
+    </svg>
+    <figcaption>The two most-confused parts: the <strong>acrosome</strong> carries enzymes (not the midpiece); the <strong>midpiece</strong> carries mitochondria for energy (not the acrosome).</figcaption>
+  </figure>
   <div class="card repro-l"><h3 class="tcr">Every part and its function — diagram question + MCQ</h3>
     <table class="trp"><thead><tr><th>Part</th><th>Location</th><th>Function</th><th>Key IEB fact</th></tr></thead>
     <tbody>
@@ -732,6 +1007,46 @@ tr:hover td{background:rgba(99,102,241,.07);}
     <div class="callout exam"><div class="ico">📌</div><div><strong>Key comparison:</strong> 1 primary spermatocyte → <strong>4 equal, functional sperm cells</strong>. This is fundamentally different from oogenesis (1 primary oocyte → only 1 functional egg + 2–3 non-functional polar bodies).</div></div>
   </div>
   <div class="sh repro">♀ 4. Female Reproductive System — All Structures</div>
+  <figure class="diagram">
+    <div class="dtitle">♀ Female Reproductive System (front view)</div>
+    <svg viewBox="0 0 620 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Front view schematic of the female reproductive system">
+      <!-- oviducts (Fallopian tubes) -->
+      <path d="M252,170 Q198,122 156,140" fill="none" stroke="#db2777" stroke-width="8" stroke-linecap="round"/>
+      <path d="M368,170 Q422,122 464,140" fill="none" stroke="#db2777" stroke-width="8" stroke-linecap="round"/>
+      <!-- fimbriae -->
+      <path d="M150,134 l-12,-8 M152,142 l-14,-2 M156,150 l-13,4" stroke="#db2777" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M470,134 l12,-8 M468,142 l14,-2 M464,150 l13,4" stroke="#db2777" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <!-- ovaries -->
+      <ellipse cx="132" cy="146" rx="24" ry="16" fill="#c084fc" stroke="#7c3aed" stroke-width="2"/>
+      <ellipse cx="488" cy="146" rx="24" ry="16" fill="#c084fc" stroke="#7c3aed" stroke-width="2"/>
+      <!-- uterus -->
+      <path d="M250,162 Q310,120 370,162 Q382,232 340,292 L280,292 Q238,232 250,162 Z" fill="#fbcfe8" stroke="#db2777" stroke-width="2.2"/>
+      <!-- endometrium (inner lining) -->
+      <path d="M272,172 Q310,142 348,172 Q356,226 326,280 L294,280 Q264,226 272,172 Z" fill="#f472b6"/>
+      <!-- cervix -->
+      <path d="M290,292 L292,322 L328,322 L330,292 Z" fill="#ec4899" stroke="#be185d" stroke-width="1.8"/>
+      <!-- vagina -->
+      <path d="M292,322 L284,396 L336,396 L328,322 Z" fill="#fbcfe8" stroke="#db2777" stroke-width="2"/>
+      <!-- leaders -->
+      <g stroke="#94a3b8" stroke-width="1.2">
+        <line x1="150" y1="116" x2="132" y2="142"/>
+        <line x1="150" y1="186" x2="206" y2="150"/>
+        <line x1="150" y1="250" x2="300" y2="214"/>
+        <line x1="452" y1="180" x2="356" y2="200"/>
+        <line x1="452" y1="306" x2="330" y2="306"/>
+        <line x1="452" y1="368" x2="330" y2="362"/>
+      </g>
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="12.5" font-weight="700">
+        <text x="12" y="116" fill="#6d28d9">Ovary — egg + oestrogen/progesterone</text>
+        <text x="12" y="190" fill="#be185d">Oviduct — fertilisation happens here</text>
+        <text x="12" y="254" fill="#be185d">Endometrium — lining for implantation</text>
+        <text x="452" y="184" fill="#be185d">Uterus — houses the foetus</text>
+        <text x="452" y="310" fill="#9d174d">Cervix — neck of the uterus</text>
+        <text x="452" y="372" fill="#be185d">Vagina — birth canal</text>
+      </g>
+    </svg>
+    <figcaption>Schematic front view. Remember: <strong>fertilisation</strong> occurs in the oviduct (Fallopian tube), while <strong>implantation</strong> occurs in the endometrium of the uterus — a favourite exam trap.</figcaption>
+  </figure>
   <div class="card repro-l"><h3 class="tcr">Every structure, function, and exam connection</h3>
     <div class="an">
       <div class="ab"><div class="nm">🔴 Ovaries</div><div class="fn">Produce egg cells (oogenesis) and secrete oestrogen (from Graafian follicle) and progesterone (from corpus luteum). Each ovary is about the size of an almond. Contains thousands of primary follicles at birth — these are the lifetime supply of potential eggs.</div><div class="nt">IEB: "organ containing Graafian follicle" = ovary</div></div>
@@ -821,6 +1136,51 @@ tr:hover td{background:rgba(99,102,241,.07);}
     <div><h2 class="tcr">The Menstrual Cycle — Complete Guide</h2><p>Day-by-day · All 4 hormones · Ovarian cycle events · Endometrium · PCOS · STIs</p></div>
   </div>
   <div class="callout exam"><div class="ico">📌</div><div><strong>Highest-value topic on the whole paper.</strong> The IEB has tested: (1) draw/complete menstrual cycle graphs showing all 4 hormones; (2) describe each phase; (3) name hormones and what they do at each stage; (4) relate events in ovary to hormones; (5) link to contraception; (6) explain PCOS. It appears in EVERY past paper in some form.</div></div>
+  <figure class="diagram">
+    <div class="dtitle">📈 The 28-Day Menstrual Cycle — All Four Hormones</div>
+    <svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of FSH, LH, oestrogen and progesterone across the 28-day menstrual cycle">
+      <!-- phase bands -->
+      <rect x="70" y="60" width="109" height="230" fill="#fecaca" opacity="0.5"/>
+      <rect x="179" y="60" width="186" height="230" fill="#fde68a" opacity="0.45"/>
+      <rect x="365" y="60" width="20" height="230" fill="#86efac" opacity="0.7"/>
+      <rect x="385" y="60" width="295" height="230" fill="#ddd6fe" opacity="0.5"/>
+      <!-- ovulation line -->
+      <line x1="375" y1="60" x2="375" y2="372" stroke="#16a34a" stroke-width="1.6" stroke-dasharray="5 4"/>
+      <!-- axes -->
+      <line x1="70" y1="60" x2="70" y2="290" stroke="#475569" stroke-width="1.6"/>
+      <line x1="70" y1="290" x2="690" y2="290" stroke="#475569" stroke-width="1.6"/>
+      <text x="36" y="180" fill="#475569" font-size="12" font-weight="700" transform="rotate(-90 36 180)" text-anchor="middle">Hormone level in blood →</text>
+      <!-- hormone curves -->
+      <polyline points="70,252 113,248 200,242 331,228 375,210 397,228 462,250 549,252 680,240" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="70,260 244,256 331,250 360,235 375,80 392,235 418,256 549,258 680,256" fill="none" stroke="#ea580c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="70,266 135,258 222,224 309,160 353,108 375,128 418,190 484,168 549,182 636,232 680,262" fill="none" stroke="#db2777" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="70,278 200,276 353,272 375,258 418,205 462,150 527,116 571,140 636,225 680,266" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+      <text x="392" y="74" fill="#ea580c" font-size="11.5" font-weight="800">← LH surge triggers ovulation</text>
+      <!-- phase labels -->
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="800" text-anchor="middle">
+        <text x="124" y="52" fill="#b91c1c">Menstruation</text>
+        <text x="272" y="52" fill="#b45309">Follicular phase</text>
+        <text x="375" y="44" fill="#15803d">Ovulation</text>
+        <text x="532" y="52" fill="#6d28d9">Luteal phase</text>
+      </g>
+      <!-- day axis labels -->
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">
+        <text x="70" y="306">0</text><text x="222" y="306">7</text><text x="375" y="306">14</text><text x="527" y="306">21</text><text x="680" y="306">28</text>
+        <text x="380" y="324" font-weight="800">Day of the cycle</text>
+      </g>
+      <!-- endometrium band -->
+      <path d="M70,372 L70,366 L113,369 L179,360 L244,348 L331,340 L418,335 L505,330 L549,328 L636,335 L680,358 L680,372 Z" fill="#f9a8d4" stroke="#db2777" stroke-width="1.3" opacity="0.85"/>
+      <text x="74" y="388" font-family="'Plus Jakarta Sans',sans-serif" font-size="11.5" font-weight="700" fill="#9d174d">Endometrium lining (thickness)</text>
+      <!-- legend -->
+      <g font-family="'Plus Jakarta Sans',sans-serif" font-size="12.5" font-weight="800">
+        <line x1="80" y1="416" x2="104" y2="416" stroke="#2563eb" stroke-width="3"/><text x="110" y="420" fill="#1d4ed8">FSH</text>
+        <line x1="160" y1="416" x2="184" y2="416" stroke="#ea580c" stroke-width="3"/><text x="190" y="420" fill="#c2410c">LH</text>
+        <line x1="232" y1="416" x2="256" y2="416" stroke="#db2777" stroke-width="3"/><text x="262" y="420" fill="#be185d">Oestrogen</text>
+        <line x1="360" y1="416" x2="384" y2="416" stroke="#7c3aed" stroke-width="3"/><text x="390" y="420" fill="#6d28d9">Progesterone</text>
+      </g>
+    </svg>
+    <figcaption>Oestrogen peaks <em>just before</em> ovulation; the high oestrogen triggers the <strong>LH surge</strong> (day 14) that causes ovulation; progesterone (from the corpus luteum) dominates the luteal phase. Learn to redraw this from memory.</figcaption>
+  </figure>
   <div class="sh repro">📊 1. The 28-Day Menstrual Cycle — Every Phase Explained</div>
   <div class="card repro-l"><h3 class="tcr">Phase-by-phase: ovary, hormones, uterus, and WHY</h3>
     <table class="trp"><thead><tr><th>Phase</th><th>Days</th><th>What happens in the OVARY</th><th>HORMONE levels</th><th>What happens in UTERUS/Endometrium</th><th>Why it happens</th></tr></thead>
@@ -1225,6 +1585,65 @@ tr:hover td{background:rgba(99,102,241,.07);}
     </div>
   </div>
 </div></div>
+<!-- ═══════════════ PAGE: FLASHCARDS ═══════════════ -->
+<div id="page-flashcards" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#ede9fe;color:#7c3aed;">🃏</div>
+    <div><h2>Flashcards</h2><p>Flip-card revision · tap a card to reveal the answer · pick a deck below</p></div>
+  </div>
+  <div class="callout exam"><div class="ico">📌</div><div>Tap the card (or press <strong>Spacebar</strong>) to flip it over. Mark <strong>✓ Got it</strong> or <strong>↻ Review again</strong> as you go — cards you miss keep coming back until you've mastered the deck. Every card is built from the definitions and column-match pairs that repeat in Q1 every year.</div></div>
+  <div class="fc-wrap">
+    <div class="fc-decks" id="fcDecks"></div>
+    <div class="fc-card" id="fcCard" onclick="fcFlip()">
+      <div class="fc-inner">
+        <div class="fc-face fc-front"><div class="fc-tag" id="fcTag">—</div><div class="fc-q" id="fcQ">Loading…</div><div class="fc-hint">tap to flip ⟳</div></div>
+        <div class="fc-face fc-back"><div class="fc-tag">Answer</div><div class="fc-a" id="fcA"></div><div class="fc-hint">tap to flip back ⟳</div></div>
+      </div>
+    </div>
+    <div class="fc-controls">
+      <button class="fc-btn" onclick="fcPrev()">‹ Prev</button>
+      <span class="fc-counter" id="fcCounter">0 / 0</span>
+      <button class="fc-btn" onclick="fcNext()">Next ›</button>
+    </div>
+    <div class="fc-controls" style="margin-top:10px;">
+      <button class="fc-btn again" onclick="fcMark(false)">↻ Review again</button>
+      <button class="fc-btn know" onclick="fcMark(true)">✓ Got it</button>
+      <button class="fc-btn" onclick="fcShuffle()">🔀 Shuffle deck</button>
+    </div>
+    <div class="fc-mastery" id="fcMastery"></div>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: QUIZ ═══════════════ -->
+<div id="page-quiz" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#dbeafe;color:#2563eb;">🎮</div>
+    <div><h2>Quiz Me</h2><p>Self-test with instant feedback · real IEB-style questions &amp; traps · beat your best score</p></div>
+  </div>
+  <div class="quiz-wrap" id="quizWrap"></div>
+</div></div>
+<!-- ═══════════════ PAGE: MY MARKS ═══════════════ -->
+<div id="page-marks" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#dcfce7;color:#16a34a;">📊</div>
+    <div><h2>My Marks</h2><p>Log your test &amp; practice marks · track your average · watch your progress climb</p></div>
+  </div>
+  <div class="callout tip"><div class="ico">💡</div><div>Add each test, assignment or past paper as you finish it. Everything saves on <strong>this device</strong> automatically — your marks stay private and never leave your browser.</div></div>
+  <div class="card">
+    <h3>➕ Add a mark</h3>
+    <div class="marks-form">
+      <div class="fld"><label>Assessment</label><input type="text" class="tname" id="mkName" placeholder="e.g. June Trial P2"></div>
+      <div class="fld"><label>My mark</label><input type="number" class="tnum" id="mkMark" min="0" step="0.5" placeholder="45"></div>
+      <div class="fld"><label>Out of</label><input type="number" class="tnum" id="mkTotal" min="1" step="0.5" placeholder="60"></div>
+      <div class="fld"><label>Date</label><input type="date" id="mkDate"></div>
+      <button class="marks-add" onclick="addMark()">Add mark</button>
+    </div>
+  </div>
+  <div class="marks-summary" id="marksSummary"></div>
+  <div class="card"><h3>📋 My results</h3><div id="marksList"></div></div>
+</div></div>
 <script>
 function show(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1347,6 +1766,276 @@ function tog(el) {
   /* ---- init ---- */
   updateAll();
   revealPage(document.querySelector('.page.active'));
+})();
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   ✨ PHASE 2 ENGINE — exam countdown · flashcards · quiz · marks
+   All data lives in localStorage (private to this device).
+   ════════════════════════════════════════════════════════════════ */
+(function(){
+  var LS=window.localStorage;
+  function get(k,d){try{var v=LS.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}}
+  function set(k,v){try{LS.setItem(k,JSON.stringify(v));}catch(e){}}
+  function $(id){return document.getElementById(id);}
+  function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function boom(scale){
+    var cv=$('confettiCanvas'); if(!cv) return; var ctx=cv.getContext('2d');
+    var cl=['#22c55e','#8b5cf6','#ec4899','#f59e0b','#3b82f6','#14b8a6'];
+    var N=Math.round(120*(scale||1)),p=[];
+    for(var i=0;i<N;i++)p.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.3,r:5+Math.random()*6,c:cl[i%cl.length],vy:2+Math.random()*4,vx:-2+Math.random()*4,rot:Math.random()*6,vr:-.2+Math.random()*.4});
+    var f=0;(function a(){f++;ctx.clearRect(0,0,cv.width,cv.height);p.forEach(function(o){o.x+=o.vx;o.y+=o.vy;o.vy+=.05;o.rot+=o.vr;ctx.save();ctx.translate(o.x,o.y);ctx.rotate(o.rot);ctx.fillStyle=o.c;ctx.fillRect(-o.r/2,-o.r/2,o.r,o.r*.6);ctx.restore();});if(f<150)requestAnimationFrame(a);else ctx.clearRect(0,0,cv.width,cv.height);})();
+  }
+
+  /* ─────────── EXAM COUNTDOWN ─────────── */
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function fmt(iso){var p=iso.split('-');return parseInt(p[2],10)+' '+MONTHS[parseInt(p[1],10)-1]+' '+p[0];}
+  function examDate(){return get('lsp2_examdate','2026-06-10');}
+  function renderCountdown(){
+    var iso=examDate();
+    if($('examDateChip'))$('examDateChip').textContent=fmt(iso);
+    var num=$('cdNum'); if(!num)return;
+    var d=new Date(iso+'T00:00:00'),now=new Date();now.setHours(0,0,0,0);
+    var diff=Math.round((d-now)/86400000);
+    if($('cdDate'))$('cdDate').textContent='Exam: '+fmt(iso);
+    if(diff>1){num.textContent=diff;$('cdLbl').textContent='days to go';}
+    else if(diff===1){num.textContent='1';$('cdLbl').textContent='day to go!';}
+    else if(diff===0){num.textContent='🍀';$('cdLbl').textContent="it's exam day — you've got this!";}
+    else {num.textContent=Math.abs(diff);$('cdLbl').textContent='days ago — set your next date 📅';}
+  }
+  window.editExamDate=function(){
+    var c=$('countdown'); if(!c||c.querySelector('.cd-dateinput'))return;
+    var btn=$('cdEdit'); btn.style.display='none';
+    var inp=document.createElement('input'); inp.type='date'; inp.className='cd-dateinput'; inp.value=examDate();
+    var save=document.createElement('button'); save.className='cd-edit'; save.textContent='Save ✓';
+    c.appendChild(inp); c.appendChild(save); inp.focus();
+    save.onclick=function(){ if(inp.value)set('lsp2_examdate',inp.value); c.removeChild(inp); c.removeChild(save); btn.style.display=''; renderCountdown(); };
+  };
+
+  /* ─────────── FLASHCARDS ─────────── */
+  var DECKS={
+   'Plant terms':[
+    ['Pollination','Transfer of pollen from the anther to the stigma'],
+    ['Fertilisation','Fusion of the male and female gametes to form a zygote'],
+    ['Seed','A developed (fertilised) ovule — embryo + food store + testa'],
+    ['Fruit','A developed ovary wall (pericarp) surrounding the seed(s)'],
+    ['Germination','Re-growth of the embryo in a seed when conditions are favourable'],
+    ['Self-pollination','Pollen → stigma of the SAME flower / plant'],
+    ['Cross-pollination','Pollen → stigma of a DIFFERENT plant of the same species']
+   ],
+   'Endocrine terms':[
+    ['Hormone','Chemical messenger made by a gland, carried in blood, controls a target organ'],
+    ['Homeostasis','Keeping a stable internal environment despite external change'],
+    ['Negative feedback','A response that reverses the change to restore the set point'],
+    ['Glycogenesis','Glucose → glycogen (insulin; storage)'],
+    ['Glycogenolysis','Glycogen → glucose (glucagon / adrenalin; release)'],
+    ['Hyperglycaemia','Blood glucose too HIGH (diabetes)'],
+    ['Hypoglycaemia','Blood glucose too LOW (dangerous)']
+   ],
+   'Reproduction terms':[
+    ['Ovulation','Release of the secondary oocyte from the ruptured Graafian follicle'],
+    ['Implantation','Embedding of the blastocyst into the endometrium'],
+    ['Semen','Sperm + secretions from the accessory glands (alkaline)'],
+    ['Menstruation','Shedding of the endometrium when no implantation occurs'],
+    ['Spermatogenesis','Production of sperm in the seminiferous tubules'],
+    ['Oogenesis','Production of egg cells in the ovaries'],
+    ['HCG','From chorionic villi; keeps the corpus luteum alive; detected by pregnancy tests']
+   ],
+   'Disorders':[
+    ['Cretinism','Too little thyroxin in a CHILD → short stature + slow mental development'],
+    ['Myxoedema','Too little thyroxin in an ADULT → thick skin, weight gain, fatigue'],
+    ["Grave's disease",'Too much thyroxin (adult) → weight loss, bulging eyes, fast heart rate'],
+    ['Goitre','Iodine deficiency → swollen thyroid in the neck'],
+    ['Gigantism','Too much growth hormone in a CHILD → very tall'],
+    ['Acromegaly','Too much growth hormone in an ADULT → enlarged face, hands, feet'],
+    ['Diabetes Type 1','β-cells destroyed → no insulin produced'],
+    ['Diabetes Type 2','Cells stop responding to insulin (insulin resistance)']
+   ],
+   'Column matches':[
+    ['Rupture of the Graafian follicle','Ovulation'],
+    ['Most common site of fertilisation','Oviduct'],
+    ['Hormone consistently high throughout pregnancy','Progesterone'],
+    ['Embryo sinks into and attaches to the endometrium','Implantation'],
+    ['Strong membrane around the embryo','Amnion'],
+    ['Cushions the foetus from impact','Amniotic fluid'],
+    ['Labour starts with contraction of muscles in this organ','Uterus'],
+    ['Process by which the embryo grows','Mitosis'],
+    ['Transports foetal waste products','Umbilical cord'],
+    ['Acts as a barrier against pathogens and drugs','Placenta'],
+    ['Stimulates sperm production / spermatogenesis','FSH'],
+    ['Its surge directly causes ovulation','LH'],
+    ['Stimulates the thyroid to make thyroxin','TSH'],
+    ['Controls the basal metabolic rate','Thyroxin'],
+    ['Raises heart rate & blood glucose during stress','Adrenalin'],
+    ['Regulates the sleep–wake cycle','Melatonin'],
+    ['Endocrine cells of the pancreas','Islets of Langerhans'],
+    ['Structure that supports an anther','Filament'],
+    ['Structure that holds the stigma in place','Style'],
+    ['A developed, fertilised ovule','Seed'],
+    ['Tissue culture making many plantlets','Plant cloning (asexual)']
+   ]
+  };
+  var fc={deck:'Plant terms',active:[],pos:0};
+  function fcKey(q){return fc.deck+'|'+q;}
+  function fcMastered(){return get('lsp2_fc',{});}
+  function fcBuild(){
+    var cards=DECKS[fc.deck],m=fcMastered()[fc.deck]||[]; fc.active=[];
+    for(var i=0;i<cards.length;i++){if(m.indexOf(fcKey(cards[i][0]))<0)fc.active.push(i);}
+    fc.pos=0;
+  }
+  function fcRender(){
+    if(!$('fcCard'))return;
+    var cards=DECKS[fc.deck]; $('fcCard').classList.remove('flipped'); $('fcTag').textContent=fc.deck;
+    var m=fcMastered()[fc.deck]||[];
+    $('fcMastery').textContent='Mastered '+m.length+' / '+cards.length+(m.length===cards.length?' 🎉 deck complete!':'');
+    if(!fc.active.length){
+      $('fcQ').textContent='🎉 You have mastered every card in this deck!';
+      $('fcA').textContent='Pick another deck above, or hit Shuffle to review them all again.';
+      $('fcCounter').textContent='✓ done'; return;
+    }
+    if(fc.pos>=fc.active.length)fc.pos=0;
+    var idx=fc.active[fc.pos];
+    $('fcQ').textContent=cards[idx][0]; $('fcA').textContent=cards[idx][1];
+    $('fcCounter').textContent=(fc.pos+1)+' / '+fc.active.length;
+  }
+  window.fcFlip=function(){var c=$('fcCard'); if(c)c.classList.toggle('flipped');};
+  window.fcNext=function(){if(fc.active.length){fc.pos=(fc.pos+1)%fc.active.length;fcRender();}};
+  window.fcPrev=function(){if(fc.active.length){fc.pos=(fc.pos-1+fc.active.length)%fc.active.length;fcRender();}};
+  window.fcMark=function(known){
+    if(!fc.active.length)return;
+    var cards=DECKS[fc.deck],key=fcKey(cards[fc.active[fc.pos]][0]);
+    if(known){
+      var m=fcMastered(),arr=m[fc.deck]||[]; if(arr.indexOf(key)<0)arr.push(key); m[fc.deck]=arr; set('lsp2_fc',m);
+      fc.active.splice(fc.pos,1); if(fc.pos>=fc.active.length)fc.pos=0; boom(0.4);
+      if(!fc.active.length)boom(1);
+    } else { fc.active.push(fc.active.splice(fc.pos,1)[0]); if(fc.pos>=fc.active.length)fc.pos=0; }
+    fcRender();
+  };
+  window.fcShuffle=function(){
+    if(!fc.active.length){var m=fcMastered();m[fc.deck]=[];set('lsp2_fc',m);fcBuild();}
+    shuffle(fc.active); fc.pos=0; fcRender();
+  };
+  function fcDecks(){
+    var w=$('fcDecks'); if(!w)return; w.innerHTML='';
+    Object.keys(DECKS).forEach(function(name){
+      var b=document.createElement('button'); b.className='fc-deck'+(name===fc.deck?' active':''); b.textContent=name;
+      b.addEventListener('click',function(){fc.deck=name;fcBuild();fcDecks();fcRender();});
+      w.appendChild(b);
+    });
+  }
+  function fcInit(){
+    if(!$('fcCard'))return; fcBuild(); fcDecks(); fcRender();
+    document.addEventListener('keydown',function(e){
+      var fp=$('page-flashcards');
+      if(fp&&fp.classList.contains('active')&&(e.code==='Space'||e.key===' ')){
+        var t=(e.target.tagName||''); if(t==='INPUT'||t==='TEXTAREA')return; e.preventDefault(); window.fcFlip();
+      }
+    });
+  }
+
+  /* ─────────── QUIZ ─────────── */
+  var QUESTIONS=[
+   ["Where does fertilisation normally occur in humans?",['Uterus','Oviduct (Fallopian tube)','Ovary','Vagina'],1,'Fertilisation happens in the oviduct; implantation happens later in the uterus.'],
+   ["Which hormone's surge directly triggers ovulation?",['FSH','Oestrogen','LH','Progesterone'],2,'A sharp LH surge (~day 14) makes the Graafian follicle rupture.'],
+   ["Glucagon affects blood glucose by…",['Lowering it','Raising it (glycogen → glucose)','Having no effect','Turning glucose into fat'],1,'Glucagon RAISES blood glucose; insulin lowers it.'],
+   ["The acrosome of a sperm cell contains…",['Mitochondria','Digestive enzymes','Haploid DNA','The flagellum'],1,'Acrosome = enzymes to penetrate the egg. Mitochondria are in the midpiece.'],
+   ["Ovulation is the rupture of the…",['Corpus luteum','Graafian follicle','Endometrium','Oviduct'],1,'The corpus luteum forms AFTER ovulation, from the ruptured follicle.'],
+   ["After fertilisation, which part becomes the fruit?",['Ovule','Ovary wall (pericarp)','Stigma','Style'],1,'Ovule → seed; ovary wall (pericarp) → fruit.'],
+   ["TSH is produced by the…",['Thyroid gland','Anterior pituitary','Hypothalamus','Adrenal gland'],1,'TSH from the pituitary stimulates the thyroid to make thyroxin.'],
+   ["Insulin is produced by which pancreatic cells?",['α-cells','β-cells','Sertoli cells','Liver cells'],1,'β-cells make insulin; α-cells make glucagon.'],
+   ["Which is NOT a female secondary sexual characteristic at puberty?",['Widening of the hips','Pronounced deepening of the voice','Breast development','Growth of pubic hair'],1,'Pronounced voice deepening is a MALE feature (testosterone on the larynx).'],
+   ["Which hormone stays high throughout pregnancy?",['FSH','LH','Progesterone','Only oestrogen'],2,'HCG keeps the corpus luteum producing progesterone, so it stays high.'],
+   ["Pollination is the transfer of pollen from the anther to the…",['Ovule','Stigma','Style','Ovary'],1,'Pollination = anther → stigma. Fertilisation happens later, in the ovule.'],
+   ["Where do sperm mature and get stored?",['Testes','Epididymis','Vas deferens','Prostate gland'],1,'Sperm are made in the seminiferous tubules but mature/stored in the epididymis.'],
+   ["A goitre (swollen thyroid) is most directly caused by…",['Excess iodine','Iodine deficiency','Too much insulin','Excess growth hormone'],1,'No iodine → low thyroxin → TSH keeps rising → the thyroid enlarges.'],
+   ["Which contraceptive ALSO protects against STIs?",['Combined pill','Copper IUD','Male condom','Progesterone injection'],2,'Only barrier methods (condoms) prevent STIs as well as pregnancy.'],
+   ["Per primary oocyte, oogenesis produces…",['4 equal eggs','1 functional egg + polar bodies','2 functional eggs','4 sperm'],1,'Unequal division → 1 egg + 2–3 polar bodies. Spermatogenesis gives 4 equal sperm.'],
+   ["Excess growth hormone in an ADULT causes…",['Gigantism','Acromegaly','Dwarfism','Cretinism'],1,'Adult (growth plates fused) = acromegaly: enlarged face, hands and feet.'],
+   ["The corpus luteum mainly secretes…",['FSH','LH','Progesterone','Testosterone'],2,'The corpus luteum secretes progesterone (and some oestrogen).']
+  ];
+  var quiz={order:[],pos:0,score:0};
+  function quizStart(){ quiz.order=shuffle(QUESTIONS.map(function(_,i){return i;})); quiz.pos=0; quiz.score=0; quizRenderQ(); }
+  function quizRenderQ(){
+    var w=$('quizWrap'); if(!w)return;
+    var Q=QUESTIONS[quiz.order[quiz.pos]],N=quiz.order.length,pct=Math.round(quiz.pos/N*100);
+    w.innerHTML='<div class="quiz-progress"><i style="width:'+pct+'%"></i></div>'+
+      '<div class="quiz-meta"><span>Question '+(quiz.pos+1)+' of '+N+'</span><span>Score: '+quiz.score+'</span></div>'+
+      '<div class="quiz-q">'+esc(Q[0])+'</div><div id="quizOpts"></div>'+
+      '<div class="quiz-fb" id="quizFb"></div><div id="quizNextWrap"></div>';
+    var ow=$('quizOpts'),opts=Q[1].map(function(t,i){return{t:t,i:i};}); shuffle(opts);
+    opts.forEach(function(o){
+      var b=document.createElement('button'); b.className='quiz-opt'; b.textContent=o.t;
+      b.addEventListener('click',function(){quizAnswer(o.i,Q,b,ow);});
+      ow.appendChild(b);
+    });
+  }
+  function quizAnswer(chosen,Q,btn,ow){
+    var correct=Q[2],correctText=Q[1][correct];
+    ow.querySelectorAll('.quiz-opt').forEach(function(b){b.disabled=true; if(b.textContent===correctText)b.classList.add('correct');});
+    var fb=$('quizFb');
+    if(chosen===correct){quiz.score++; fb.className='quiz-fb show ok'; fb.innerHTML='✅ <strong>Correct!</strong> '+esc(Q[3]);}
+    else{btn.classList.add('wrong'); fb.className='quiz-fb show no'; fb.innerHTML='❌ <strong>Not quite.</strong> '+esc(Q[3]);}
+    var nb=document.createElement('button'); nb.className='quiz-next';
+    nb.textContent=(quiz.pos+1<quiz.order.length)?'Next question ›':'See my score 🎉';
+    nb.addEventListener('click',function(){quiz.pos++; if(quiz.pos<quiz.order.length)quizRenderQ(); else quizResult();});
+    $('quizNextWrap').appendChild(nb);
+  }
+  function quizResult(){
+    var N=quiz.order.length,pct=Math.round(quiz.score/N*100),best=get('lsp2_quizbest',0),isBest=pct>best;
+    if(isBest)set('lsp2_quizbest',pct);
+    var msg=pct>=80?'Outstanding — you really know this! 🌟':pct>=60?'Solid work — review the ones you missed. 💪':'Keep going — revisit the topics and try again. 📚';
+    $('quizWrap').innerHTML='<div class="quiz-result"><div class="quiz-score">'+pct+'%</div>'+
+      '<p style="font-weight:800;margin:6px 0 2px;">You scored '+quiz.score+' / '+N+'</p>'+
+      '<p style="color:var(--muted);margin-bottom:6px;">'+msg+'</p>'+
+      '<p style="font-weight:700;margin-bottom:16px;">'+(isBest?'🏆 New best score!':'Your best: '+Math.max(best,pct)+'%')+'</p>'+
+      '<button class="quiz-restart">↻ Try again (reshuffled)</button></div>';
+    $('quizWrap').querySelector('.quiz-restart').addEventListener('click',quizStart);
+    if(pct>=70)boom(1);
+  }
+  function quizInit(){ if($('quizWrap'))quizStart(); }
+
+  /* ─────────── MY MARKS ─────────── */
+  var SM=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function todayISO(){var d=new Date(),m=d.getMonth()+1,day=d.getDate();return d.getFullYear()+'-'+(m<10?'0'+m:m)+'-'+(day<10?'0'+day:day);}
+  function fmtShort(iso){if(!iso)return'';var p=iso.split('-');return parseInt(p[2],10)+' '+SM[parseInt(p[1],10)-1]+' '+p[0];}
+  function marks(){return get('lsp2_marks',[]);}
+  function gradeColor(p){return p>=70?'#16a34a':p>=50?'#d97706':'#dc2626';}
+  window.addMark=function(){
+    var name=($('mkName').value||'').trim(),mark=parseFloat($('mkMark').value),total=parseFloat($('mkTotal').value),date=$('mkDate').value||todayISO();
+    if(!name){$('mkName').focus();return;}
+    if(isNaN(mark)||isNaN(total)||total<=0){$('mkMark').focus();return;}
+    if(mark<0)mark=0; if(mark>total)mark=total;
+    var arr=marks(); arr.push({id:String(Date.now())+'-'+Math.round(Math.random()*1000),name:name,mark:mark,total:total,date:date}); set('lsp2_marks',arr);
+    $('mkName').value=''; $('mkMark').value=''; $('mkTotal').value=''; $('mkDate').value=todayISO();
+    marksRender(); boom(0.4);
+  };
+  function deleteMark(id){ set('lsp2_marks',marks().filter(function(m){return m.id!==id;})); marksRender(); }
+  function marksRender(){
+    var list=$('marksList'),sum=$('marksSummary'); if(!list)return;
+    var arr=marks();
+    if(!arr.length){ sum.innerHTML=''; list.innerHTML='<div class="empty-state">No marks yet — add your first result above to start tracking your progress. 📈</div>'; return; }
+    var pcts=arr.map(function(m){return m.mark/m.total*100;});
+    var avg=Math.round(pcts.reduce(function(a,b){return a+b;},0)/pcts.length),best=Math.round(Math.max.apply(null,pcts));
+    sum.innerHTML='<div class="sc"><div class="sn" style="color:var(--endo)">'+arr.length+'</div><div class="sl">Marks logged</div></div>'+
+      '<div class="sc"><div class="sn" style="color:'+gradeColor(avg)+'">'+avg+'%</div><div class="sl">Average</div></div>'+
+      '<div class="sc"><div class="sn" style="color:var(--plant)">'+best+'%</div><div class="sl">Best result</div></div>';
+    var rows=arr.slice().sort(function(a,b){return a.date<b.date?1:(a.date>b.date?-1:0);});
+    var h='<table><thead><tr><th>Assessment</th><th>Date</th><th>Mark</th><th>%</th><th>Progress</th><th></th></tr></thead><tbody>';
+    rows.forEach(function(m){
+      var p=Math.round(m.mark/m.total*100),c=gradeColor(p);
+      h+='<tr><td><strong>'+esc(m.name)+'</strong></td><td>'+fmtShort(m.date)+'</td><td>'+m.mark+' / '+m.total+'</td>'+
+        '<td class="pct" style="color:'+c+'">'+p+'%</td><td><div class="bar"><i style="width:'+p+'%;background:'+c+'"></i></div></td>'+
+        '<td><button class="mk-del" data-id="'+m.id+'">✕</button></td></tr>';
+    });
+    list.innerHTML=h+'</tbody></table>';
+    list.querySelectorAll('.mk-del').forEach(function(b){b.addEventListener('click',function(){deleteMark(b.getAttribute('data-id'));});});
+  }
+  function marksInit(){ if(!$('marksList'))return; var di=$('mkDate'); if(di&&!di.value)di.value=todayISO(); marksRender(); }
+
+  /* ─────────── INIT ─────────── */
+  renderCountdown(); fcInit(); quizInit(); marksInit();
 })();
 </script>
 </body></html>

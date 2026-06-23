@@ -24,10 +24,14 @@ Eight sections covering the full demarcation:
 
 ## 🎮 Study features
 
-- **Progress tracking** — mark each section as studied; your progress saves automatically in the browser
-- **Confetti reward** when you complete all 8 sections 🎉
-- Smooth scroll-reveal animations, colour-coded topics, and a back-to-top button
-- Works on phone, tablet and desktop — open the link and study anywhere
+- **Exam countdown** — set your own exam date; the home page shows a live "days to go" counter
+- **Labelled diagrams** — hand-drawn SVG diagrams for the flower L/S, sperm cell, the full menstrual-cycle hormone graph, the blood-glucose feedback loop, the endocrine body map and the female reproductive system
+- **Flashcards** — flip-card decks for every key definition and the column-match pairs; tracks what you've mastered
+- **Quiz Me** — interactive multiple-choice self-test built from real IEB traps, with instant feedback, explanations and a best-score tracker
+- **My Marks** — log your test and practice marks; see your average, best result and progress bars
+- **Progress tracking** — mark each section as studied; everything saves automatically in the browser
+- **Confetti rewards** 🎉, scroll-reveal animations, colour-coded topics, and a back-to-top button
+- Works on phone, tablet and desktop — open the link and study anywhere. All your data stays private on your own device.
 
 ## 🛠️ Tech
 

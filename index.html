@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Sciences P2 — Complete Study Guide | Curro Kathu Gr 12 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+:root {
+  --bg:#f9f8f4; --card:#fff; --text:#1a1a2e; --muted:#6b7280; --border:#e5e0d4;
+  --plant:#16a34a; --plant-l:#dcfce7; --plant-m:#86efac; --plant-d:#14532d;
+  --endo:#7c3aed; --endo-l:#ede9fe; --endo-m:#c4b5fd; --endo-d:#4c1d95;
+  --repro:#db2777; --repro-l:#fce7f3; --repro-m:#f9a8d4; --repro-d:#831843;
+  --trick:#dc2626; --trick-l:#fee2e2; --tip:#d97706; --tip-l:#fef3c7;
+  --memo:#059669; --memo-l:#ecfdf5; --exam:#2563eb; --exam-l:#eff6ff;
+  --nav-bg:#0f0e1a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px;}
+.page{display:none;} .page.active{display:block;}
+nav{position:sticky;top:0;z-index:200;background:var(--nav-bg);display:flex;align-items:center;overflow-x:auto;padding:0 8px;border-bottom:2px solid #2d2b4e;scrollbar-width:none;}
+nav::-webkit-scrollbar{display:none;}
+.nav-btn{flex-shrink:0;color:#9ca3af;font-size:12.5px;font-weight:700;padding:14px 16px;cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-btn:hover{color:#e5e7eb;background:rgba(255,255,255,.05);}
+.nav-btn.active{color:white;border-bottom-color:#c4b5fd;background:rgba(255,255,255,.07);}
+.nav-btn.p-active{color:white;border-bottom-color:var(--plant-m);}
+.nav-btn.e-active{color:white;border-bottom-color:var(--endo-m);}
+.nav-btn.r-active{color:white;border-bottom-color:var(--repro-m);}
+.container{max-width:1020px;margin:0 auto;padding:0 20px 60px;}
+.hero{background:linear-gradient(135deg,#0f0e1a 0%,#1a0e2e 40%,#0d1f0f 100%);padding:56px 24px 48px;text-align:center;color:white;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 18px;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;margin-bottom:18px;}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.15;margin-bottom:10px;}
+.hero h1 span{color:var(--endo-m);}
+.hero p{color:rgba(255,255,255,.6);margin-bottom:24px;}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 20px;font-weight:800;font-size:13px;}
+.chip small{display:block;font-weight:400;font-size:11px;opacity:.6;margin-bottom:2px;}
+.page-title{padding:32px 0 24px;display:flex;align-items:flex-start;gap:16px;}
+.page-title .ic{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;margin-top:2px;}
+.page-title h2{font-size:clamp(22px,4vw,34px);font-weight:900;line-height:1.2;margin-bottom:6px;}
+.page-title p{color:var(--muted);font-size:14px;}
+.sh{font-size:20px;font-weight:800;margin:36px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:10px;}
+.sh.plant{border-color:var(--plant-m);color:var(--plant-d);}
+.sh.endo{border-color:var(--endo-m);color:var(--endo-d);}
+.sh.repro{border-color:var(--repro-m);color:var(--repro-d);}
+.card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:22px 26px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.card.plant-l{border-left:5px solid var(--plant);}
+.card.endo-l{border-left:5px solid var(--endo);}
+.card.repro-l{border-left:5px solid var(--repro);}
+.card.tip{background:var(--tip-l);border-left:5px solid var(--tip);}
+.card.trick{background:var(--trick-l);border-left:5px solid var(--trick);}
+.card.memo{background:var(--memo-l);border-left:5px solid var(--memo);}
+.card.exam{background:var(--exam-l);border-left:5px solid var(--exam);}
+.card h3{font-size:16px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.card h4{font-size:14.5px;font-weight:700;margin:14px 0 6px;}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0;}
+th{padding:10px 13px;text-align:left;font-weight:800;font-size:12.5px;text-transform:uppercase;letter-spacing:.5px;background:#f3f0e8;border-bottom:2px solid var(--border);}
+td{padding:9px 13px;border-bottom:1px solid #f0ece2;vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#fafaf5;}
+.tpl th{background:var(--plant-l) !important;}
+.ten th{background:var(--endo-l) !important;}
+.trp th{background:var(--repro-l) !important;}
+.callout{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;border-radius:12px;margin:12px 0;font-size:14px;}
+.callout .ico{font-size:21px;flex-shrink:0;margin-top:1px;}
+.callout.tip{background:var(--tip-l);border:1px solid #fcd34d;}
+.callout.trick{background:var(--trick-l);border:1px solid #fca5a5;}
+.callout.memo{background:var(--memo-l);border:1px solid #6ee7b7;}
+.callout.exam{background:var(--exam-l);border:1px solid #93c5fd;}
+.flow{display:flex;flex-direction:column;align-items:center;padding:18px;background:var(--bg);border:2px dashed var(--border);border-radius:14px;margin:14px 0;}
+.fb{background:white;border:2px solid;border-radius:10px;padding:10px 18px;text-align:center;font-size:13.5px;font-weight:600;max-width:380px;width:100%;line-height:1.4;}
+.fa{font-size:20px;line-height:2;color:var(--muted);}
+.flow.plant .fb{border-color:var(--plant);} .flow.plant .fa{color:var(--plant);}
+.flow.endo .fb{border-color:var(--endo);} .flow.endo .fa{color:var(--endo);}
+.flow.repro .fb{border-color:var(--repro);} .flow.repro .fa{color:var(--repro);}
+.fb.hi{background:#ecfdf5;border-color:var(--memo) !important;}
+.qa{border:1.5px solid var(--border);border-radius:13px;overflow:hidden;margin-bottom:13px;}
+.qa-q{background:#f7f5ef;padding:14px 18px;font-weight:700;font-size:14.5px;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;user-select:none;}
+.qa-q:hover{background:#eeebdf;}
+.qa-q .mk{flex-shrink:0;font-size:11.5px;font-weight:700;color:var(--muted);background:rgba(0,0,0,.07);border-radius:6px;padding:2px 8px;margin-top:2px;}
+.qa-a{display:none;padding:16px 18px;background:var(--memo-l);border-top:1.5px solid #a7f3d0;font-size:14px;}
+.qa-a.show{display:block;}
+.qa-a ul{margin-left:20px;margin-top:8px;} .qa-a li{margin-bottom:5px;}
+.qtag{display:inline-block;border-radius:5px;font-size:11px;font-weight:800;padding:2px 8px;letter-spacing:.5px;text-transform:uppercase;margin-left:6px;vertical-align:middle;}
+.tp{background:var(--plant-l);color:var(--plant-d);}
+.te{background:var(--endo-l);color:var(--endo-d);}
+.tr2{background:var(--repro-l);color:var(--repro-d);}
+.tt{background:var(--tip-l);color:#92400e;}
+.tex{background:var(--exam-l);color:#1e40af;}
+.tck{background:var(--trick-l);color:#991b1b;}
+.trep{background:#fef08a;color:#854d0e;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+@media(max-width:700px){.g2,.g3{grid-template-columns:1fr;}}
+.sc{background:white;border:1.5px solid var(--border);border-radius:12px;padding:18px;text-align:center;}
+.sn{font-size:36px;font-weight:900;line-height:1.1;}
+.sl{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px;}
+.tl{position:relative;padding-left:30px;}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border);}
+.tl-i{position:relative;margin-bottom:20px;}
+.tl-i::before{content:'';position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--muted);}
+.tl-i.rep::before{border-color:var(--repro);background:var(--repro-l);}
+.tl-t{font-weight:800;font-size:14.5px;margin-bottom:4px;}
+.tl-d{font-size:12px;color:var(--muted);font-weight:600;margin-bottom:6px;}
+.tl-b{font-size:13.5px;}
+.an{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+.ab{background:white;border:1.5px solid var(--border);border-radius:10px;padding:14px;}
+.ab .nm{font-weight:800;font-size:14px;margin-bottom:6px;}
+.ab .fn{font-size:13px;color:#374151;}
+.ab .nt{font-size:12px;color:var(--muted);margin-top:4px;font-style:italic;}
+@media(max-width:600px){.an{grid-template-columns:1fr;}}
+hr{border:none;border-top:2px solid var(--border);margin:32px 0;}
+p{margin:6px 0;} ul,ol{margin-left:22px;margin-top:6px;} li{margin-bottom:4px;}
+strong{font-weight:700;} em{color:var(--muted);}
+.tcp{color:var(--plant-d);} .tce{color:var(--endo-d);} .tcr{color:var(--repro-d);}
+
+/* ════════════════════════════════════════════════════════════════
+   ✨ ENGAGEMENT + COLOUR OVERHAUL  (appended — these rules override the above)
+   Pure presentation: not a single word of study content is changed.
+   ════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#f3f5ff;
+  --ink:#1a1a2e;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(1000px 520px at 8% -8%, #e6ecff 0%, transparent 55%),
+    radial-gradient(900px 520px at 102% -2%, #ffe6f4 0%, transparent 52%),
+    radial-gradient(800px 600px at 50% 110%, #e4fbef 0%, transparent 55%),
+    var(--bg);
+  background-attachment:fixed;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(120deg,#0f0e1a 0%,#2a1056 30%,#5b1670 55%,#0e3a1d 100%);
+  background-size:220% 220%;
+  animation:heroShift 16s ease infinite;
+  position:relative; overflow:hidden;
+}
+@keyframes heroShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;filter:blur(46px);opacity:.45;z-index:0;}
+.hero::before{width:260px;height:260px;background:#a855f7;top:-70px;left:-50px;animation:floaty 9s ease-in-out infinite;}
+.hero::after{width:220px;height:220px;background:#ec4899;bottom:-60px;right:-40px;animation:floaty 11s ease-in-out infinite reverse;}
+.hero>*{position:relative;z-index:1;}
+.hero h1 span{color:#f5b8ff;text-shadow:0 2px 26px rgba(245,184,255,.55);}
+.hero-badge{background:rgba(255,255,255,.14);animation:pulseBadge 3.2s ease-in-out infinite;}
+@keyframes pulseBadge{0%,100%{box-shadow:0 0 0 0 rgba(244,114,182,.45)}50%{box-shadow:0 0 0 10px rgba(244,114,182,0)}}
+.chip{transition:transform .2s ease,background .2s ease,box-shadow .2s ease;}
+.chip:hover{transform:translateY(-4px);background:rgba(255,255,255,.18);box-shadow:0 10px 24px rgba(0,0,0,.25);}
+
+/* ---------- NAV ---------- */
+nav{background:linear-gradient(90deg,#100e1f 0%,#241046 60%,#311248 100%);box-shadow:0 6px 20px rgba(15,14,26,.35);}
+.nav-btn{font-size:13px;border-radius:10px 10px 0 0;}
+.nav-btn:hover{background:rgba(255,255,255,.08);transform:translateY(-1px);}
+.nav-btn.active{background:rgba(255,255,255,.12);}
+.nav-btn .tick{display:none;margin-left:5px;color:#4ade80;font-weight:900;}
+.nav-btn.studied .tick{display:inline;}
+
+/* ---------- PAGE TITLE BANNER ---------- */
+.page-title{background:#fff;border:1px solid #ecebf7;border-radius:22px;padding:22px 24px;margin-top:24px;box-shadow:0 12px 32px rgba(30,27,75,.08);}
+.page-title .ic{box-shadow:0 8px 20px rgba(0,0,0,.14);animation:floaty 4.5s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* ---------- SECTION HEADERS ---------- */
+.sh{border:none;border-left:7px solid #6366f1;border-radius:14px;padding:13px 18px;margin:38px 0 16px;
+    background:linear-gradient(90deg,#eef1ff 0%,#ffffff 65%);color:#1e1b4b;box-shadow:0 3px 12px rgba(30,27,75,.05);}
+.sh.plant{border-left-color:var(--plant);background:linear-gradient(90deg,var(--plant-l) 0%,#fff 65%);color:var(--plant-d);}
+.sh.endo{border-left-color:var(--endo);background:linear-gradient(90deg,var(--endo-l) 0%,#fff 65%);color:var(--endo-d);}
+.sh.repro{border-left-color:var(--repro);background:linear-gradient(90deg,var(--repro-l) 0%,#fff 65%);color:var(--repro-d);}
+
+/* ---------- CARDS ---------- */
+.card{border:1px solid #eef0f7;border-radius:18px;box-shadow:0 6px 22px rgba(30,27,75,.06);
+      transition:transform .25s ease,box-shadow .25s ease;}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(30,27,75,.13);}
+.card.plant-l{border-left:6px solid var(--plant);background:linear-gradient(180deg,#f2fdf6 0%,#fff 24%);}
+.card.endo-l{border-left:6px solid var(--endo);background:linear-gradient(180deg,#f7f5ff 0%,#fff 24%);}
+.card.repro-l{border-left:6px solid var(--repro);background:linear-gradient(180deg,#fff5fa 0%,#fff 24%);}
+.card h3{font-size:16.5px;}
+
+/* ---------- TABLES ---------- */
+th{background:linear-gradient(180deg,#eef1fb,#e3e8f7);color:#312e81;}
+.tpl th{background:linear-gradient(180deg,var(--plant-l),#bbeccf)!important;color:var(--plant-d)!important;}
+.ten th{background:linear-gradient(180deg,var(--endo-l),#d6ccfe)!important;color:var(--endo-d)!important;}
+.trp th{background:linear-gradient(180deg,var(--repro-l),#fbc2e1)!important;color:var(--repro-d)!important;}
+tr:hover td{background:rgba(99,102,241,.07);}
+
+/* ---------- CALLOUTS ---------- */
+.callout{border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,.05);transition:transform .2s ease;}
+.callout:hover{transform:translateX(3px);}
+.callout .ico{animation:nudge 2.6s ease-in-out infinite;}
+@keyframes nudge{0%,92%,100%{transform:rotate(0)}96%{transform:rotate(-9deg)}}
+
+/* ---------- STAT CARDS ---------- */
+.sc{border:none;border-radius:18px;background:linear-gradient(180deg,#fff,#f6f8ff);
+    box-shadow:0 8px 24px rgba(30,27,75,.08);transition:transform .25s ease,box-shadow .25s ease;}
+.sc:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 16px 34px rgba(30,27,75,.14);}
+.sn{font-size:40px;}
+
+/* ---------- FLOW DIAGRAMS ---------- */
+.flow{border-radius:16px;background:linear-gradient(180deg,#fbfbff,#f3f4ff);}
+.fb{border-radius:14px;box-shadow:0 3px 10px rgba(0,0,0,.05);transition:transform .2s ease,box-shadow .2s ease;}
+.fb:hover{transform:scale(1.03);box-shadow:0 8px 20px rgba(0,0,0,.1);}
+.fb.hi{background:#ecfdf5;box-shadow:0 6px 18px rgba(5,150,105,.18);}
+.fa{animation:bobArrow 1.8s ease-in-out infinite;}
+@keyframes bobArrow{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* ---------- Q & A ---------- */
+.qa{border:none;border-radius:14px;box-shadow:0 4px 14px rgba(30,27,75,.06);overflow:hidden;}
+.qa-q{background:linear-gradient(90deg,#eef2ff,#f7f5ff);transition:background .2s ease;}
+.qa-q:hover{background:linear-gradient(90deg,#e0e7ff,#ede9fe);}
+.qa-q .mk{background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;}
+
+/* ---------- TIMELINE ---------- */
+.tl::before{background:linear-gradient(180deg,var(--repro),#f9a8d4);width:3px;}
+.tl-i.rep::before{box-shadow:0 0 0 4px #fce7f3;}
+
+/* ---------- ANATOMY MINI-CARDS ---------- */
+.ab{border-radius:14px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.ab:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.09);border-color:var(--repro-m);}
+
+/* ---------- SCROLL-REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ---------- GAMIFIED: "MARK AS STUDIED" BUTTON ---------- */
+.studyBtn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-family:inherit;
+  border:2px solid #c7d2fe;background:#eef2ff;color:#3730a3;font-weight:800;font-size:13.5px;
+  padding:10px 18px;border-radius:999px;margin:20px 0 6px;transition:all .2s ease;}
+.studyBtn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(99,102,241,.28);}
+.studyBtn.done{background:linear-gradient(135deg,#22c55e,#16a34a);border-color:#16a34a;color:#fff;box-shadow:0 8px 20px rgba(22,163,74,.3);}
+
+/* ---------- FLOATING PROGRESS PILL ---------- */
+#lsProgress{position:fixed;left:16px;bottom:16px;z-index:300;display:flex;align-items:center;gap:11px;
+  background:#fff;border:1px solid #ecebf7;border-radius:999px;padding:8px 16px 8px 8px;
+  box-shadow:0 10px 28px rgba(30,27,75,.2);}
+#lsProgress .ring{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(#6366f1 var(--p,0%),#e8e8f4 0);transition:background .5s ease;}
+#lsProgress .ring b{width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;
+  font-size:11px;font-weight:900;color:#3730a3;}
+#lsProgress .lbl{font-size:12.5px;font-weight:800;color:#1e1b4b;line-height:1.25;}
+#lsProgress .lbl small{display:block;font-weight:600;color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;}
+
+/* ---------- BACK TO TOP ---------- */
+#backTop{position:fixed;right:16px;bottom:16px;z-index:300;width:48px;height:48px;border:none;cursor:pointer;
+  border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;font-size:21px;
+  box-shadow:0 10px 24px rgba(99,102,241,.42);opacity:0;pointer-events:none;
+  transition:opacity .3s ease,transform .2s ease;}
+#backTop.show{opacity:1;pointer-events:auto;}
+#backTop:hover{transform:translateY(-3px) scale(1.06);}
+
+/* ---------- TOAST + CONFETTI ---------- */
+#toast{position:fixed;left:50%;top:18px;transform:translateX(-50%) translateY(-160%);z-index:400;
+  background:linear-gradient(135deg,#22c55e,#8b5cf6);color:#fff;font-weight:800;font-size:14px;
+  padding:12px 24px;border-radius:999px;box-shadow:0 12px 34px rgba(0,0,0,.28);transition:transform .5s ease;}
+#toast.show{transform:translateX(-50%) translateY(0);}
+#confettiCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
+
+@media(max-width:600px){
+  #lsProgress{padding:6px 10px 6px 6px;}
+  #lsProgress .lbl{display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+}
+</style>
+</head>
+<body>
+<nav id="mainNav">
+  <button class="nav-btn active" onclick="show('home')">🏠 Overview</button>
+  <button class="nav-btn" onclick="show('plants')">🌸 Flowering Plants</button>
+  <button class="nav-btn" onclick="show('endocrine')">🔬 Endocrine System</button>
+  <button class="nav-btn" onclick="show('repro')">🧬 Human Reproduction</button>
+  <button class="nav-btn" onclick="show('menstrual')">📅 Menstrual Cycle</button>
+  <button class="nav-btn" onclick="show('disorders')">⚠️ Disorders</button>
+  <button class="nav-btn" onclick="show('practice')">✏️ Practice Q&amp;A</button>
+  <button class="nav-btn" onclick="show('tricks')">🎯 Tricks &amp; Traps</button>
+</nav>
+<!-- ═══════════════ PAGE: HOME ═══════════════ -->
+<div id="page-home" class="page active">
+<div class="hero">
+  <div class="hero-badge">Curro Kathu · Grade 12 · 2026</div>
+  <h1>Life Sciences <span>Paper 2</span><br>Complete Study Guide</h1>
+  <p>Compiled from 10+ years of IEB past papers &amp; marking guidelines · Nothing missed</p>
+  <div class="chips">
+    <div class="chip"><small>Date</small>10 June 2026</div>
+    <div class="chip"><small>Duration</small>1h 20 min</div>
+    <div class="chip"><small>Total</small>60 marks</div>
+    <div class="chip"><small>Topics</small>3 sections</div>
+    <div class="chip"><small>Questions</small>Q1 · Q2 · Q3</div>
+  </div>
+</div>
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#e0f2fe;color:#0369a1;">📋</div>
+    <div><h2>Paper Format &amp; Exam Strategy</h2><p>Everything you need to know before opening the paper</p></div>
+  </div>
+  <div class="g3" style="margin-bottom:24px;">
+    <div class="sc"><div class="sn" style="color:var(--plant)">3</div><div class="sl">Topics on Demarcation</div></div>
+    <div class="sc"><div class="sn" style="color:var(--endo)">60</div><div class="sl">Total Marks</div></div>
+    <div class="sc"><div class="sn" style="color:var(--repro)">1h20</div><div class="sl">Time Allowed</div></div>
+  </div>
+  <div class="sh">📄 How the Paper is Structured</div>
+  <div class="card exam">
+    <h3>🎯 IEB Paper Format (based on past 10+ years of papers)</h3>
+    <table><thead><tr><th>Question</th><th>Format types</th><th>Topics tested</th><th>Approx marks</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Q1 (Answer Booklet)</strong></td><td>Column matching · MCQ · True/False+correction · Two-item (A/B/C/Both/Neither) · Short definitions · Diagram labelling</td><td>All 3 topics — broad sweep across everything</td><td>~20</td></tr>
+      <tr><td><strong>Q2</strong></td><td>Data/source response · Paragraph explanations · Describe/compare tables</td><td>Flowering Plants OR Endocrine System</td><td>~20</td></tr>
+      <tr><td><strong>Q3</strong></td><td>Structured questions · Labelled diagrams · Flow diagrams · Extended explanations</td><td>Human Reproduction OR Endocrine System</td><td>~20</td></tr>
+    </tbody></table>
+  </div>
+  <div class="callout exam"><div class="ico">📌</div><div>
+    <strong>What ALWAYS appears in Q1 (Answer Booklet):</strong>
+    <ul>
+      <li><strong>Column matching (10 items)</strong> — match descriptions to hormones, structures, or processes. 10 pairs × 1 mark = 10 marks. The same pairs repeat across years.</li>
+      <li><strong>MCQ (4 options)</strong> — IEB loves traps: "which of the following is INCORRECT"; double negatives; "all EXCEPT"</li>
+      <li><strong>True/False + correction</strong> — if False, you must write the ONE word that replaces the underlined word. Do NOT rewrite the whole sentence.</li>
+      <li><strong>Two-item matching</strong> — A (only 1), B (only 2), C (both items), D (neither item)</li>
+      <li><strong>Diagram labelling</strong> — endocrine glands on body diagram, parts of male/female system, parts of a flower</li>
+    </ul>
+  </div></div>
+  <div class="sh">✍️ How to Write Each Type of Answer</div>
+  <div class="g2">
+    <div class="card tip"><h3>💡 Mark allocation = amount of detail needed</h3>
+      <ul>
+        <li><strong>(1 mark)</strong> = one precise scientific word or single fact</li>
+        <li><strong>(2 marks)</strong> = full definition OR two clearly linked points</li>
+        <li><strong>(3–4 marks)</strong> = "explain" or "describe" = that many distinct, accurate points</li>
+        <li><strong>(5–8 marks)</strong> = diagram (heading + correct structure + all labels + functions) OR extended flow diagram with arrows</li>
+        <li><strong>(10 marks)</strong> = Q1 column match = 10 correct matches, 1 mark each</li>
+      </ul>
+    </div>
+    <div class="card tip"><h3>✍️ Answer-writing rules that gain marks</h3>
+      <ul>
+        <li>Use scientific terms always — "oestrogen" not "the female hormone"</li>
+        <li>For "explain" = state the <em>cause → mechanism → result</em></li>
+        <li>For "describe" = say what you see/what happens, step by step</li>
+        <li>For "define" = give the complete textbook definition (cause + effect)</li>
+        <li>Diagrams: <em>heading is ALWAYS required for marks</em>, neat leader lines, correct labels</li>
+        <li>Flow diagrams: arrows must show direction; all sequential steps must be in order</li>
+        <li>Never leave a blank — partial credit is possible for partial answers</li>
+      </ul>
+    </div>
+  </div>
+  <div class="sh">📚 Study Strategy for This Paper</div>
+  <div class="g2">
+    <div class="card"><h3>🗓️ Priority activities (do these FIRST)</h3>
+      <ol>
+        <li style="margin-bottom:8px;"><strong>Memorise the Endocrine Glands table</strong> — every gland, location, hormone, function. Tested in EVERY paper in Q1 column match. Make flashcards.</li>
+        <li style="margin-bottom:8px;"><strong>Draw the menstrual cycle graph from memory</strong> — include: days (0,14,28), all 4 hormones (FSH/LH/oestrogen/progesterone) at correct phases, follicle → ovulation → corpus luteum, endometrium thickness curve. Do 5 times.</li>
+        <li style="margin-bottom:8px;"><strong>Draw a labelled LS of a flower</strong> from memory — heading, all parts with functions. Practice until instant.</li>
+        <li style="margin-bottom:8px;"><strong>Write negative feedback flow diagrams</strong> (blood glucose AND sperm production) from memory. Both from scratch.</li>
+        <li><strong>Do 5 different Q1 Answer Booklets</strong> from past papers — column matches, MCQ, True/False — under timed conditions (≤20 min).</li>
+      </ol>
+    </div>
+    <div class="card"><h3>🎯 On exam day — time management</h3>
+      <ol>
+        <li style="margin-bottom:8px;"><strong>Start Q1 (Answer Booklet)</strong> — most structured, least risky. Do column matches first (easiest, most marks per time spent).</li>
+        <li style="margin-bottom:8px;"><strong>80 min ÷ 60 marks ≈ 1.3 min per mark.</strong> A 4-mark question = budget ~5 min. A 6-mark diagram = ~8 min.</li>
+        <li style="margin-bottom:8px;"><strong>Read every question word</strong> — "name" = 1 word; "explain" = mechanism + reason; "describe" = sequential detail.</li>
+        <li style="margin-bottom:8px;"><strong>For flow diagrams</strong>: plan on the margin first, number your steps, then write neatly with arrows.</li>
+        <li><strong>Check your True/False corrections</strong> — only replace the underlined word, don't rewrite sentences.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="sh">🗺️ Topic Overview — What's on Each Page</div>
+  <div class="g3">
+    <div class="card plant-l"><h3 class="tcp">🌸 Flowering Plants</h3>
+      <ul style="font-size:13.5px;">
+        <li>Flower structure (LS diagram)</li>
+        <li>Pollination types (self/cross/wind/insect)</li>
+        <li>Fertilisation → seed → fruit</li>
+        <li>Sexual vs asexual reproduction</li>
+        <li>Germination conditions</li>
+        <li>Auxins in plants</li>
+        <li>Seed banks and food security</li>
+      </ul>
+    </div>
+    <div class="card endo-l"><h3 class="tce">🔬 Endocrine System</h3>
+      <ul style="font-size:13.5px;">
+        <li>All glands + hormones + locations</li>
+        <li>Homeostasis definition</li>
+        <li>Negative feedback mechanism</li>
+        <li>Blood glucose regulation (insulin/glucagon)</li>
+        <li>Thyroid hormone feedback</li>
+        <li>Sperm production feedback</li>
+        <li>All endocrine disorders</li>
+      </ul>
+    </div>
+    <div class="card repro-l"><h3 class="tcr">🧬 Human Reproduction</h3>
+      <ul style="font-size:13.5px;">
+        <li>Male system all structures</li>
+        <li>Sperm cell structure</li>
+        <li>Spermatogenesis flow</li>
+        <li>Female system all structures</li>
+        <li>Oogenesis flow</li>
+        <li>Fertilisation &amp; pregnancy stages</li>
+        <li>Contraception methods</li>
+        <li>PCOS &amp; STIs</li>
+        <li>Secondary sexual characteristics</li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: FLOWERING PLANTS ═══════════════ -->
+<div id="page-plants" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:var(--plant-l);color:var(--plant);">🌸</div>
+    <div><h2 class="tcp">Reproduction in Flowering Plants</h2><p>Structure · Pollination · Fertilisation · Seed &amp; Fruit Formation · Sexual vs Asexual · Germination · Auxins · Seed Banks</p></div>
+  </div>
+  <div class="card plant-l"><h3>🌍 Why this matters — putting the theory in context</h3>
+    <p>Flowering plants (angiosperms) are the most successful group of plants on Earth — over 300 000 species. Their success comes from an evolved reproductive system combining sexual reproduction (producing variation through seeds) and asexual reproduction (producing clones quickly). Farmers, geneticists, and food security experts all depend on understanding these mechanisms. South Africa's seed bank (National Plant Genetic Resources Centre) collects wild plant seeds to protect against future crop failure. The IEB tests whether you understand the WHY behind these structures and processes — not just the names.</p>
+  </div>
+  <div class="sh plant">🌺 1. Structure of a Flower (Longitudinal Section)</div>
+  <div class="callout exam"><div class="ico">📌</div><div><strong>REPEATEDLY TESTED (IEB 2013, 2014, 2020, 2022):</strong> "Make a longitudinal section (LS) sketch of a flower. Label THREE parts associated with sexual reproduction." The heading "L/S Section Through a Flower" is required for marks. Valid reproductive parts: stigma, anther, filament, style, ovary, ovule. Do NOT say "petal" — it is non-reproductive (it only attracts pollinators).</div></div>
+  <div class="card plant-l"><h3 class="tcp">📊 All Flower Parts — Type, Function, and Why They Matter</h3>
+    <table class="tpl"><thead><tr><th>Part</th><th>♂/♀/Non</th><th>Function</th><th>Exam-relevant detail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sepal</strong> (calyx = all sepals)</td><td>Non-reproductive</td><td>Protects the delicate bud before the flower opens; photosynthesises in some species</td><td>Usually green; outermost whorl; NOT involved in reproduction</td></tr>
+      <tr><td><strong>Petal</strong> (corolla = all petals)</td><td>Non-reproductive</td><td>Attracts pollinators (insects, birds, bats) through colour, pattern, UV markings, and scent; produces nectar as a reward at the base</td><td>Absent or small in wind-pollinated flowers (no need to attract pollinators)</td></tr>
+      <tr><td><strong>Stamen</strong> (= anther + filament)</td><td>♂ Male</td><td>The entire male reproductive unit</td><td>A flower can have many stamens; together = androecium</td></tr>
+      <tr><td><strong>Anther</strong></td><td>♂ Male</td><td>Produces pollen grains by meiosis; releases pollen when ripe (dehiscence); the pollen contains the male gamete</td><td>"Rupture of anther to release pollen" = anther dehiscence</td></tr>
+      <tr><td><strong>Filament</strong></td><td>♂ Male (support)</td><td>Slender stalk that supports and holds up the anther to allow pollen release and access by pollinators</td><td>IEB Q: "Structure that supports an anther" = <strong>filament</strong></td></tr>
+      <tr><td><strong>Carpel/Pistil</strong> (= stigma + style + ovary)</td><td>♀ Female</td><td>The entire female reproductive unit; receives pollen, contains eggs; together = gynoecium</td><td>Can have one or many carpels fused together</td></tr>
+      <tr><td><strong>Stigma</strong></td><td>♀ Female</td><td>Sticky/feathery surface that receives and traps pollen; surface on which pollen germinates and begins pollen tube growth</td><td>Site of POLLINATION (not fertilisation); secretes a sugary fluid to trigger germination</td></tr>
+      <tr><td><strong>Style</strong></td><td>♀ Female (support)</td><td>Connects stigma to ovary; holds the stigma in the correct position; pollen tube grows down through the style (guided by chemical signals)</td><td>IEB Q: "Structure that holds the stigma in place" = <strong>style</strong></td></tr>
+      <tr><td><strong>Ovary</strong></td><td>♀ Female</td><td>Contains ovule(s); after fertilisation the ovary wall (pericarp) develops into the <strong>fruit</strong></td><td>IEB Q: "Grew from an ovary" = it is a fruit</td></tr>
+      <tr><td><strong>Ovule</strong></td><td>♀ Female</td><td>Contains the egg cell (female gamete); after fertilisation the ovule develops into the <strong>seed</strong></td><td>"Developed fertilised ovule" = seed (column match answer)</td></tr>
+      <tr><td><strong>Receptacle</strong></td><td>Support</td><td>Swollen tip of the flower stalk; attachment point for all floral whorls</td><td>In some plants (e.g. apple) the receptacle also becomes fleshy and part of what we eat</td></tr>
+      <tr><td><strong>Nectary</strong></td><td>Accessory</td><td>Secretes nectar (sugar solution) at the base of petals/stamens; lures and rewards pollinators; drives evolution of insect-pollination</td><td>Nectaries absent in wind-pollinated flowers</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh plant">🐝 2. Pollination — Types, Mechanisms, Advantages and Disadvantages</div>
+  <div class="card plant-l"><h3 class="tcp">Definition and Context</h3>
+    <p><strong>Pollination</strong> = the transfer of pollen grains from the <strong>anther</strong> (of one flower) to the <strong>stigma</strong> (of the same or a different flower of the same species).</p>
+    <p style="margin-top:8px;">Pollination is NOT fertilisation — it is only the <em>delivery of pollen</em>. After landing on the stigma, pollen germinates and grows a pollen tube down the style before fertilisation can occur. Think of it like the pollen being a "delivery package" — it still has to be unpacked and the sperm nucleus has to travel to the egg.</p>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>Classic trap (IEB True/False):</strong> "Fertilisation occurs at the stigma" → <strong>FALSE</strong>. Pollination occurs at the stigma. Fertilisation occurs inside the <strong>ovule</strong> when the sperm nucleus fuses with the egg cell.</div></div>
+    <h4>Types of Pollination</h4>
+    <table class="tpl"><thead><tr><th>Type</th><th>Description</th><th>Advantages</th><th>Disadvantages</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Self-pollination</strong></td><td>Pollen transfers from anther to stigma of the SAME flower or same plant</td><td>Guaranteed fertilisation; no pollinator needed; energy-efficient; can reproduce at any time; works in isolated plants</td><td>No genetic variation produced; all offspring are clones; vulnerable to same diseases; inbreeding leads to homozygosity</td><td>Tomatoes (stamens form a tube around stigma), wheat, some grasses</td></tr>
+      <tr><td><strong>Cross-pollination</strong></td><td>Pollen transfers from anther of one plant to stigma of a DIFFERENT plant of the same species</td><td>Produces genetic variation; offspring may have new combinations of traits; better disease resistance and adaptability; drives evolution</td><td>Depends on external agents; wasteful (most pollen never reaches stigma)</td><td>Most flowering plants; peaches, peas, sugarcane</td></tr>
+      <tr><td><strong>Wind pollination</strong></td><td>Pollen is light, small, dry, smooth, produced in enormous quantities; carried by wind</td><td>No need for pollinators; simple flowers sufficient; continuous wind availability; sugarcane is wind-pollinated (IEB 2022)</td><td>Very wasteful — most pollen never reaches a stigma of the right species; dependent on wind direction and speed; no control over where pollen goes</td><td>Grasses, wheat, maize, sugarcane, many trees</td></tr>
+      <tr><td><strong>Insect pollination</strong></td><td>Insects attracted by coloured petals, scent, and nectar; pollen sticks to their bodies and is carried to next flower</td><td>Very targeted — insect visits same species; less pollen wasted; reliable; efficient; important for agricultural crops</td><td>Depends on pollinator populations — bee decline = crop failure; some pollinators limited in range; habitat loss reduces pollinators</td><td>Peaches (IEB 2014 beehive investigation), most fruit trees</td></tr>
+      <tr><td><strong>Bird/bat pollination</strong></td><td>Attracted to large, tube-shaped, red/orange/white flowers with abundant nectar; pollen attached to head/tongue</td><td>Reliable transport over distances; some plants exclusively pollinated by one species (co-evolution)</td><td>Entirely dependent on that specific animal species; habitat destruction breaks relationship</td><td>Proteas (birds), Baobab (bats)</td></tr>
+    </tbody></table>
+  </div>
+  <div class="callout memo"><div class="ico">📋</div><div><strong>IEB 2013 — Why Mendel cut anthers from pea flowers (2 marks):</strong> "To prevent self-pollination / to use pollen of a chosen characteristic or plant feature — not pollen randomly brought by a pollinating agent." Context: he needed to control which traits were crossed to study inheritance patterns.</div></div>
+  <div class="callout memo"><div class="ico">📋</div><div><strong>IEB 2020 — Why tomatoes self-pollinate easily:</strong> "The stamens wrap around the stigma / form a tube around the stigma; the stigma is shorter than the stamens; making it easy for pollen to fall/reach the stigma below the anthers; pollen from other flowers cannot easily reach the stigma." (1 explained reason = 2 marks)</div></div>
+  <div class="sh plant">🌱 3. Fertilisation in Flowering Plants — Step by Step</div>
+  <div class="card plant-l"><h3 class="tcp">The full journey from pollen landing to zygote forming</h3>
+    <p>Once pollen lands on the stigma, the process of getting the male gamete to the egg inside the ovule takes hours to days. This is a multi-step journey through the style:</p>
+    <div class="flow plant">
+      <div class="fb">1. Pollen grain lands on sticky stigma surface (= POLLINATION)</div><div class="fa">↓</div>
+      <div class="fb">2. Pollen grain absorbs water from the stigma fluid and GERMINATES — pollen tube starts to grow outward</div><div class="fa">↓</div>
+      <div class="fb">3. Pollen tube grows DOWN through the style (guided by chemical attractants toward the ovule)</div><div class="fa">↓</div>
+      <div class="fb">4. Pollen tube enters the ovule through a small pore called the MICROPYLE</div><div class="fa">↓</div>
+      <div class="fb">5. The pollen tube releases the SPERM NUCLEUS (male gamete) into the ovule</div><div class="fa">↓</div>
+      <div class="fb">6. SPERM NUCLEUS fuses with EGG CELL NUCLEUS → ZYGOTE (2n diploid) forms — this is FERTILISATION</div><div class="fa">↓</div>
+      <div class="fb">7. Zygote divides by mitosis and differentiates → develops into the EMBRYO (the future plant)</div><div class="fa">↓</div>
+      <div class="fb hi">8. OVULE → SEED (embryo + food store + testa). OVARY WALL (pericarp) → FRUIT</div>
+    </div>
+    <div class="callout exam" style="margin-top:14px;"><div class="ico">📌</div><div><strong>IEB 2020 memo — how fertilisation occurs in flowering plants (2 marks):</strong> "Sperm (from pollen tube) fuses with ovum/egg cell — must have the concept of FUSION for the zygote mark."</div></div>
+  </div>
+  <div class="sh plant">🍑 4. Seed and Fruit Formation</div>
+  <div class="card plant-l"><h3 class="tcp">What becomes what after fertilisation?</h3>
+    <table class="tpl"><thead><tr><th>Before fertilisation</th><th>After fertilisation → becomes</th><th>Function of resulting structure</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ovule</strong></td><td><strong>Seed</strong></td><td>Contains embryo, food store (endosperm/cotyledon), and seed coat (testa)</td></tr>
+      <tr><td><strong>Ovary wall (pericarp)</strong></td><td><strong>Fruit</strong></td><td>Surrounds and protects seeds; aids dispersal (fleshy for animals; dry pod for wind/explosion)</td></tr>
+      <tr><td><strong>Egg cell</strong></td><td><strong>Embryo</strong></td><td>Future plant: contains radicle (future root) and plumule (future shoot)</td></tr>
+      <tr><td><strong>Polar nuclei + 2nd sperm</strong></td><td><strong>Endosperm</strong></td><td>Food reserve (starch, proteins, fats) that feeds the embryo during germination (double fertilisation)</td></tr>
+      <tr><td><strong>Ovule wall</strong></td><td><strong>Testa (seed coat)</strong></td><td>Hard, protective outer coat; prevents desiccation and damage</td></tr>
+      <tr><td><strong>Integuments</strong></td><td><strong>Testa</strong></td><td>Waterproof, tough outer covering</td></tr>
+    </tbody></table>
+    <h4>What is a FRUIT? (IEB 2020 — asked repeatedly)</h4>
+    <p>A fruit is a <strong>developed/ripened ovary wall (pericarp)</strong> that surrounds one or more seeds. Evidence that something is a fruit:</p>
+    <ul><li>It <strong>contains seeds</strong></li><li>It grew from an <strong>ovary</strong></li><li>Seeds developed from <strong>ovules</strong></li><li>It is a product of <strong>sexual reproduction</strong></li></ul>
+    <div class="callout trick"><div class="ico">⚠️</div><div>A tomato = fruit (contains seeds, grew from ovary). A potato = NOT a fruit (it is a modified stem/tuber — asexual reproduction). A pea pod = fruit (pod is the ovary wall; peas inside are the seeds).</div></div>
+  </div>
+  <div class="sh plant">🌱 5. Germination</div>
+  <div class="card plant-l"><h3 class="tcp">Definition and conditions required</h3>
+    <p><strong>Germination</strong> = the resumption of growth of the embryo inside a dormant seed when favourable conditions occur.</p>
+    <h4>Three essential conditions (tested in MCQ and True/False):</h4>
+    <table class="tpl"><thead><tr><th>Condition</th><th>Why it is needed</th><th>What happens without it</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Water</strong></td><td>Activates enzymes; converts stored insoluble food into soluble form for transport; softens testa; enters through micropyle; provides medium for biochemical reactions; allows turgor for cell expansion</td><td>Seed remains dormant; metabolic processes cannot begin</td></tr>
+      <tr><td><strong>Oxygen</strong></td><td>Needed for aerobic respiration to produce ATP energy for growth; the embryo has no photosynthesis yet</td><td>No energy for cell division or growth; seed dies or remains dormant</td></tr>
+      <tr><td><strong>Correct temperature</strong></td><td>Enzymes work optimally within a narrow temperature range (usually 15–30°C for most crops); metabolic reactions have minimum activation energy requirements</td><td>Too cold: enzymes too slow; too hot: enzymes denatured; seed fails to germinate</td></tr>
+    </tbody></table>
+    <p style="margin-top:10px;"><em>Note: some seeds also require light, or a period of cold (vernalisation), or fire (some proteas), or passage through an animal's gut to break seed dormancy before they will germinate.</em></p>
+    <h4>Sequence of germination:</h4>
+    <p>Seed absorbs water → testa softens and splits → radicle (root) emerges first (anchors plant, absorbs water and minerals) → plumule (shoot) emerges and grows upward (phototropism) → first true leaves unfold → photosynthesis begins → seedling is now independent.</p>
+  </div>
+  <div class="sh plant">⚖️ 6. Sexual vs Asexual Reproduction in Plants</div>
+  <div class="card plant-l"><h3 class="tcp">Complete Comparison <span class="qtag trep">ALWAYS TESTED</span></h3>
+    <table class="tpl"><thead><tr><th>Feature</th><th>Sexual Reproduction (seeds)</th><th>Asexual / Vegetative Reproduction</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Parents</strong></td><td>Two parents (pollen donor + egg parent)</td><td>One parent only</td></tr>
+      <tr><td><strong>Gametes</strong></td><td>Yes — meiosis produces haploid gametes that fuse</td><td>No — mitosis only; no gametes</td></tr>
+      <tr><td><strong>Genetic variation</strong></td><td>HIGH — crossing over + random fertilisation → unique offspring genotypes</td><td>NONE — offspring are genetically identical clones of parent (same genotype)</td></tr>
+      <tr><td><strong>Energy use</strong></td><td>High (meiosis, attracting pollinators, making gametes)</td><td>Low (mitosis only)</td></tr>
+      <tr><td><strong>Speed</strong></td><td>Slower — depends on pollination success</td><td>Faster — no gamete production needed</td></tr>
+      <tr><td><strong>Advantages</strong></td><td>Genetic variation → adaptability; better disease resistance; evolution possible; offspring may have advantageous new trait combinations; more offspring (seeds)</td><td>Consistent product quality for farmers; no pollinator needed; works any time of year; maintains desirable traits exactly; faster to reach productivity; cost-effective</td></tr>
+      <tr><td><strong>Disadvantages</strong></td><td>Requires pollinators; dependent on environmental conditions; some fertilisations fail</td><td>No variation → all offspring vulnerable to same disease/pest; if parent has a weakness, all offspring inherit it; no evolutionary adaptation possible</td></tr>
+      <tr><td><strong>Examples</strong></td><td>Peaches (via bees), peas, wheat, tomatoes</td><td>Potato tubers, onion bulbs, strawberry runners, sugarcane stem cuttings, tissue culture (plant cloning), grafting, budding</td></tr>
+    </tbody></table>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>Terminology traps:</strong>
+      <ul>
+        <li>"Tissue culture produces many small plantlets" = <strong>plant cloning / asexual reproduction</strong> (IEB 2013 column match: tissue culture = plant cloning)</li>
+        <li>"Polyploidy in crops such as wheat results from this form of reproduction" = <strong>sexual reproduction</strong> — polyploidy arises when chromosome sets fail to separate normally during or after sexual reproduction</li>
+        <li>"Grafting" = asexual — a scion from one plant is joined to the rootstock of another. No gametes. Offspring have exact genotype of scion parent.</li>
+      </ul>
+    </div></div>
+    <h4>IEB 2014 — Pros and Cons debate on asexual reproduction in peaches (4 marks):</h4>
+    <p><strong>Pros:</strong> "Cost-effective and time-saving since grafted/cloned saplings grow faster than seedlings, reaching productivity earlier. Product (peach) quality is consistent for food markets."</p>
+    <p><strong>Cons:</strong> "Artificial process involving cost. Reduction of genetic variation/fertility rates. Can result in huge crop loss from the same disease/pests (no variation to confer resistance)."</p>
+  </div>
+  <div class="sh plant">🧪 7. Auxins — Plant Hormones</div>
+  <div class="card plant-l"><h3 class="tcp">What are auxins, what do they do, and how are they tested?</h3>
+    <p><strong>Auxins</strong> are plant hormones (chemical growth regulators). The IEB directly linked them to human hormones: <em>"Name the hormone in humans that has a similar role to plant auxins" → <strong>Growth Hormone (GH/STH/somatotropin)</strong></em> (IEB 2020). Both promote growth/elongation of cells.</p>
+    <ul>
+      <li>Auxins cause cells to <strong>elongate</strong> by loosening cell walls — more water enters → cells expand</li>
+      <li><strong>Phototropism</strong>: auxins move to the shaded side of a stem → shaded cells elongate more → stem bends TOWARDS the light</li>
+      <li><strong>Asexual reproduction via cuttings</strong>: auxins stimulate cells in the cutting to undergo <strong>mitosis</strong>, then differentiate into root, stem, and leaf cells → new plant grows. This is why rooting powder (containing auxin) is applied to stem cuttings.</li>
+      <li><strong>IEB 2020 — role of auxins in asexual reproduction:</strong> "Asexual reproduction involves causing plant somatic cells to produce new plant organs / auxins cause cells to undergo mitosis / auxins cause differentiation to produce root, stem, and leaf cells / new plants."</li>
+      <li><strong>Polyploid tomatoes</strong>: auxins can stimulate mitosis in somatic cells to produce plants with more chromosome sets → larger, more nutritious, often seedless fruits</li>
+    </ul>
+  </div>
+  <div class="sh plant">🏦 8. Seed Banks and Genetic Diversity</div>
+  <div class="card plant-l"><h3 class="tcp">Why are seed banks important? (IEB 2020 — 2 marks)</h3>
+    <ul>
+      <li>Store seeds to <strong>re-establish crop plants</strong> in case of natural disaster, war, drought, climate change, or total crop failure</li>
+      <li>Store seeds from <strong>wild plant relatives</strong> that have greater genetic diversity than commercial varieties</li>
+      <li>Re-introduce <strong>genetic variation (biodiversity)</strong> into cultivated plants that have become genetically uniform through inbreeding</li>
+      <li>Ensure long-term <strong>food security</strong> by preserving diverse crop varieties for adaptation to future environmental changes</li>
+    </ul>
+    <p style="margin-top:10px;"><strong>Why heirloom varieties have LOWER genetic diversity than wild relatives (IEB 2020):</strong> "Heirloom varieties developed from small groups of plants breeding with one another → many characteristics lost / increase in homozygosity / inbreeding. Whereas wild plants can be pollinated from any individual in the area → random breeding → higher genetic diversity."</p>
+    <h4>Hybrid vs Heirloom comparison (IEB 2020 — 5 mark table question):</h4>
+    <table class="tpl"><thead><tr><th>Feature</th><th>Modern Hybrid</th><th>Heirloom Variety</th></tr></thead>
+    <tbody>
+      <tr><td>Pest/disease resistance</td><td>Higher resistance (bred specifically for resistance)</td><td>Less or variable resistance (more genetic variation; only resistant in local area where bred)</td></tr>
+      <tr><td>Consistency of fruit size</td><td>More uniform/consistent (all genetically identical — farmer controls pollination)</td><td>Less uniform; greater variety of shapes/sizes (more genetic variation; natural pollination)</td></tr>
+      <tr><td>Cost of growing</td><td>Expensive — must buy new seed every year (cannot save seed)</td><td>Cheaper — can regrow from collected/saved seed</td></tr>
+    </tbody></table>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: ENDOCRINE SYSTEM ═══════════════ -->
+<div id="page-endocrine" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:var(--endo-l);color:var(--endo);">🔬</div>
+    <div><h2 class="tce">The Endocrine System</h2><p>All glands · All hormones · Homeostasis · Negative feedback · Blood glucose · Thyroid · Sperm production</p></div>
+  </div>
+  <div class="card endo-l"><h3>🌍 Context — why does the endocrine system exist?</h3>
+    <p>Your body faces a constant challenge: the outside world changes (temperature, food availability, stress, injury) but your cells can only survive within a very narrow set of internal conditions. The endocrine system is the body's long-distance chemical communication network. Glands release hormones directly into the bloodstream — essentially sending chemical messages that travel to target organs anywhere in the body. Unlike the nervous system (fast, electrical, short-lived), hormones work slowly but sustain their effects over hours or days. Without the endocrine system: blood sugar would spike fatally after every meal; puberty wouldn't trigger; the body couldn't respond to stress; and the menstrual cycle wouldn't exist. Every single function on your demarcation depends on hormones.</p>
+  </div>
+  <div class="sh endo">🏛️ 1. Core Definitions</div>
+  <div class="card endo-l"><h3 class="tce">Know these word-for-word (IEB tests definitions directly)</h3>
+    <table class="ten"><thead><tr><th>Term</th><th>Complete IEB definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hormone</strong></td><td>A chemical messenger (protein or steroid) produced by an endocrine gland, transported in the blood, that controls/regulates the activity of a specific target organ elsewhere in the body (IEB 2014: "chemical/metabolic regulator; produced in one part of the body and controls activity of another")</td></tr>
+      <tr><td><strong>Endocrine gland</strong></td><td>A ductless gland that releases hormones directly into the bloodstream — no duct is needed because the blood transports hormones throughout the body for rapid delivery to target organs</td></tr>
+      <tr><td><strong>Target organ</strong></td><td>The specific organ or tissue that responds to a particular hormone because it possesses specific receptor proteins on or in its cells that recognise and bind that hormone</td></tr>
+      <tr><td><strong>Homeostasis</strong></td><td>The maintenance of a stable, constant internal environment (set point) in the body despite changes in external or internal conditions; achieved through the nervous and endocrine systems working together</td></tr>
+      <tr><td><strong>Negative feedback</strong></td><td>A control mechanism in which the body's response to a deviation from the set point acts to reverse or reduce that deviation, returning conditions to the normal set point</td></tr>
+    </tbody></table>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>IEB 2013 — "Why do endocrine glands have no ducts?" (2 marks):</strong> "Endocrine glands have no ducts for transport — hormones are secreted directly into the bloodstream / blood system which transports hormones rapidly around the body to reach their target organs." Do NOT say "because they are glands" — that is circular reasoning and earns nothing.</div></div>
+  </div>
+  <div class="sh endo">📊 2. Complete Master Table — All Endocrine Glands</div>
+  <div class="callout exam"><div class="ico">📌</div><div><strong>This table is tested EVERY SINGLE YEAR</strong> in Q1. The column match always includes 3–6 of these gland-hormone-function pairs. Memorise all rows completely — location, hormone name, and function.</div></div>
+  <div class="card endo-l">
+    <table class="ten"><thead><tr><th>Gland</th><th>Location in body</th><th>Hormone(s) secreted</th><th>Main function(s)</th><th>What stimulates it</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9c3;"><td><strong>Hypothalamus</strong></td><td>Floor of the brain (diencephalon); directly above pituitary gland</td><td>Releasing hormones (TRH, GnRH, CRH, GHRH, etc.) and inhibiting hormones</td><td>The master coordinator — connects the nervous system to the endocrine system; controls the pituitary; also regulates body temperature, hunger, thirst, sleep, and circadian rhythm directly</td><td>Nerve impulses from higher brain centres; monitors blood hormone levels via negative feedback</td></tr>
+      <tr style="background:#e0f2fe;"><td><strong>Pituitary gland</strong> (hypophysis) — the "master gland"</td><td>Base of brain, in a bony recess (sella turcica); attached below hypothalamus by infundibulum stalk</td><td>Anterior: GH (growth hormone), TSH, FSH, LH, ACTH, Prolactin. Posterior: ADH, Oxytocin (made in hypothalamus, stored here)</td><td>GH: stimulates bone and tissue growth; TSH: stimulates thyroid; FSH+LH: control reproduction; ACTH: stimulates adrenals; Prolactin: milk production; ADH: water reabsorption in kidneys; Oxytocin: uterine contractions + milk release</td><td>Releasing hormones from hypothalamus; negative feedback from target hormone levels in blood</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Thyroid gland</strong></td><td>Front/lower neck, across/around the trachea, just below the larynx (butterfly-shaped; 2 lobes)</td><td>Thyroxin (T3 — triiodothyronine; T4 — thyroxine)</td><td>Controls the <strong>basal metabolic rate</strong> (rate cells use oxygen and release energy); promotes normal development of the nervous system; regulates heart rate; stimulates growth in children; requires iodine to synthesise</td><td>TSH from anterior pituitary; iodine availability from blood</td></tr>
+      <tr style="background:#f0fdf4;"><td><strong>Parathyroid glands</strong> (4 small glands)</td><td>Embedded in / on the posterior surface of the thyroid gland</td><td>Parathyroid hormone (PTH / parathormone)</td><td>Raises blood calcium levels when they drop too low: stimulates bone to release calcium into blood; stimulates kidneys to retain calcium and excrete phosphate; activates vitamin D (which enhances calcium absorption from gut)</td><td>Low blood calcium levels (direct feedback — no pituitary intermediate)</td></tr>
+      <tr style="background:#fef9c3;"><td><strong>Adrenal glands</strong> (2 glands — one on top of each kidney)</td><td>On top (superior) of each kidney; hence "adrenal" = ad (near) + renal (kidney)</td><td><em>Medulla (inner):</em> Adrenalin (epinephrine), Noradrenalin. <em>Cortex (outer):</em> Cortisol, Aldosterone, Sex hormones (androgens)</td><td>Adrenalin: "fight-or-flight" — raises heart rate + blood pressure; dilates bronchioles; raises blood glucose from glycogen stores; dilates pupils; shunts blood to muscles; heightens alertness. Cortisol: stress response; anti-inflammatory. Aldosterone: regulates Na+ and water balance in kidneys</td><td>Adrenalin: nerve impulse from brain (stress/fright/exercise). Cortisol: ACTH from pituitary</td></tr>
+      <tr style="background:#ede9fe;"><td><strong>Pancreas</strong> (Islets of Langerhans)</td><td>Behind stomach, in the abdomen (retroperitoneal); has both exocrine and endocrine functions</td><td><strong>Insulin</strong> (from β-cells), <strong>Glucagon</strong> (from α-cells)</td><td>Insulin: LOWERS blood glucose → makes membranes more permeable to glucose; stimulates glycogenesis (glucose→glycogen in liver/muscle); stimulates cellular respiration. Glucagon: RAISES blood glucose → stimulates glycogenolysis (glycogen→glucose in liver)</td><td>Insulin: high blood glucose. Glucagon: low blood glucose. Both are direct responses — no pituitary intermediate.</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Ovaries</strong></td><td>Pelvic cavity (one on each side of uterus); female only</td><td><strong>Oestrogen</strong> (from Graafian follicle), <strong>Progesterone</strong> (from corpus luteum)</td><td>Oestrogen: develops female secondary sexual characteristics; stimulates endometrium thickening; triggers LH surge when very high. Progesterone: maintains endometrium for pregnancy; inhibits FSH and LH (negative feedback = contraceptive mechanism)</td><td>FSH (stimulates follicle → oestrogen); LH (triggers ovulation, forms corpus luteum → progesterone)</td></tr>
+      <tr style="background:#fef9c3;"><td><strong>Testes</strong></td><td>Inside the scrotum (outside the body cavity to maintain lower temperature); male only</td><td><strong>Testosterone</strong> (from Leydig/interstitial cells)</td><td>Develops and maintains male secondary sexual characteristics (voice deepening, facial/body hair, muscle mass, penile growth); stimulates spermatogenesis in seminiferous tubules; maintains libido; promotes bone density</td><td>LH (also called ICSH — Interstitial Cell Stimulating Hormone) from anterior pituitary</td></tr>
+      <tr style="background:#e0f2fe;"><td><strong>Thymus</strong></td><td>Chest cavity (mediastinum), between lungs, above and in front of the heart; large in children, shrinks after puberty</td><td>Thymosin</td><td>Stimulates development and maturation of T-lymphocytes (T-cells) — essential for cell-mediated immunity; critical for building immune system competence during childhood</td><td>Developmental signals; shrinks with age as immune system matures</td></tr>
+      <tr style="background:#f0fdf4;"><td><strong>Pineal gland</strong></td><td>Deep in the centre of the brain, between the two cerebral hemispheres (epithalamus)</td><td>Melatonin</td><td>Regulates the circadian rhythm (sleep-wake cycle); produced in darkness, suppressed by light; affects seasonal reproduction in some animals (longer nights → more melatonin → reproductive suppression in winter)</td><td>Darkness → melatonin increases; light detected by retina → melatonin suppressed</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Placenta</strong> (temporary — during pregnancy only)</td><td>Uterine wall (embedded in endometrium after implantation)</td><td>HCG (human chorionic gonadotropin) early in pregnancy; then Oestrogen and Progesterone (takes over from corpus luteum at ~12 weeks)</td><td>HCG: maintains the corpus luteum so it keeps producing progesterone (pregnancy test detects this hormone); Oestrogen + Progesterone from placenta: maintain the uterine lining and inhibit new ovarian cycles throughout pregnancy</td><td>Triggered by embryo implantation; "a disc-shaped organ that becomes an endocrine gland about 12 weeks after fertilisation" (IEB 2013 column match)</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh endo">🔄 3. Negative Feedback — The Universal Control Mechanism</div>
+  <div class="card endo-l"><h3 class="tce">How negative feedback works — general model</h3>
+    <p>Negative feedback is the body's thermostat principle. It is called "negative" because the response <em>opposes and reverses</em> the original change. Every time a level deviates from its set point, sensors detect this and trigger a corrective response that brings it back. The response then "switches off" once the set point is restored.</p>
+    <div class="flow endo">
+      <div class="fb">NORMAL SET POINT (e.g. blood glucose ~4–8 mmol/L; thyroxin at normal level)</div><div class="fa">↓ Stimulus</div>
+      <div class="fb">Level deviates — rises ABOVE or falls BELOW the set point</div><div class="fa">↓ Detection</div>
+      <div class="fb">Receptor/sensor detects deviation (e.g. pancreatic β-cells detect high glucose; hypothalamus detects low thyroxin)</div><div class="fa">↓ Signal</div>
+      <div class="fb">Control centre (often hypothalamus/pituitary) releases a corrective hormone</div><div class="fa">↓ Response</div>
+      <div class="fb">Effector (target organ) responds to reverse the deviation</div><div class="fa">↓ Restoration</div>
+      <div class="fb hi">Level returns to set point → response is "switched off" → NEGATIVE FEEDBACK LOOP COMPLETE</div>
+    </div>
+    <div class="callout memo" style="margin-top:14px;"><div class="ico">📋</div><div><strong>IEB 2014 column match:</strong> "The control mechanism that illustrates the relationship between glucagon and blood sugar" = <strong>negative feedback</strong>.</div></div>
+  </div>
+  <div class="sh endo">🩸 4. Blood Glucose Regulation — In Full Detail</div>
+  <div class="card endo-l"><h3 class="tce">Insulin and glucagon — how they work together</h3>
+    <p>Blood glucose must stay within approximately 4–8 mmol/L. Too high (hyperglycaemia) = diabetes complications — blood vessels and nerves are damaged. Too low (hypoglycaemia) = the brain is starved of fuel and you lose consciousness. The pancreas monitors blood glucose levels minute-by-minute and releases the correct hormone. This is one of the most precisely controlled systems in the body.</p>
+    <div class="g2">
+      <div class="card memo"><h3>🔻 High blood glucose → INSULIN</h3>
+        <ol>
+          <li>After eating: blood glucose rises above set point</li>
+          <li>β-cells of Islets of Langerhans detect high glucose</li>
+          <li>β-cells secrete <strong>INSULIN</strong> into bloodstream</li>
+          <li>Insulin binds receptors on liver + muscle cells</li>
+          <li>Cell membranes become more <strong>permeable to glucose</strong> → glucose enters cells</li>
+          <li>Liver/muscle convert glucose → <strong>glycogen</strong> (GLYCOGENESIS — stored)</li>
+          <li>Rate of cellular respiration increases → more glucose burned for energy</li>
+          <li>Blood glucose drops back to normal → β-cells detect this → insulin secretion decreases</li>
+          <li><strong>Negative feedback complete</strong></li>
+        </ol>
+      </div>
+      <div class="card exam"><h3>🔺 Low blood glucose → GLUCAGON</h3>
+        <ol>
+          <li>During fasting or exercise: blood glucose drops below set point</li>
+          <li>α-cells of Islets of Langerhans detect low glucose</li>
+          <li>α-cells secrete <strong>GLUCAGON</strong> into bloodstream</li>
+          <li>Glucagon binds receptors on liver cells</li>
+          <li>Liver converts stored <strong>glycogen → glucose</strong> (GLYCOGENOLYSIS)</li>
+          <li>Glucose released into bloodstream</li>
+          <li>Blood glucose rises back to normal → α-cells detect this → glucagon secretion decreases</li>
+          <li><strong>Negative feedback complete</strong></li>
+        </ol>
+      </div>
+    </div>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>THE most common student error — swap insulin and glucagon:</strong>
+      <table style="margin-top:8px;font-size:13px;"><thead><tr><th>Hormone</th><th>Made by</th><th>Released when blood glucose is</th><th>Effect on blood glucose</th><th>Effect on glycogen</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Insulin</strong></td><td>β-cells (pancreas)</td><td>HIGH (after eating)</td><td>LOWERS it</td><td>Glucose → glycogen (makes/stores glycogen)</td></tr>
+        <tr><td><strong>Glucagon</strong></td><td>α-cells (pancreas)</td><td>LOW (fasting/exercise)</td><td>RAISES it</td><td>Glycogen → glucose (breaks down glycogen)</td></tr>
+      </tbody></table>
+      <p style="margin-top:8px;"><strong>IEB 2011 trap:</strong> "Glucagon converts glucose to glycogen" → <strong>FALSE</strong>. That is insulin's job. Glucagon does the OPPOSITE.</p>
+    </div></div>
+    <h4>Role of adrenalin in blood glucose:</h4>
+    <p>During stress/fright/intense exercise, the adrenal medulla releases <strong>adrenalin</strong>, which rapidly mobilises glucose from glycogen stores in the liver (same as glucagon but faster and through a different pathway). This is why blood glucose spikes during stress — the body needs quick energy for "fight or flight". Adrenalin is a short-term emergency response; the pancreas handles long-term regulation.</p>
+    <div class="callout memo"><div class="ico">📋</div><div><strong>IEB 2014 (a): "Give ONE event that could cause the change in blood sugar level at A [sudden rise]":</strong> Exercise / fright / stress / meal — any event that requires rapid energy mobilisation or has just consumed glucose.</div></div>
+  </div>
+  <div class="sh endo">🔄 5. Negative Feedback: Sperm Production</div>
+  <div class="card endo-l"><h3 class="tce">Flow diagram — testosterone and spermatogenesis <span class="qtag trep">ALWAYS TESTED — draw from memory</span></h3>
+    <p>This flow diagram appears almost every year. Practice writing it out completely from scratch. The starting point given is usually: "Testosterone levels are low →"</p>
+    <div class="flow endo">
+      <div class="fb">Low testosterone detected in blood (sensed by hypothalamus)</div><div class="fa">↓</div>
+      <div class="fb">Hypothalamus releases <strong>GnRH</strong> (Gonadotropin-Releasing Hormone) → stimulates anterior pituitary</div><div class="fa">↓</div>
+      <div class="fb">Anterior pituitary releases <strong>LH</strong> (also called ICSH — Interstitial Cell Stimulating Hormone) AND <strong>FSH</strong></div><div class="fa">↓</div>
+      <div class="fb">LH stimulates Leydig (interstitial) cells in testes → secrete more <strong>testosterone</strong></div><div class="fa">↓</div>
+      <div class="fb">FSH + testosterone together stimulate <strong>spermatogenesis</strong> in seminiferous tubules → sperm production increases</div><div class="fa">↓</div>
+      <div class="fb">High testosterone detected in blood → negative feedback to hypothalamus AND anterior pituitary</div><div class="fa">↓</div>
+      <div class="fb hi">Pituitary reduces LH and FSH secretion → testosterone levels decrease → set point restored → NEGATIVE FEEDBACK COMPLETE</div>
+    </div>
+    <div class="callout exam"><div class="ico">📌</div><div><strong>Marking tip:</strong> You need at least 4 sequential points with arrows showing direction of cause/effect. Essential points: low testosterone → LH/FSH rise → testosterone increases → sperm production → high testosterone → negative feedback suppresses LH/FSH.</div></div>
+  </div>
+  <div class="sh endo">🦋 6. Negative Feedback: Thyroid Hormone (TRH-TSH-Thyroxin Axis)</div>
+  <div class="card endo-l"><h3 class="tce">The 3-tier hypothalamus-pituitary-thyroid axis</h3>
+    <p>This is the most elaborate feedback loop in the endocrine system — three glands working in sequence. It controls your metabolic rate, body temperature, heart rate, and nervous system development.</p>
+    <div class="flow endo">
+      <div class="fb">Low thyroxin detected in blood (e.g. cold conditions demand more heat production)</div><div class="fa">↓</div>
+      <div class="fb">Hypothalamus secretes <strong>TRH</strong> (Thyrotropin-Releasing Hormone)</div><div class="fa">↓</div>
+      <div class="fb">TRH travels to anterior pituitary → stimulates release of <strong>TSH</strong> (Thyroid-Stimulating Hormone)</div><div class="fa">↓</div>
+      <div class="fb">TSH travels to thyroid gland → thyroid absorbs iodine from blood + manufactures <strong>thyroxin</strong></div><div class="fa">↓</div>
+      <div class="fb">Thyroxin increases metabolic rate; promotes growth, nervous system function, heart rate</div><div class="fa">↓</div>
+      <div class="fb hi">High thyroxin feeds back to hypothalamus + pituitary → TRH and TSH secretion decreases → thyroid slows → NEGATIVE FEEDBACK COMPLETE</div>
+    </div>
+    <div class="callout memo"><div class="ico">📋</div><div><strong>IEB 2021 — Iodine, thyroid, and cats:</strong> "Iodine is essential for thyroxin formation — absorbed from blood by the thyroid gland to manufacture thyroxin." In the sick cat (no functional thyroid), radioactive iodine remained in the blood (not absorbed) — confirming thyroid failure. If iodine is deficient in diet → thyroid cannot make thyroxin → TSH keeps rising → thyroid enlarges trying to absorb more iodine = GOITRE.</div></div>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: HUMAN REPRODUCTION ═══════════════ -->
+<div id="page-repro" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:var(--repro-l);color:var(--repro);">🧬</div>
+    <div><h2 class="tcr">Human Reproduction</h2><p>Male system · Sperm structure · Spermatogenesis · Female system · Oogenesis · Fertilisation · Pregnancy · Contraception</p></div>
+  </div>
+  <div class="card repro-l"><h3>🌍 Context</h3>
+    <p>Human reproduction integrates everything: the endocrine system controls every step (hormones trigger puberty, drive the menstrual cycle, maintain pregnancy); meiosis produces the gametes; fertilisation restores the diploid number; and a nine-month developmental programme produces a new human being. The IEB tests this through diagrams, flow charts, True/False statements, MCQ, and extended explanations. Understanding HOW the hormones and organs interact — not just memorising names — is what earns you the top marks.</p>
+  </div>
+  <div class="sh repro">♂ 1. Male Reproductive System — All Structures</div>
+  <div class="card repro-l"><h3 class="tcr">Every structure, its function, and what the IEB asks about it</h3>
+    <div class="an">
+      <div class="ab"><div class="nm">🔵 Testes (singular: testis)</div><div class="fn">Produce sperm by spermatogenesis AND secrete testosterone. Located in the scrotum (outside body) to keep temperature 2–3°C below core body temperature — essential because spermatogenesis is impaired by normal body temperature (37°C). The two functions are in different cells: seminiferous tubules make sperm; Leydig (interstitial) cells make testosterone.</div><div class="nt">IEB: "D: produces sperm/male gametes/testosterone"</div></div>
+      <div class="ab"><div class="nm">🔵 Seminiferous tubules</div><div class="fn">Highly coiled tubes packed inside the testes where spermatogenesis occurs. Lined by Sertoli cells (which nourish developing sperm) and spermatogonia (stem cells). Length increases dramatically at puberty under FSH stimulation (IEB 2019 graph question).</div><div class="nt">Function: "site of spermatogenesis / gamete production"</div></div>
+      <div class="ab"><div class="nm">🔵 Epididymis</div><div class="fn">Tightly coiled tube on the posterior surface of each testis. Sperm travel here from seminiferous tubules and spend 10–14 days maturing — gaining the ability to swim (motility) and ability to fertilise an egg. Also stores sperm until ejaculation.</div><div class="nt">IEB 2014 label C: epididymis. "Maturation AND storage of sperm"</div></div>
+      <div class="ab"><div class="nm">🔵 Vas deferens (sperm duct)</div><div class="fn">Muscular tube that carries mature sperm from the epididymis up and over the bladder to the urethra during ejaculation. CUT during vasectomy (sterilisation procedure). About 30 cm long.</div><div class="nt">IEB 2014 label A: vas deferens/sperm duct</div></div>
+      <div class="ab"><div class="nm">🔵 Seminal vesicles</div><div class="fn">Two pouch-like glands at the back of the bladder that secrete a thick alkaline fluid rich in FRUCTOSE (energy source for sperm motility) and prostaglandins. Contribute ~60% of semen volume. The alkalinity neutralises the slight acidity of the vagina.</div><div class="nt">IEB 2014: "produces/secretes fluid to promote sperm movement / nutrition / correct pH"</div></div>
+      <div class="ab"><div class="nm">🔵 Prostate gland</div><div class="fn">Walnut-sized gland at the BASE OF THE BLADDER, surrounding the upper urethra. Secretes an alkaline milky fluid that enhances sperm motility and helps neutralise vaginal acidity. IEB asks: "This structure at the junction of bladder and urethra secretes fluid contributing to semen" = prostate gland.</div><div class="nt">Answer = B (prostate gland) in 2013 MCQ</div></div>
+      <div class="ab"><div class="nm">🔵 Cowper's gland (Bulbourethral)</div><div class="fn">Two pea-sized glands below the prostate. Secrete clear pre-ejaculatory fluid that lubricates the urethra and neutralises any remaining urine acidity before ejaculation. Can contain a small number of sperm — why withdrawal method is unreliable.</div></div>
+      <div class="ab"><div class="nm">🔵 Urethra</div><div class="fn">Carries both urine and semen out of the body (NEVER simultaneously — a sphincter valve prevents mixing). The ejaculatory ducts (from vas deferens + seminal vesicles) join the urethra. During erection the urinary sphincter closes.</div><div class="nt">IEB 2014 label B: urethra</div></div>
+      <div class="ab"><div class="nm">🔵 Penis</div><div class="fn">Organ of sexual intercourse and urination. Contains three cylinders of erectile tissue that fill with blood during sexual arousal (erection). During ejaculation, semen is forcibly expelled through the urethra. External genitals = penis + scrotum.</div></div>
+      <div class="ab"><div class="nm">🔵 Scrotum</div><div class="fn">External skin pouch containing the testes. Holds testes outside the body cavity — maintains testicular temperature ~2–3°C BELOW core body temperature. In cold conditions: scrotal muscles contract (cremasteric reflex) pulling testes closer to body. In heat: muscles relax, testes descend away from body.</div></div>
+    </div>
+    <h4>Key definitions (IEB tests these word-for-word):</h4>
+    <table class="trp"><thead><tr><th>Term</th><th>IEB definition (from memos)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Semen</strong></td><td>A fluid containing sperm cells AND secretions from the accessory glands (seminal vesicles, prostate, Cowper's gland). It is alkaline. NOT just sperm alone.</td></tr>
+      <tr><td><strong>Ejaculation</strong></td><td>The forcible release of semen (sperm + fluids) from the penis during male orgasm</td></tr>
+      <tr><td><strong>Erection</strong></td><td>The swelling/stiffening of the penis with blood when sexually aroused</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh repro">🔬 2. Sperm Cell Structure and Function</div>
+  <div class="card repro-l"><h3 class="tcr">Every part and its function — diagram question + MCQ</h3>
+    <table class="trp"><thead><tr><th>Part</th><th>Location</th><th>Function</th><th>Key IEB fact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Acrosome</strong></td><td>Cap covering the front tip of the head</td><td>Contains hydrolytic enzymes (acrosin, hyaluronidase) that digest the zona pellucida (outer layers of the egg) to allow the sperm nucleus to penetrate and fertilise the egg</td><td>IEB 2013 MCQ: "Contains enzymes that help sperm penetrate the egg" = <strong>C: acrosome</strong></td></tr>
+      <tr><td><strong>Nucleus</strong></td><td>Inside the head</td><td>Contains haploid (n=23) genetic material — 22 autosomes + 1 sex chromosome (X or Y). Determines the sex of the future offspring.</td><td>Y-bearing sperm → male child; X-bearing sperm → female child</td></tr>
+      <tr><td><strong>Head</strong></td><td>Front section (oval-shaped)</td><td>Contains nucleus and acrosome; streamlined oval shape reduces drag</td><td>IEB 2023: "head is oval-shaped; tail is 8× longer than head"</td></tr>
+      <tr><td><strong>Midpiece</strong></td><td>Between head and tail</td><td>Packed with <strong>mitochondria</strong> that carry out aerobic respiration to produce ATP energy for the swimming movement of the flagellum. Longer midpiece = more mitochondria = more ATP = faster sperm.</td><td>IEB 2023 investigation: "sperm with longer midpiece swims faster" — because more mitochondria = more ATP</td></tr>
+      <tr><td><strong>Tail (flagellum)</strong></td><td>Long posterior structure</td><td>Whip-like beating motion that propels the sperm through fluid towards the egg. Powered by ATP from the midpiece mitochondria.</td><td>Tail is ~8× longer than the head (IEB 2023)</td></tr>
+      <tr><td><strong>Plasma membrane</strong></td><td>Outer boundary</td><td>Selective permeability; contains receptor proteins for egg recognition</td><td>Changes after fertilisation to prevent multiple sperm entering</td></tr>
+    </tbody></table>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>Most common sperm cell error:</strong> "The midpiece contains enzymes to penetrate the egg" → WRONG. The <strong>acrosome</strong> contains enzymes. The <strong>midpiece</strong> contains <strong>mitochondria</strong> for energy. Two completely different functions in two different structures.</div></div>
+  </div>
+  <div class="sh repro">🔄 3. Spermatogenesis — Step-by-Step</div>
+  <div class="card repro-l"><h3 class="tcr">Production of sperm — from stem cell to mature gamete</h3>
+    <p>Spermatogenesis occurs continuously from puberty (~12 years) throughout a man's life (into his 70s–80s). The full process takes ~64–72 days. It is stimulated by <strong>FSH</strong> (from pituitary) and <strong>testosterone</strong> (from Leydig cells). Sertoli cells in the tubule walls nourish and protect developing sperm.</p>
+    <div class="flow repro">
+      <div class="fb"><strong>Spermatogonium</strong> (2n — diploid stem cell in wall of seminiferous tubule)</div><div class="fa">↓ Mitosis (stem cells always remain; this makes sperm production continuous)</div>
+      <div class="fb"><strong>Primary spermatocyte</strong> (2n — grows larger; DNA replicates)</div><div class="fa">↓ Meiosis I (reduction division — chromosome number halved)</div>
+      <div class="fb"><strong>2 × Secondary spermatocytes</strong> (n — haploid; each has 23 chromosomes)</div><div class="fa">↓ Meiosis II (equational division)</div>
+      <div class="fb"><strong>4 × Spermatids</strong> (n — haploid; round cells with no tail yet)</div><div class="fa">↓ Spermiogenesis (NOT a cell division — maturation/differentiation of spermatids)</div>
+      <div class="fb hi"><strong>4 × Mature spermatozoa</strong> (n) — head, midpiece, and tail develop during spermiogenesis</div>
+      <div class="fa">↓ Move to epididymis (10–14 days: gain swimming ability)</div>
+      <div class="fb hi"><strong>Stored in epididymis</strong> until ejaculation</div>
+    </div>
+    <div class="callout exam"><div class="ico">📌</div><div><strong>Key comparison:</strong> 1 primary spermatocyte → <strong>4 equal, functional sperm cells</strong>. This is fundamentally different from oogenesis (1 primary oocyte → only 1 functional egg + 2–3 non-functional polar bodies).</div></div>
+  </div>
+  <div class="sh repro">♀ 4. Female Reproductive System — All Structures</div>
+  <div class="card repro-l"><h3 class="tcr">Every structure, function, and exam connection</h3>
+    <div class="an">
+      <div class="ab"><div class="nm">🔴 Ovaries</div><div class="fn">Produce egg cells (oogenesis) and secrete oestrogen (from Graafian follicle) and progesterone (from corpus luteum). Each ovary is about the size of an almond. Contains thousands of primary follicles at birth — these are the lifetime supply of potential eggs.</div><div class="nt">IEB: "organ containing Graafian follicle" = ovary</div></div>
+      <div class="ab"><div class="nm">🔴 Graafian follicle</div><div class="fn">A large, fluid-filled sac in the ovary that develops from a primary follicle. Contains a maturing secondary oocyte surrounded by follicular cells. Secretes oestrogen. At ovulation (~day 14) the Graafian follicle RUPTURES and releases the egg. The rupture IS ovulation.</div><div class="nt">IEB: "Rupture of Graafian follicle" = OVULATION</div></div>
+      <div class="ab"><div class="nm">🔴 Corpus luteum</div><div class="fn">Forms from the ruptured Graafian follicle AFTER ovulation (follicular cells reorganise into luteal cells). Secretes HIGH amounts of PROGESTERONE and some oestrogen. Maintains the endometrium. If no fertilisation → degenerates into corpus albicans → progesterone drops → menstruation. If fertilisation → HCG from embryo keeps corpus luteum alive → progesterone stays high → no menstruation = pregnancy.</div><div class="nt">IEB: "Progesterone remains high during pregnancy" = corpus luteum maintained by HCG</div></div>
+      <div class="ab"><div class="nm">🔴 Oviduct (Fallopian tube)</div><div class="fn">Muscular tube ~10 cm long connecting each ovary to the uterus. Lined internally with cilia that sweep the egg towards the uterus. Peristaltic contractions help move the egg. The <strong>ampulla</strong> (widest part) is the most common site of fertilisation — sperm swim up to meet the egg here.</div><div class="nt">IEB: "Most common site of fertilisation" = oviduct (NOT uterus)</div></div>
+      <div class="ab"><div class="nm">🔴 Uterus (womb)</div><div class="fn">Thick-walled, pear-shaped muscular organ. Site of embryo implantation. Houses and nourishes the developing foetus for 9 months. Labour contractions originate from its smooth muscle. Inner lining = endometrium (shed during menstruation; rebuilt each cycle).</div><div class="nt">IEB 2014: "Labour initiated by contraction of muscles in this organ" = uterus</div></div>
+      <div class="ab"><div class="nm">🔴 Endometrium</div><div class="fn">The inner lining of the uterus. Thickens under oestrogen (days 6–13) then under progesterone (days 15–28) to prepare a rich, vascular bed for implantation. If no implantation → endometrium breaks down and is shed during menstruation (days 1–5). If fertilisation → embryo implants into this layer.</div><div class="nt">IEB: "Attachment of developing embryo into this lining" = implantation into endometrium</div></div>
+      <div class="ab"><div class="nm">🔴 Cervix</div><div class="fn">The narrow lower neck/opening of the uterus projecting into the vagina. Produces mucus that changes through the cycle: thin and watery at ovulation (allows sperm in) → thick and hostile at other times (blocks sperm). The Mirena/progesterone injection also works by thickening cervical mucus. Dilates to 10 cm during childbirth.</div></div>
+      <div class="ab"><div class="nm">🔴 Vagina</div><div class="fn">Muscular tube (~9 cm) from cervix to external opening. Receives the penis during intercourse (semen deposited here). Birth canal — baby exits through vagina. Slightly acidic pH (bacteria keep it healthy). Sperm are alkaline — semen's alkalinity helps neutralise vaginal acidity.</div><div class="nt">IEB 2013 MCQ: "vagina — fertilisation" = INCORRECT. Fertilisation is in oviduct.</div></div>
+      <div class="ab"><div class="nm">🔴 Mammary glands</div><div class="fn">Milk-producing glands in the breasts. Stimulated to produce milk (LACTATION) by PROLACTIN from the anterior pituitary. Milk RELEASE triggered by OXYTOCIN (posterior pituitary) when the baby suckles. Also provides maternal antibodies to the baby (passive immunity).</div><div class="nt">IEB 2013: "gland that produces milk and supplies antibodies to baby" = mammary gland</div></div>
+    </div>
+  </div>
+  <div class="sh repro">🔄 5. Oogenesis — Step-by-Step</div>
+  <div class="card repro-l"><h3 class="tcr">Production of egg cells — unique features you must know</h3>
+    <p>Unlike spermatogenesis (continuous from puberty), oogenesis begins in the FEMALE FOETUS and is arrested at TWO points. All the primary oocytes a woman will ever have (~1–2 million) are present at birth. By puberty this drops to ~400 000. Only about 400 eggs are ever ovulated in a lifetime.</p>
+    <div class="flow repro">
+      <div class="fb"><strong>Oogonium</strong> (2n) — multiplies by mitosis in foetal ovary before birth (only)</div><div class="fa">↓ Begins meiosis I — then ARRESTED at Prophase I (before birth)</div>
+      <div class="fb"><strong>Primary oocyte</strong> (2n) — present at birth in primary follicles; can remain dormant for up to 50 years</div><div class="fa">↓ ONE per cycle completes meiosis I at puberty (stimulated by FSH)</div>
+      <div class="fb"><strong>Secondary oocyte</strong> (n) + <strong>1st polar body</strong> (n, non-functional, discarded)</div><div class="fa">↓ ARRESTED at Metaphase II — released at OVULATION (day ~14)</div>
+      <div class="fb">Secondary oocyte released from ovary at ovulation → travels down oviduct</div><div class="fa">↓ Meiosis II completed ONLY if fertilisation occurs</div>
+      <div class="fb hi"><strong>Mature ovum</strong> (n) + <strong>2nd polar body</strong> (non-functional) + polar bodies from 1st polar body</div>
+      <div class="fa">↓ Result</div>
+      <div class="fb hi">Total per primary oocyte: <strong>1 functional egg cell</strong> + 2–3 non-functional polar bodies</div>
+    </div>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>Why do polar bodies form?</strong> Oogenesis uses UNEQUAL cell division — one daughter cell gets almost ALL the cytoplasm (food stores, organelles) → becomes the egg. The other gets almost none → becomes the polar body. This ensures the egg has maximum resources for early embryo development. This is the opposite of spermatogenesis which uses EQUAL cell division (all 4 spermatids are the same size).</div></div>
+    <h4>Spermatogenesis vs Oogenesis — Comparison Table (frequently asked)</h4>
+    <table class="trp"><thead><tr><th>Feature</th><th>Spermatogenesis</th><th>Oogenesis</th></tr></thead>
+    <tbody>
+      <tr><td>Location</td><td>Seminiferous tubules (testes)</td><td>Ovaries</td></tr>
+      <tr><td>When starts</td><td>Puberty (~age 12)</td><td>Begins in foetus; primary oocytes present at birth</td></tr>
+      <tr><td>Continuity</td><td>Continuous throughout adult life</td><td>Cyclic; one egg completes per monthly cycle; stops at menopause</td></tr>
+      <tr><td>Cells produced per primary cell</td><td>4 equal, functional sperm</td><td>1 functional egg + 2–3 non-functional polar bodies</td></tr>
+      <tr><td>Cell division type</td><td>Equal (all daughter cells same size)</td><td>Unequal (egg gets most cytoplasm)</td></tr>
+      <tr><td>When meiosis II completed</td><td>During spermatogenesis (in testis)</td><td>Only if fertilisation occurs (in oviduct)</td></tr>
+      <tr><td>Hormonal control</td><td>FSH + testosterone</td><td>FSH (follicle development); LH (triggers ovulation)</td></tr>
+      <tr><td>Number produced</td><td>~300 million sperm per day</td><td>1 egg per month (~400 total in lifetime)</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh repro">🤱 6. Fertilisation, Implantation, and Pregnancy</div>
+  <div class="card repro-l"><h3 class="tcr">Timeline from fertilisation to birth</h3>
+    <div class="tl">
+      <div class="tl-i rep"><div class="tl-t">Fertilisation</div><div class="tl-d">Day 14 (at ovulation)</div><div class="tl-b">Sperm reaches the secondary oocyte in the OVIDUCT. The acrosome releases enzymes digesting the zona pellucida. ONE sperm enters → zona pellucida hardens (blocks polyspermy). Sperm nucleus fuses with egg nucleus → <strong>ZYGOTE (2n)</strong>. Meiosis II of secondary oocyte is completed here.</div></div>
+      <div class="tl-i rep"><div class="tl-t">Cleavage</div><div class="tl-d">Days 14–21</div><div class="tl-b">Zygote undergoes rapid <strong>mitosis</strong> without growing (cleavage): 2-cell → 4-cell → 8-cell → morula (solid ball of cells) → blastocyst (hollow ball with inner cell mass). Travels down oviduct to uterus (cilia + peristalsis).</div></div>
+      <div class="tl-i rep"><div class="tl-t">Implantation</div><div class="tl-d">Day ~21 (7 days post-fertilisation)</div><div class="tl-b">Blastocyst attaches to and <strong>sinks into the endometrium</strong> of the uterus. Outer trophoblast cells develop chorionic villi which burrow into the endometrium. Chorionic villi immediately begin producing <strong>HCG</strong> (human chorionic gonadotropin) — the hormone detected by home pregnancy tests. IEB 2014: "Attachment of developing embryo sinking into endometrium" = IMPLANTATION.</div></div>
+      <div class="tl-i rep"><div class="tl-t">Placenta formation</div><div class="tl-d">Weeks 4–12</div><div class="tl-b">Chorionic villi interdigitate with maternal blood supply → placenta forms. Functions: (1) exchange of O₂, glucose, amino acids, vitamins, antibodies from mother → foetus; (2) CO₂ and waste products from foetus → mother; (3) barrier against most bacteria and some drugs (not all!); (4) HCG production (maintains corpus luteum early on); (5) takes over oestrogen and progesterone production at ~12 weeks (corpus luteum then degenerates). IEB 2014: "Acts as a barrier against pathogens and drugs" = placenta.</div></div>
+      <div class="tl-i rep"><div class="tl-t">Structures protecting the foetus</div><div class="tl-d">Weeks 4–40</div><div class="tl-b"><strong>Umbilical cord</strong> = connects foetus to placenta. Contains: 2 umbilical arteries (carry deoxygenated blood + CO₂ + waste FROM foetus to placenta) + 1 umbilical vein (carries oxygenated blood + nutrients TO foetus). IEB 2014: "Responsible for transport of foetal waste products" = umbilical cord.<br><strong>Amnion</strong> = strong, smooth membrane forming the fluid-filled sac around the embryo. IEB 2014: "Strong membrane around embryo" = amnion.<br><strong>Amniotic fluid</strong> = liquid filling the amniotic sac. Protects foetus from mechanical shock/impact; maintains temperature; allows foetus to move (essential for muscle and joint development). IEB 2014: "Substance that protects and cushions foetus from impact injury" = amniotic fluid.</div></div>
+      <div class="tl-i rep"><div class="tl-t">Birth (Parturition)</div><div class="tl-d">~Week 40</div><div class="tl-b">Labour begins with uterine contractions. OXYTOCIN (posterior pituitary) intensifies contractions in a <em>positive feedback loop</em> (more contractions → more oxytocin → more contractions). Cervix dilates to 10 cm. Amniotic sac ruptures ("waters break"). Baby is born head-first (normally). Placenta expelled as "afterbirth". IEB 2014: "Labour initiated by contraction of certain muscles in this organ" = uterus.</div></div>
+    </div>
+  </div>
+  <div class="sh repro">📈 7. Secondary Sexual Characteristics at Puberty</div>
+  <div class="card repro-l"><h3 class="tcr">Physical vs physiological changes — and the classic exam trap</h3>
+    <div class="g2">
+      <div><h4 style="color:var(--endo-d)">Males — triggered by TESTOSTERONE</h4>
+        <p><strong>Physical changes:</strong> Voice deepens (larynx and vocal cords enlarge); facial, pubic, and underarm hair grows; penis and testes enlarge; shoulders broaden; increased muscle mass; acne (increased sebaceous gland activity); general growth spurt</p>
+        <p style="margin-top:8px;"><strong>Physiological (functional) changes:</strong> spermatogenesis begins; seminiferous tubules lengthen and widen; Leydig cells become active; ability to ejaculate develops; sex drive develops; sperm are produced</p>
+      </div>
+      <div><h4 style="color:var(--repro-d)">Females — triggered by OESTROGEN</h4>
+        <p><strong>Physical changes:</strong> Breasts develop; hips widen; pubic and underarm hair grows; increased fat distribution (hips, thighs, breasts); slight voice deepening (NOT pronounced); skin becomes smoother; general growth spurt (earlier than males)</p>
+        <p style="margin-top:8px;"><strong>Physiological (functional) changes:</strong> menarche (first menstrual cycle/period); oogenesis becomes cyclic; ovaries begin releasing eggs monthly; uterus and vagina enlarge; cervical glands become active; sexual interest develops</p>
+      </div>
+    </div>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>IEB 2023 MCQ TRAP:</strong> "Which of the following are ALL secondary characteristics of females during puberty? (i) Widening of hips (ii) Pronounced deepening of voice (iii) Development of breasts (iv) Growth of underarm and pubic hair (v) Increased fat distribution" → Answer: <strong>A — (i), (iii), (iv) and (v) only</strong>. Option (ii) is WRONG for females — pronounced voice deepening is a MALE characteristic driven by testosterone acting on the larynx. Females only have very slight voice change. This MCQ appears repeatedly.</div></div>
+  </div>
+  <div class="sh repro">💊 8. Contraception — Complete Methods Table</div>
+  <div class="card repro-l"><h3 class="tcr">Method · Mechanism · Advantage · Disadvantage</h3>
+    <table class="trp"><thead><tr><th>Method</th><th>How it PREVENTS pregnancy (mechanism)</th><th>Advantage</th><th>Disadvantage</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Combined pill</strong> (oestrogen + progesterone)</td><td>High progesterone level inhibits LH release from pituitary → no LH surge → no ovulation; also thickens cervical mucus; makes endometrium thin</td><td>Very effective (~99%); can reduce period pain and regulate cycle</td><td>Must take daily; no STI protection; hormonal side effects</td></tr>
+      <tr><td><strong>Progesterone injection</strong> (e.g. Depo-Provera) / <strong>Mirena IUD</strong></td><td>Progesterone inhibits LH → no ovulation; also thickens cervical mucus blocking sperm. IEB 2020: "Mirena releases progesterone which decreases LH and FSH secretion to prevent ovulation"</td><td>Long-lasting (3 months for injection; 5 years for Mirena); woman has control; no daily effort</td><td>Irregular bleeding; hormonal side effects; must be fitted by a doctor (Mirena)</td></tr>
+      <tr><td><strong>Copper IUD</strong></td><td>Copper ions are directly TOXIC to sperm — reduces motility and viability; may also prevent implantation</td><td>Hormone-free; very effective; lasts 5–10 years</td><td>Can cause heavier bleeding and cramps; ethical concerns if considered to prevent a fertilised egg from implanting</td></tr>
+      <tr><td><strong>Male condom</strong></td><td>Physical barrier placed over erect penis before sex; traps semen and prevents sperm from entering the vagina/reaching the egg</td><td><strong>ONLY method that also prevents STIs</strong>; free at clinics; no hormones; easily available</td><td>Can burst or slip; must be applied correctly before any contact; reduced sensation</td></tr>
+      <tr><td><strong>Female condom</strong></td><td>Inserted inside the vagina before sex; lines vaginal walls and covers cervix; prevents sperm entering the uterus</td><td>Woman controls contraception; some STI protection; can insert before sex begins</td><td>Can become dislodged; more expensive than male condom</td></tr>
+      <tr><td><strong>Diaphragm</strong></td><td>Dome-shaped rubber barrier inserted to cover the cervix; mechanically prevents sperm reaching the uterus. IEB 2014: "fitted inside female to cover cervix; prevents sperm travelling up through cervix"</td><td>No hormones; can insert before sex; reusable</td><td>Must be correctly fitted by a doctor; less reliable alone (use with spermicide); must be left in for hours after sex</td></tr>
+      <tr><td><strong>Vasectomy</strong></td><td>Vas deferens cut and tied → sperm cannot leave testes → ejaculate contains zero sperm (fluids still present)</td><td>Permanent; very effective; no hormones; no daily effort</td><td>Considered permanent (reversal is difficult and unreliable); requires surgery under local anaesthetic; does NOT affect testosterone production (IEB trap)</td></tr>
+      <tr><td><strong>Tubal ligation</strong></td><td>Fallopian tubes cut, tied, or blocked → egg cannot travel to uterus; sperm cannot reach egg</td><td>Permanent; very effective</td><td>Surgical procedure under general anaesthetic; irreversible; no STI protection</td></tr>
+    </tbody></table>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>IEB 2013 MCQ:</strong> "The hormone injection containing progesterone works effectively as a contraceptive because it:" → <strong>A: stops the development of egg cells and ovulation</strong>. NOT because it obstructs sperm movement (that would be condom/IUD). The primary mechanism is PREVENTING OVULATION by suppressing LH.</div></div>
+    <div class="callout memo"><div class="ico">📋</div><div><strong>IEB 2020 — Mirena mechanism (3 marks):</strong> "The Mirena releases progesterone / progesterone decreases/inhibits LH and FSH secretion / therefore ovulation does not occur / no ovum is released." You also get a mark for: "thickens cervical mucus to prevent sperm entering the uterus."</div></div>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: MENSTRUAL CYCLE ═══════════════ -->
+<div id="page-menstrual" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:var(--repro-l);color:var(--repro);">📅</div>
+    <div><h2 class="tcr">The Menstrual Cycle — Complete Guide</h2><p>Day-by-day · All 4 hormones · Ovarian cycle events · Endometrium · PCOS · STIs</p></div>
+  </div>
+  <div class="callout exam"><div class="ico">📌</div><div><strong>Highest-value topic on the whole paper.</strong> The IEB has tested: (1) draw/complete menstrual cycle graphs showing all 4 hormones; (2) describe each phase; (3) name hormones and what they do at each stage; (4) relate events in ovary to hormones; (5) link to contraception; (6) explain PCOS. It appears in EVERY past paper in some form.</div></div>
+  <div class="sh repro">📊 1. The 28-Day Menstrual Cycle — Every Phase Explained</div>
+  <div class="card repro-l"><h3 class="tcr">Phase-by-phase: ovary, hormones, uterus, and WHY</h3>
+    <table class="trp"><thead><tr><th>Phase</th><th>Days</th><th>What happens in the OVARY</th><th>HORMONE levels</th><th>What happens in UTERUS/Endometrium</th><th>Why it happens</th></tr></thead>
+    <tbody>
+      <tr style="background:#fff1f2;"><td><strong>Menstruation</strong></td><td>1–5</td><td>Old corpus luteum has fully degenerated → corpus albicans. A new crop of follicles begins developing under rising FSH.</td><td>Oestrogen LOW. Progesterone LOW (corpus luteum gone → no progesterone support). FSH beginning to rise.</td><td>Endometrium loses blood supply → contracts → breaks down and is shed: blood + endometrial tissue + cervical mucus. Flow lasts 3–7 days. Day 1 = first day of bleeding = Day 1 of cycle.</td><td>Progesterone drop removes support from endometrium → arteries in endometrium constrict → tissue dies → shed. This is why the pill (high progesterone) prevents menstruation.</td></tr>
+      <tr style="background:#fef9c3;"><td><strong>Follicular / Proliferative phase</strong></td><td>6–13</td><td>FSH stimulates several follicles but ONE becomes dominant — the Graafian follicle. It grows and fills with fluid. Granulosa cells of the follicle secrete increasingly large amounts of OESTROGEN.</td><td>FSH rising → stimulates follicle. OESTROGEN rising sharply (produced by Graafian follicle). LH low. Progesterone low.</td><td>Oestrogen stimulates endometrium to proliferate: new blood vessels (spiral arteries) and glands grow → lining rebuilds and thickens. By day 12 the endometrium is ~4–10 mm thick.</td><td>Rising oestrogen signals "a follicle is maturing — start preparing the uterus for a potential pregnancy." Oestrogen is the "builder" hormone.</td></tr>
+      <tr style="background:#f0fdf4;"><td><strong>Ovulation</strong></td><td>~Day 14</td><td>High oestrogen (positive feedback for the ONLY time in the cycle) triggers a sharp, massive <strong>LH SURGE</strong> from the pituitary. This surge causes the Graafian follicle wall to rupture → secondary oocyte is expelled into the oviduct. This is OVULATION.</td><td>LH PEAKS (sharp spike on ~day 14). FSH also peaks slightly (dual peak). Oestrogen peaks just before then drops slightly after ovulation. Progesterone still low.</td><td>Endometrium is thick. Cervical mucus becomes thin, watery, and "stretchy" (spinnbarkeit) — facilitates sperm movement through cervix. This is the fertile window (~days 10–18).</td><td>High oestrogen acts on the pituitary in a POSITIVE feedback loop (unusual — most feedback is negative). This positive feedback is required to generate the LH surge that triggers the physical rupture of the follicle.</td></tr>
+      <tr style="background:#ede9fe;"><td><strong>Luteal / Secretory phase</strong></td><td>15–28</td><td>Ruptured Graafian follicle reorganises into the <strong>CORPUS LUTEUM</strong> (yellow body). Corpus luteum secretes large amounts of PROGESTERONE and some oestrogen. If no fertilisation: corpus luteum degenerates at ~day 26 → progesterone plummets → cycle resets.</td><td>PROGESTERONE HIGH (peaks ~day 21) — this is the dominant hormone now. Oestrogen moderate. LH and FSH LOW (suppressed by negative feedback from progesterone and oestrogen).</td><td>Progesterone causes endometrium to enter secretory phase: glands enlarge and secrete glycogen; blood vessels coil further; lining becomes thick, spongy, and nutritious — ideal for implantation. If no implantation: corpus luteum degenerates → progesterone drops → endometrium breaks down → Day 1 begins again.</td><td>Progesterone = the "maintenance" hormone. It holds the endometrium in place while waiting for a potential embryo to implant. When progesterone drops (no pregnancy), the endometrium collapses. All hormonal contraceptives mimic this by keeping progesterone artificially high.</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Pregnancy (if fertilisation occurs)</strong></td><td>Day 21+</td><td>Embryo implants ~day 21. Trophoblast cells immediately produce HCG. HCG acts like LH → maintains the corpus luteum → prevents its degeneration. Corpus luteum continues producing progesterone. Placenta takes over at ~12 weeks.</td><td>HCG level rises steeply (PREGNANCY TEST detects this). Progesterone remains HIGH throughout. FSH and LH are suppressed → no new follicle develops → no ovulation → NO menstruation.</td><td>Endometrium remains intact and thick (progesterone maintains it). Embryo implants and develops. Menstruation does NOT occur for the entire pregnancy.</td><td>IEB 2020: "How does pregnancy change hormone X (progesterone)?" → "Progesterone level remains HIGH because HCG from chorionic villi maintains corpus luteum which continues producing progesterone."</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh repro">🔄 2. Correct Sequence of Hormonal Events — MCQ Standard</div>
+  <div class="card repro-l"><h3 class="tcr">The exact sequence the IEB asks you to order</h3>
+    <div class="flow repro">
+      <div class="fb">Step 1: <strong>FSH</strong> secreted by anterior pituitary → stimulates follicle development (days 1–13)</div><div class="fa">↓</div>
+      <div class="fb">Step 2: Graafian follicle secretes <strong>OESTROGEN</strong> → oestrogen level rises sharply</div><div class="fa">↓</div>
+      <div class="fb">Step 3: High oestrogen → positive feedback → <strong>LH SURGE</strong> from pituitary (~day 14)</div><div class="fa">↓</div>
+      <div class="fb">Step 4: LH surge causes follicle rupture → <strong>OVULATION</strong> (egg released)</div><div class="fa">↓</div>
+      <div class="fb">Step 5: Corpus luteum forms from ruptured follicle → secretes <strong>PROGESTERONE</strong></div><div class="fa">↓</div>
+      <div class="fb hi">Step 6: High progesterone → NEGATIVE FEEDBACK → FSH + LH suppressed → no new follicle → system holds waiting for implantation or menstruation</div>
+    </div>
+    <div class="callout exam"><div class="ico">📌</div><div><strong>IEB 2023 MCQ:</strong> "Give the correct order: FSH secreted (2) → LH peaks (3) → Ovulation (1) → Progesterone secretion increases (4)" → Answer: <strong>B: 2 → 3 → 1 → 4</strong>. This sequence question appears almost every year in some form — memorise it.</div></div>
+  </div>
+  <div class="sh repro">⚠️ 3. PCOS — Polycystic Ovary Syndrome (IEB 2022 — 14 marks)</div>
+  <div class="card repro-l"><h3 class="tcr">What PCOS is, how it differs from a normal cycle, and why it causes infertility</h3>
+    <p><strong>PCOS</strong> = a hormonal disorder in which the ovaries produce too many male hormones (androgens). This imbalance causes numerous small cysts (fluid-filled sacs) to form in the ovaries and disrupts the normal menstrual cycle. It affects <strong>1 in 10 women of childbearing age (10%)</strong>.</p>
+    <h4>Symptoms of PCOS (IEB 2022 — list any TWO for 2 marks):</h4>
+    <ul>
+      <li>Missed or irregular menstrual periods (may be painful)</li>
+      <li>Infertility (no ovulation occurs)</li>
+      <li>Acne and increased body/facial hair (excess androgens cause this)</li>
+      <li>Weight gain</li>
+      <li>Depression and mood swings</li>
+    </ul>
+    <h4>PCOS vs Normal cycle — comparison table (IEB 2022 — 6 marks for 3 differences):</h4>
+    <table class="trp"><thead><tr><th>Feature compared</th><th>Normal menstrual cycle</th><th>PCOS cycle</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ovulation</strong></td><td>Ovulation occurs normally on ~day 14; egg is released from ruptured Graafian follicle</td><td>NO ovulation; follicles develop but become cysts instead of releasing eggs; no egg released</td></tr>
+      <tr><td><strong>LH level</strong></td><td>LH fluctuates: low in follicular phase, then sharp peak (~10 µg/L peak) on day 14 to trigger ovulation, then decreases</td><td>LH remains consistently HIGH throughout cycle (avg ~15 µg/L); does NOT fluctuate; no LH surge</td></tr>
+      <tr><td><strong>FSH level</strong></td><td>FSH fluctuates: rises in follicular phase, peaks near day 14 (>10 µg/L), then decreases</td><td>FSH remains consistently LOW (&lt;5 µg/L); does not fluctuate; consistently lower than LH</td></tr>
+      <tr><td><strong>Menstruation</strong></td><td>Regular menstruation every ~28 days</td><td>Missed or irregular menstruation (because endometrium is not cycling normally)</td></tr>
+      <tr><td><strong>Follicle development</strong></td><td>One dominant Graafian follicle develops and ruptures normally</td><td>Multiple follicles develop but become cysts (membranous sacs filled with fluid) instead of maturing and rupturing</td></tr>
+    </tbody></table>
+    <h4>Why women with PCOS are infertile (IEB 2022 — 3 marks):</h4>
+    <ul>
+      <li>LH levels remain consistently high → there is NO LH surge/peak → the Graafian follicle is never triggered to rupture</li>
+      <li>FSH levels remain very low → follicle development is not properly stimulated</li>
+      <li>Without the LH surge, no ovulation occurs → no egg is released → fertilisation cannot happen → INFERTILITY</li>
+    </ul>
+    <h4>Treatment (IEB 2022):</h4>
+    <p>Oral contraceptive pill or hormonal patch → "decreases LH and FSH secretion to normalise the LH/FSH ratio." This regularises the cycle and reduces androgen production. Weight loss also improves symptoms. For fertility: clomiphene citrate (induces ovulation); IVF.</p>
+    <h4>Social/cultural impact of PCOS (IEB 2022 — any 2 for 2 marks):</h4>
+    <ul>
+      <li>Painful periods may cause absenteeism from school/work</li>
+      <li>Cultural stigma around infertility / inability to conceive (especially in cultures where women are expected to have children)</li>
+      <li>Financial cost of treatment / assisted reproductive technology (IVF)</li>
+      <li>Emotional difficulties — mood swings/depression from hormonal imbalance</li>
+    </ul>
+  </div>
+  <div class="sh repro">🦠 4. Sexually Transmitted Infections (STIs)</div>
+  <div class="card repro-l"><h3 class="tcr">IEB 2013 True/False section — know these facts</h3>
+    <table class="trp"><thead><tr><th>STI</th><th>Cause</th><th>Transmission</th><th>Treatment</th><th>Key IEB fact / trap</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Syphilis</strong></td><td>Bacterium: Treponema pallidum</td><td>Body fluids during close sexual contact</td><td>Penicillin (effective in early stages)</td><td>IEB 2013: "Syphilis is transmitted by body fluids" = <strong>TRUE ✓</strong></td></tr>
+      <tr><td><strong>Gonorrhoea</strong></td><td>Bacterium: Neisseria gonorrhoeae</td><td>Sexual fluids during intercourse</td><td>In South Africa, gonorrhoea does NOT respond to penicillin → treated with <strong>other antibiotics / tetracycline</strong></td><td>IEB 2013: "Gonorrhoea can be cured with penicillin" = <strong>FALSE ✗</strong> → correction: replace "penicillin" with "other antibiotics / tetracycline"</td></tr>
+      <tr><td><strong>HIV/AIDS</strong></td><td>Virus: HIV (Human Immunodeficiency Virus)</td><td>Blood, sexual fluids, breast milk</td><td>Antiretrovirals (ARVs) — control viral load; cannot cure</td><td>Condoms are the single best prevention; destroys T-helper lymphocytes → immune failure</td></tr>
+      <tr><td><strong>Herpes (HSV-2)</strong></td><td>Virus: Herpes Simplex type 2</td><td>Skin-to-skin sexual contact (also without visible sores)</td><td>Antiviral drugs reduce frequency/severity (no cure)</td><td>Condoms reduce but cannot fully prevent (skin contact outside condom area)</td></tr>
+      <tr><td><strong>Chlamydia</strong></td><td>Bacterium: Chlamydia trachomatis</td><td>Sexual fluids</td><td>Antibiotics (doxycycline/azithromycin)</td><td>Often completely asymptomatic → can spread unaware; if untreated → scars oviducts → infertility</td></tr>
+    </tbody></table>
+    <div class="callout tip"><div class="ico">💡</div><div><strong>STI prevention hierarchy (most to least effective):</strong> (1) Abstinence; (2) Mutual monogamy after testing; (3) Correct and consistent condom use (only method that both prevents pregnancy AND STIs); (4) Regular testing and early treatment.</div></div>
+    <div class="callout tip"><div class="ico">💡</div><div><strong>IEB 2013 — "The greatest number of new STD cases was between 1991 and 1997" → Check the data:</strong> 1991–1997: increase = 202 970 − 188 650 = 14 320. 1997–2001: increase = 46 475. 2001–2009: increase = 18 105. Therefore the greatest increase was 1997–2001 → statement is FALSE. Correction: replace "1991 and 1997" with "1997 and 2001".</div></div>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: DISORDERS ═══════════════ -->
+<div id="page-disorders" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#fee2e2;color:#dc2626;">⚠️</div>
+    <div><h2>Endocrine Disorders — Complete Reference</h2><p>Thyroid · Pituitary · Pancreas · Adrenal · Context and mechanisms</p></div>
+  </div>
+  <div class="callout exam"><div class="ico">📌</div><div><strong>Disorders are tested EVERY year</strong> — usually as a multi-mark question asking for 2 symptoms each of 2–3 named disorders (4–6 marks), OR as MCQ/True/False. Know the cause, symptoms, which gland, hyper vs hypo, and context for each.</div></div>
+  <div class="sh">🦋 Thyroid Disorders</div>
+  <div class="card"><h3>Complete Thyroid Disorder Table <span class="qtag trep">4–6 marks every year</span></h3>
+    <table><thead><tr><th>Disorder</th><th>Cause</th><th>Who / when</th><th>Symptoms (know 3–4 each)</th><th>Treatment</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9c3;"><td><strong>Cretinism</strong></td><td>HYPOSECRETION of thyroxin in infants/young children — insufficient thyroxin during critical developmental period</td><td>Infants and young children (usually detected at or shortly after birth)</td><td>• Short stature (reduced bone growth)<br>• Thick skin and coarse features<br>• Slow mental/intellectual development (brain development requires thyroxin)<br>• Delayed puberty / immature sexual development<br>• Protruding tongue<br>• Low energy, sluggishness</td><td>Thyroxin replacement tablets from birth; iodine supplementation; most effective if started immediately at birth before irreversible brain damage occurs</td></tr>
+      <tr style="background:#e0f2fe;"><td><strong>Myxoedema</strong> (adult hypothyroidism)</td><td>HYPOSECRETION of thyroxin in adults — often autoimmune destruction of thyroid tissue; iodine deficiency; after thyroid surgery/radiation</td><td>Adults, especially women over 40</td><td>• Skin thickens on hands, feet, face (mucus accumulates in tissues = "myxoedema")<br>• Tongue thickens (difficulty swallowing/speaking)<br>• Slow mental and physical activities (low metabolic rate → everything slows)<br>• Weight gain (fewer calories burned)<br>• Low body temperature / intolerance to cold<br>• Constipation<br>• Dry skin, hair loss, brittle nails<br>• Fatigue and depression<br>• Low heart rate and blood pressure</td><td>Daily oral thyroxin (levothyroxine) tablets; dose adjusted by blood tests; usually lifelong treatment</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Grave's Disease</strong> (adult hyperthyroidism)</td><td>HYPERSECRETION of thyroxin — autoimmune: antibodies mimic TSH and constantly stimulate thyroid to overproduce thyroxin; most common cause of hyperthyroidism</td><td>Adults, 3× more common in women; genetic component</td><td>• Weight loss despite normal or increased appetite (very high metabolic rate burns calories rapidly)<br>• Hyperactivity, nervousness, trembling hands<br>• Insomnia (too much energy, cannot sleep)<br>• Protruding eyeballs / exophthalmos / proptosis (autoimmune inflammation behind eyes)<br>• Rapid heartbeat (tachycardia) and high blood pressure<br>• Visible enlarged thyroid (goitre)<br>• Heat intolerance / excessive sweating<br>• Diarrhoea (hyperactive gut)</td><td>Antithyroid drugs (block thyroxin synthesis); radioactive iodine (destroys overactive cells); surgery to remove part of thyroid gland</td></tr>
+      <tr style="background:#f0fdf4;"><td><strong>Goitre</strong></td><td>Iodine DEFICIENCY → thyroid cannot synthesise thyroxin (iodine is a raw material) → low thyroxin → TSH levels keep RISING (no negative feedback) → thyroid enlarges trying to absorb more iodine from the blood</td><td>Any age; common in inland areas with iodine-poor soil and water (historically common in mountainous regions)</td><td>• Visible swelling in the front of the neck (enlarged thyroid gland)<br>• Difficulty swallowing or breathing if severely enlarged<br>• Hoarse voice (larynx compressed)<br>• Symptoms of hypothyroidism if severe</td><td>Iodised salt (preventative); iodine supplementation; thyroxin replacement if hypothyroid develops; surgery if goitre is very large</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">🧠 Pituitary Disorders (Growth Hormone)</div>
+  <div class="card"><h3>Growth Hormone Disorders — context and distinction</h3>
+    <p>Growth Hormone (GH) stimulates bone and tissue growth. Its effect depends entirely on WHETHER the person's growth plates (epiphyseal plates in long bones) are still open. In children the growth plates are open → bones can grow LONGER. In adults they have fused → only cartilaginous bones (face, hands, feet, jaw) can still enlarge.</p>
+    <table><thead><tr><th>Disorder</th><th>Cause</th><th>When</th><th>Symptoms</th><th>Treatment</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9c3;"><td><strong>Gigantism</strong></td><td>HYPERSECRETION of GH during CHILDHOOD (growth plates still open → entire long bones grow excessively)</td><td>Before puberty ends (growth plates close)</td><td>Abnormally tall stature (can exceed 2.4 m); proportionate but excessive bone growth; possible delayed puberty; joint pain from excessive skeletal load; organ overgrowth</td><td>Surgery/radiation to remove pituitary tumour; somatostatin analogues to block GH release</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Acromegaly</strong></td><td>HYPERSECRETION of GH in ADULTHOOD (growth plates have FUSED → long bones cannot lengthen; only cartilaginous/membranous bones still respond)</td><td>After puberty (adulthood); long bones cannot grow longer</td><td>Enlargement of bones of FACE (brow, jaw, cheekbones become prominent), HANDS, and FEET; enlarged vertebrae; tongue and soft tissues enlarge; joint pain; enlarged organs (heart, liver); gap develops between front teeth. IEB 2020: "oversecretion in adults causes enlarged bones of face/feet/hands" (acromegaly)</td><td>Surgical removal of pituitary tumour; medical management (somatostatin analogues)</td></tr>
+      <tr style="background:#e0f2fe;"><td><strong>Pituitary Dwarfism</strong></td><td>HYPOSECRETION of GH during CHILDHOOD → insufficient stimulus for bone growth</td><td>Childhood</td><td>Short stature (proportionate body — unlike achondroplastic dwarfism which involves bone deformity); normal intelligence; delayed puberty; otherwise normal body proportions</td><td>GH injections (recombinant human GH) — highly effective if started early enough</td></tr>
+    </tbody></table>
+    <div class="callout trick"><div class="ico">⚠️</div><div><strong>Gigantism vs Acromegaly — the key distinction:</strong> Both = excess GH. Gigantism = excess GH in CHILD (open growth plates → very tall). Acromegaly = excess GH in ADULT (closed growth plates → enlarged face/hands/feet). This distinction is a standard MCQ and True/False trap.</div></div>
+  </div>
+  <div class="sh">🍬 Pancreatic Disorders — Diabetes</div>
+  <div class="card"><h3>Type 1 vs Type 2 Diabetes Mellitus</h3>
+    <p>Diabetes mellitus = a condition where blood glucose cannot be regulated normally, causing chronically HIGH blood glucose (hyperglycaemia). Left untreated: damages blood vessels, kidneys, eyes (diabetic retinopathy), nerves (neuropathy), and can be fatal.</p>
+    <table><thead><tr><th>Feature</th><th>Type 1 Diabetes</th><th>Type 2 Diabetes</th></tr></thead>
+    <tbody>
+      <tr><td>Cause</td><td>Autoimmune: immune system mistakenly destroys β-cells of Islets of Langerhans → NO insulin produced at all</td><td>Insulin resistance: body cells stop responding to insulin (receptor sensitivity decreases); often linked to obesity, poor diet, physical inactivity</td></tr>
+      <tr><td>Onset</td><td>Usually childhood/young adulthood ("juvenile onset diabetes") — can appear suddenly</td><td>Usually adulthood (but increasingly diagnosed in younger overweight individuals)</td></tr>
+      <tr><td>Insulin production</td><td>None (β-cells destroyed)</td><td>Normal or even high initially; decreases as β-cells exhaust themselves; cells don't respond to it</td></tr>
+      <tr><td>Symptoms</td><td>High blood glucose; glucose in urine; excessive thirst (polydipsia); excessive urination (polyuria); weight loss despite eating; fatigue; blurred vision; slow healing wounds</td><td>Same as Type 1 but typically slower, milder onset; often discovered on routine blood test</td></tr>
+      <tr><td>Treatment</td><td>Insulin injections (multiple daily or insulin pump) + strict dietary management + regular blood glucose monitoring — cannot be managed without insulin</td><td>Lifestyle changes (diet, exercise, weight loss) first; oral medications (metformin); insulin injections in advanced stages</td></tr>
+      <tr><td>Prevention</td><td>Cannot be prevented (autoimmune trigger)</td><td>Healthy diet (low sugar/refined carbohydrates); regular physical activity; maintaining healthy body weight; avoiding obesity</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">💊 Adrenal Disorders</div>
+  <div class="card"><h3>Addison's Disease vs Cushing's Syndrome</h3>
+    <table><thead><tr><th>Disorder</th><th>Cause</th><th>Hormone involved</th><th>Key symptoms</th></tr></thead>
+    <tbody>
+      <tr style="background:#fef9c3;"><td><strong>Addison's Disease</strong></td><td>HYPOSECRETION of cortisol and aldosterone — adrenal cortex failure (often autoimmune destruction of cortex)</td><td>Cortisol (low) + Aldosterone (low)</td><td>Extreme fatigue; weight loss; low blood pressure; hyperpigmentation (skin darkens, especially in skin folds — ACTH is high trying to stimulate adrenals and ACTH is related to MSH melanin pathway); salt craving; hypoglycaemia; nausea</td></tr>
+      <tr style="background:#fce7f3;"><td><strong>Cushing's Syndrome</strong></td><td>HYPERSECRETION of cortisol — adrenal cortex tumour OR prolonged high-dose corticosteroid medication</td><td>Cortisol (excess)</td><td>"Moon face" (rounded puffy face); "buffalo hump" (fat deposit on upper back); weight gain especially around abdomen; high blood pressure; high blood glucose (cortisol promotes gluconeogenesis); muscle weakness; purple stretch marks; osteoporosis; increased susceptibility to infections</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">📊 Quick Reference: All Disorders at a Glance</div>
+  <div class="card"><table>
+    <thead><tr><th>Gland</th><th>HYPO-secretion disorders</th><th>HYPER-secretion disorders</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Thyroid</strong></td><td>Cretinism (child); Myxoedema (adult); Goitre (iodine deficiency — TSH rises, thyroid enlarges)</td><td>Grave's Disease (autoimmune hyperthyroidism)</td></tr>
+      <tr><td><strong>Pituitary — GH</strong></td><td>Pituitary Dwarfism (child — short stature)</td><td>Gigantism (child — very tall); Acromegaly (adult — enlarged face/hands)</td></tr>
+      <tr><td><strong>Pancreas — Insulin</strong></td><td>Diabetes Type 1 (no insulin); Diabetes Type 2 (insulin resistance)</td><td>Hypoglycaemia (if too much insulin given — blood sugar crashes)</td></tr>
+      <tr><td><strong>Adrenal cortex</strong></td><td>Addison's Disease (low cortisol/aldosterone)</td><td>Cushing's Syndrome (excess cortisol)</td></tr>
+      <tr><td><strong>Parathyroid</strong></td><td>Hypoparathyroidism → tetany (muscle cramps from low blood calcium)</td><td>Hyperparathyroidism → hypercalcaemia (kidney stones, bone loss, fatigue)</td></tr>
+    </tbody></table>
+  </div>
+</div></div>
+<!-- ═══════════════ PAGE: PRACTICE Q&A ═══════════════ -->
+<div id="page-practice" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#e0f2fe;color:#0369a1;">✏️</div>
+    <div><h2>Practice Questions &amp; Model Answers</h2><p>All sourced from IEB past papers and marking guidelines · Click any question to reveal the full model answer</p></div>
+  </div>
+  <div class="callout exam"><div class="ico">📌</div><div>These are real IEB questions with real memo answers. Cover the answer, attempt it yourself, then reveal. The number in brackets is the mark value — write that many distinct, correct points.</div></div>
+
+  <div class="sh">🌸 Flowering Plants</div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">1. Explain clearly the difference between pollination and fertilisation in flowering plants. <span class="mk">(4)</span></div>
+  <div class="qa-a"><strong>IEB 2014 model answer:</strong><ul>
+    <li>Pollination = the transfer of pollen from the <strong>anther</strong> to the <strong>stigma</strong> (of the same or different flower)</li>
+    <li>Fertilisation = the <strong>fusion</strong> of a male gamete (from pollen tube) with a female gamete (egg cell inside ovule)</li>
+    <li>Pollination leads to a pollen tube growing down the style to deliver the sperm nucleus to the ovule</li>
+    <li>Fertilisation occurs inside the <strong>ovule</strong> and produces a <strong>zygote</strong> which develops into the embryo</li>
+  </ul><em>Marks awarded: 2 for pollination (transfer + anther-to-stigma) + 2 for fertilisation (fusion + gametes/zygote inside ovule)</em></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">2. Why is the tomato regarded as a fruit? (IEB 2020) <span class="mk">(2)</span></div>
+  <div class="qa-a"><strong>Any 2 of:</strong><ul>
+    <li>It <strong>contains seeds</strong></li>
+    <li>It developed from an <strong>ovary</strong> (ovary wall = pericarp)</li>
+    <li>Its seeds developed from <strong>ovules</strong></li>
+    <li>It is a product of <strong>sexual reproduction</strong></li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">3. Explain why a farmer growing commercial peaches would choose asexual reproduction over seed production. Give ONE advantage and ONE disadvantage of this choice. (IEB 2014) <span class="mk">(4)</span></div>
+  <div class="qa-a"><strong>Advantage (2 marks):</strong> "Cost-effective and time-saving — grafted/cloned saplings grow faster than seedlings, reaching productivity earlier. Product (peach) quality is consistent for food markets because all offspring are genetically identical."<br><br><strong>Disadvantage (2 marks):</strong> "Reduction of genetic variation — can result in huge crop loss from disease/pests because all plants are equally susceptible (no variation to confer resistance). Relies on an artificial process with additional cost."</div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">4. What is the importance of seed banks for ensuring food security? (IEB 2020) <span class="mk">(2)</span></div>
+  <div class="qa-a"><strong>Any 2 of:</strong><ul>
+    <li>Important for storing seeds to re-establish crop plants in case of a natural disaster / drought / crop failure</li>
+    <li>To re-introduce <strong>genetic variation / biodiversity</strong> into cultivated plants that have become uniform through inbreeding</li>
+    <li>To store seeds from wild plant relatives for the future</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">5. Explain the role auxins play in asexual reproduction to produce many polyploid plants. (IEB 2020) <span class="mk">(3)</span></div>
+  <div class="qa-a"><ul>
+    <li>Asexual reproduction involves causing plant <strong>somatic cells</strong> to produce new plant organs / new plants</li>
+    <li>Auxins cause cells to undergo <strong>mitosis</strong> (cell division)</li>
+    <li>Auxins cause <strong>differentiation</strong> — cells develop into root, stem, and leaf cells / produce a new plant</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">6. Suggest why self-pollination may easily occur in tomatoes. (IEB 2020) <span class="mk">(2)</span></div>
+  <div class="qa-a"><ul>
+    <li>The stamens wrap around / form a tube around the stigma OR the stigma is shorter than the stamens / positioned below anthers</li>
+    <li>Making it easy for pollen to fall/reach the stigma which is surrounded by / below the anthers</li>
+  </ul></div></div>
+
+  <div class="sh">🔬 Endocrine System</div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">7. What is a hormone? Give a complete definition. (IEB 2014) <span class="mk">(2)</span></div>
+  <div class="qa-a"><ul>
+    <li>A (protein/steroid) chemical messenger / metabolic regulator</li>
+    <li>Produced in one part of the body and <strong>controls/regulates the activity of another</strong> (target) organ; transported in the bloodstream</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">8. Describe the function of insulin in the human body. (IEB 2014) <span class="mk">(2)</span></div>
+  <div class="qa-a"><strong>Any 2 connected points:</strong><ul>
+    <li>Lowers blood glucose levels</li>
+    <li>Makes cell membranes more permeable to glucose (allows glucose to enter cells)</li>
+    <li>Increases the rate at which glucose is converted to glycogen in liver and muscle cells (glycogenesis)</li>
+    <li>Stimulates cellular respiration (glucose burned for energy)</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">9. Name TWO symptoms each of Cretinism and Myxoedema, and give the cause of each disorder. (IEB 2013) <span class="mk">(6)</span></div>
+  <div class="qa-a"><p><strong>Cretinism</strong> — Cause: hyposecretion of thyroxin in infants/children</p><ul><li>Short/stunted stature</li><li>Slow mental development / intellectual disability</li><li>Thick skin / coarse facial features</li><li>Delayed puberty / immature sexual development</li></ul>
+  <p><strong>Myxoedema</strong> — Cause: hyposecretion of thyroxin in adults</p><ul><li>Thickening of skin on hands/feet/face</li><li>Tongue thickens; slow physical and mental activities</li><li>Weight gain; low body temperature; constipation; fatigue; low heart rate</li></ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">10. Draw a flow diagram to show negative feedback in the regulation of sperm production. Begin with: "Testosterone levels are low." (IEB 2019) <span class="mk">(6)</span></div>
+  <div class="qa-a"><ol>
+    <li>Testosterone levels are low → detected by hypothalamus</li>
+    <li>Hypothalamus releases GnRH → stimulates anterior pituitary →</li>
+    <li>Anterior pituitary releases LH (ICSH) and FSH →</li>
+    <li>LH stimulates Leydig cells in testes to secrete more testosterone →</li>
+    <li>FSH + testosterone stimulate spermatogenesis / sperm production →</li>
+    <li>High testosterone feeds back to hypothalamus and pituitary → LH and FSH secretion decreases → testosterone returns to normal set point (NEGATIVE FEEDBACK)</li>
+  </ol><em>Marking: 4+ correct sequential points with directional arrows.</em></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">11. What is the relationship between glucagon and blood sugar levels? (IEB 2014) <span class="mk">(2)</span></div>
+  <div class="qa-a"><ul>
+    <li>As blood sugar (glucose) level decreases, glucagon level <strong>increases</strong></li>
+    <li>As glucagon increases, blood sugar <strong>increases</strong> (glucagon stimulates glycogenolysis in liver)</li>
+    <li>As blood sugar rises back to normal, glucagon secretion decreases — negative feedback</li>
+  </ul></div></div>
+
+  <div class="sh">🧬 Human Reproduction</div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">12. Define semen. (IEB 2014) <span class="mk">(2)</span></div>
+  <div class="qa-a"><ul>
+    <li>A fluid containing <strong>sperm cells</strong> AND <strong>secretions from the accessory glands</strong> (seminal vesicles, prostate, Cowper's gland)</li>
+    <li>The fluid is <strong>alkaline</strong> (to neutralise vaginal acidity)</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">13. Explain how a pregnancy will change the level of progesterone from what is shown in a normal menstrual cycle graph, and give the reason for this change. (IEB 2020) <span class="mk">(3)</span></div>
+  <div class="qa-a"><ul>
+    <li>Progesterone level will remain <strong>high / will not decrease</strong> after day 28</li>
+    <li>Because: the embryo implants into the endometrium → chorionic villi produce <strong>HCG</strong></li>
+    <li>HCG maintains the corpus luteum → corpus luteum continues producing <strong>progesterone</strong> → endometrium remains intact → no menstruation → pregnancy continues</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">14. By referring to FSH and LH levels, explain why women with PCOS may be infertile. (IEB 2022) <span class="mk">(3)</span></div>
+  <div class="qa-a"><ul>
+    <li>LH levels remain <strong>consistently high</strong> / there is no LH surge or peak in PCOS</li>
+    <li>FSH levels remain <strong>very low</strong> in PCOS → follicle development is not properly stimulated</li>
+    <li>Without a normal FSH stimulus and LH surge, no ovulation occurs → no egg released → <strong>fertilisation cannot happen → infertility</strong></li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">15. Give TWO differences between the menstrual cycles of women with PCOS compared to regular cycles. (IEB 2022) <span class="mk">(4)</span></div>
+  <div class="qa-a"><strong>Any 2 differences (each stated as a comparison, 2 marks per difference):</strong><ul>
+    <li>PCOS: no ovulation / follicles form cysts. Normal: ovulation occurs (~day 14, egg released)</li>
+    <li>PCOS: LH levels remain high (avg ~15 µg/L) / do not fluctuate. Normal: LH peaks on day 14 (~10 µg/L) then drops</li>
+    <li>PCOS: FSH remains very low (&lt;5 µg/L). Normal: FSH peaks near day 14 (&gt;10 µg/L)</li>
+    <li>PCOS: missed or irregular menstruation. Normal: regular menstruation every ~28 days</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">16. Give TWO differences between spermatogenesis and oogenesis. <span class="mk">(4)</span></div>
+  <div class="qa-a"><strong>Any 2 differences stated as comparisons:</strong><ul>
+    <li><strong>Products:</strong> Spermatogenesis produces 4 equal, functional sperm per primary spermatocyte. Oogenesis produces 1 functional egg + 2–3 non-functional polar bodies per primary oocyte.</li>
+    <li><strong>Continuity:</strong> Spermatogenesis is continuous from puberty throughout life. Oogenesis is a cyclic process arrested at prophase I before birth; resumes one cycle per month.</li>
+    <li><strong>Location:</strong> Spermatogenesis in seminiferous tubules of testes. Oogenesis in ovaries.</li>
+    <li><strong>Cell division equality:</strong> Spermatogenesis = equal division (all 4 spermatids same size). Oogenesis = unequal (egg gets most cytoplasm; polar bodies are tiny).</li>
+  </ul></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">17. The progesterone injection works as a contraceptive because it: A) stops development of egg cells and ovulation; B) prevents thickening of endometrium; C) obstructs sperm in the oviduct; D) stimulates sperm movement. (IEB 2013 MCQ) <span class="mk">(2)</span></div>
+  <div class="qa-a"><strong>Answer: A</strong><br>The progesterone injection suppresses LH secretion from the pituitary → no LH surge → no Graafian follicle rupture → no ovulation → egg is not released → fertilisation cannot occur. The PRIMARY mechanism is preventing ovulation. It also thickens cervical mucus (secondary effect) but the question asks for the main mechanism and "stops development of egg cells and ovulation" correctly describes the hormonal pathway.</div></div>
+
+  <div class="qa"><div class="qa-q" onclick="tog(this)">18. Name the structure at the junction of the bladder and urethra that secretes fluid contributing to semen. Is this the seminal vesicle, prostate gland, ovary, or foreskin? (IEB 2013 MCQ) <span class="mk">(1)</span></div>
+  <div class="qa-a"><strong>Answer: B — Prostate gland</strong><br>The prostate gland wraps around the urethra at its junction with the bladder. The seminal vesicles are separate pouches — they open into the vas deferens just before the urethra but do NOT surround the urethra at the bladder junction.</div></div>
+</div></div>
+<!-- ═══════════════ PAGE: TRICKS & TRAPS ═══════════════ -->
+<div id="page-tricks" class="page">
+<div class="container">
+  <div class="page-title">
+    <div class="ic" style="background:#fee2e2;color:#dc2626;">🎯</div>
+    <div><h2>Tricks, Traps &amp; Common Student Errors</h2><p>Compiled from 10+ years of IEB marking guidelines — every repeated mistake, every column match pair, every True/False trap</p></div>
+  </div>
+  <div class="sh">❌ The 20 Most Common Student Errors — With Explanations</div>
+  <div class="card trick">
+    <table><thead><tr><th>What students write</th><th>What's actually correct</th><th>Why it happens</th></tr></thead>
+    <tbody>
+      <tr><td>Fertilisation occurs at the stigma</td><td>Pollination occurs at the stigma. Fertilisation occurs inside the <strong>ovule</strong> when the sperm nucleus fuses with the egg cell.</td><td>Confuse the first event (pollen landing) with the outcome (gamete fusion)</td></tr>
+      <tr><td>Corpus luteum secretes FSH</td><td>The corpus luteum secretes <strong>progesterone</strong> (and some oestrogen). FSH is made by the <strong>anterior pituitary</strong>.</td><td>The corpus luteum is in the ovary; students confuse what it makes vs what stimulates it</td></tr>
+      <tr><td>Ovulation = rupture of corpus luteum</td><td>Ovulation = rupture of the <strong>Graafian follicle</strong>. The corpus luteum FORMS from the ruptured follicle AFTER ovulation.</td><td>Don't know the exact sequence — corpus luteum is a post-ovulation structure</td></tr>
+      <tr><td>Glucagon lowers blood sugar</td><td>Glucagon <strong>RAISES</strong> blood sugar (glycogen → glucose). <strong>Insulin LOWERS</strong> blood sugar.</td><td>Most common swap in the entire syllabus — memorise: glucagon RAISES; insulin LOWERS</td></tr>
+      <tr><td>Insulin is made in the liver</td><td>Insulin is made by <strong>β-cells of Islets of Langerhans in the pancreas</strong>. The liver stores glycogen and responds to insulin — it doesn't make it.</td><td>Liver is so dominant in glucose metabolism students think it produces insulin</td></tr>
+      <tr><td>Sperm matures in the testes</td><td>Sperm is PRODUCED in the seminiferous tubules of testes. It MATURES and is stored in the <strong>epididymis</strong>.</td><td>Both are in the same organ system; students lump them together</td></tr>
+      <tr><td>Fertilisation occurs in the uterus</td><td>Fertilisation occurs in the <strong>oviduct (Fallopian tube)</strong>. IMPLANTATION occurs in the uterus.</td><td>The most frequently confused event-location pairing in reproduction</td></tr>
+      <tr><td>Oogenesis produces 4 eggs (like spermatogenesis)</td><td>Oogenesis produces <strong>1 functional egg</strong> + 2–3 non-functional polar bodies. Only spermatogenesis gives 4 equal functional cells.</td><td>Students copy the spermatogenesis outcome onto oogenesis</td></tr>
+      <tr><td>"Pronounced deepening of voice" is a female characteristic</td><td>Pronounced voice deepening = <strong>MALE</strong> characteristic (testosterone acts on larynx). Females only have a very slight change.</td><td>IEB 2023 MCQ trap — this exact option was included in a "which are ALL female characteristics" question</td></tr>
+      <tr><td>TSH is produced by the thyroid</td><td>TSH (Thyroid-Stimulating Hormone) = produced by the <strong>anterior pituitary</strong>. TSH targets the thyroid. The thyroid produces thyroxin.</td><td>The word "thyroid" in "TSH" makes students think the thyroid makes it</td></tr>
+      <tr><td>Adrenalin is produced by the kidneys</td><td>Adrenalin is produced by the <strong>adrenal medulla</strong>. Adrenal glands sit ON TOP of each kidney. "Adrenal" = near (ad) + kidney (renal). They are separate glands.</td><td>Students hear "adrenal" and think kidney</td></tr>
+      <tr><td>Semen = sperm</td><td>Semen = sperm + secretions from seminal vesicles + prostate fluid + Cowper's gland fluid. It is alkaline. Sperm = only the male gamete cells.</td><td>Used interchangeably in everyday language</td></tr>
+      <tr><td>Acrosome contains mitochondria</td><td><strong>Midpiece</strong> contains mitochondria (for ATP/energy). <strong>Acrosome</strong> contains digestive enzymes to penetrate the egg.</td><td>Students mix up the two functional parts of the sperm head/midpiece</td></tr>
+      <tr><td>Corpus luteum forms before ovulation</td><td>Corpus luteum forms <strong>AFTER ovulation</strong> from the ruptured Graafian follicle. The Graafian follicle exists BEFORE ovulation.</td><td>Don't know the precise timeline of ovarian events</td></tr>
+      <tr><td>FSH directly causes ovulation</td><td>The <strong>LH surge</strong> directly causes ovulation (follicle rupture). FSH stimulates follicle development — it does NOT trigger ovulation.</td><td>Students know FSH is important for reproduction and assume it triggers ovulation too</td></tr>
+      <tr><td>Progesterone is highest just before ovulation</td><td>Progesterone is highest in the <strong>luteal phase (days 15–24)</strong>, well AFTER ovulation. Oestrogen peaks just before ovulation.</td><td>Don't know the timing — oestrogen peaks pre-ovulation; progesterone peaks post-ovulation</td></tr>
+      <tr><td>Vasectomy prevents testosterone production</td><td>Vasectomy only cuts the <strong>vas deferens</strong> — sperm cannot leave but testosterone production continues unchanged (Leydig cells are unaffected).</td><td>Think any reproductive surgery affects hormone production</td></tr>
+      <tr><td>The egg is released from the oviduct</td><td>The egg is released from the <strong>ovary</strong> (specifically the ruptured Graafian follicle). It then ENTERS the oviduct.</td><td>Know where the egg travels but confuse the release site</td></tr>
+      <tr><td>Style = stigma</td><td><strong>Stigma</strong> = sticky tip where pollen lands. <strong>Style</strong> = stalk holding stigma; pollen tube grows through it. Two different structures with distinct functions.</td><td>Both are female flower parts; names are unfamiliar</td></tr>
+      <tr><td>Pollen = male gamete</td><td>Pollen is a grain that CONTAINS the generative nucleus which produces the male gamete (sperm nucleus). The pollen grain itself is a structure, not the gamete.</td><td>Loose everyday language</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">🔁 Column Match Pairs That Repeat EVERY Year</div>
+  <div class="card">
+    <p style="margin-bottom:12px;">These descriptions have appeared in Q1 column matching in 8+ of the last 10 past papers. Learn both directions — you may see the description or the term.</p>
+    <table><thead><tr><th>Column A (description)</th><th>Column B (answer)</th></tr></thead>
+    <tbody>
+      <tr><td>Rupture of the Graafian follicle</td><td><strong>Ovulation</strong></td></tr>
+      <tr><td>Most common site of fertilisation</td><td><strong>Oviduct</strong></td></tr>
+      <tr><td>Hormone that remains consistently high throughout pregnancy</td><td><strong>Progesterone</strong></td></tr>
+      <tr><td>Attachment of developing embryo sinking into endometrium</td><td><strong>Implantation</strong></td></tr>
+      <tr><td>Strong membrane around the embryo</td><td><strong>Amnion</strong></td></tr>
+      <tr><td>Substance that protects and cushions the foetus from impact</td><td><strong>Amniotic fluid</strong></td></tr>
+      <tr><td>Labour initiated by contraction of muscles in this organ</td><td><strong>Uterus</strong></td></tr>
+      <tr><td>Process by which embryo grows (mitosis or meiosis?)</td><td><strong>Mitosis</strong></td></tr>
+      <tr><td>Responsible for transport of foetal waste products</td><td><strong>Umbilical cord</strong></td></tr>
+      <tr><td>Acts as a barrier against pathogens and drugs</td><td><strong>Placenta</strong></td></tr>
+      <tr><td>A disc-shaped organ that becomes endocrine ~12 weeks post-fertilisation</td><td><strong>Placenta</strong></td></tr>
+      <tr><td>Flexible structure from placenta to foetal abdomen</td><td><strong>Umbilical cord</strong></td></tr>
+      <tr><td>Stimulates development of sperm / spermatogenesis</td><td><strong>FSH</strong></td></tr>
+      <tr><td>High levels directly cause ovulation (LH surge)</td><td><strong>LH</strong></td></tr>
+      <tr><td>Stimulates production of thyroxin by thyroid</td><td><strong>TSH</strong></td></tr>
+      <tr><td>Hormone that regulates the basal metabolic rate</td><td><strong>Thyroxin</strong></td></tr>
+      <tr><td>Raises heart rate, blood pressure, and blood glucose in response to stress</td><td><strong>Adrenalin</strong></td></tr>
+      <tr><td>Regulates sleep-wake cycles / circadian rhythm</td><td><strong>Melatonin</strong> (pineal gland)</td></tr>
+      <tr><td>Endocrine glands found in the pancreas</td><td><strong>Islets of Langerhans</strong></td></tr>
+      <tr><td>Structure that supports an anther</td><td><strong>Filament</strong></td></tr>
+      <tr><td>Structure that holds the stigma in place</td><td><strong>Style</strong></td></tr>
+      <tr><td>Transfer of pollen from anther to stigma</td><td><strong>Pollination</strong></td></tr>
+      <tr><td>Developed fertilised ovule</td><td><strong>Seed</strong></td></tr>
+      <tr><td>Tissue culture produces many small plantlets</td><td><strong>Plant cloning / asexual reproduction</strong></td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">✅ True/False Traps — with Corrections</div>
+  <div class="card trick">
+    <table><thead><tr><th>Statement given</th><th>T / F</th><th>If False — correction (replace UNDERLINED word only)</th></tr></thead>
+    <tbody>
+      <tr><td>Syphilis is transmitted by body fluids.</td><td>✅ TRUE</td><td>—</td></tr>
+      <tr><td>In South Africa Gonorrhoea can be cured with <u>penicillin</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>other antibiotics / tetracycline</strong></td></tr>
+      <tr><td>Fertilisation normally occurs in the <u>uterus</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>oviduct</strong></td></tr>
+      <tr><td>The corpus luteum secretes <u>FSH</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>progesterone</strong></td></tr>
+      <tr><td>Ovulation is the rupture of the <u>corpus luteum</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>Graafian follicle</strong></td></tr>
+      <tr><td><u>Glucagon</u> converts glucose into glycogen.</td><td>❌ FALSE</td><td>Replace with: <strong>Insulin</strong> (glucagon does the reverse)</td></tr>
+      <tr><td>Endocrine glands have <u>ducts</u> for hormone transport.</td><td>❌ FALSE</td><td>Replace with: <strong>no ducts / are ductless</strong></td></tr>
+      <tr><td>TSH is produced by the <u>thyroid</u> gland.</td><td>❌ FALSE</td><td>Replace with: <strong>pituitary / anterior pituitary</strong></td></tr>
+      <tr><td>The adrenal gland is found <u>inside</u> the kidney.</td><td>❌ FALSE</td><td>Replace with: <strong>on top of / above</strong></td></tr>
+      <tr><td>Sperm matures in the <u>testes</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>epididymis</strong></td></tr>
+      <tr><td>The thyroid gland is found at the base of the <u>brain</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>front/lower neck (across the trachea, below the larynx)</strong></td></tr>
+      <tr><td><u>Oestrogen</u> is secreted by the corpus luteum.</td><td>❌ FALSE</td><td>Replace with: <strong>Progesterone</strong> (oestrogen is from Graafian follicle)</td></tr>
+      <tr><td>The acrosome of sperm contains <u>mitochondria</u>.</td><td>❌ FALSE</td><td>Replace with: <strong>enzymes</strong> (mitochondria are in the midpiece)</td></tr>
+    </tbody></table>
+  </div>
+  <div class="sh">📝 Key Definitions to Know Exactly</div>
+  <div class="card">
+    <div class="g2">
+      <div>
+        <h4 class="tcp" style="margin-bottom:8px;">🌸 Plant terms</h4>
+        <ul style="font-size:13.5px;">
+          <li><strong>Pollination:</strong> transfer of pollen from anther to stigma</li>
+          <li><strong>Fertilisation:</strong> fusion of male and female gametes to form a zygote</li>
+          <li><strong>Seed:</strong> a developed fertilised ovule; contains embryo + food store + testa</li>
+          <li><strong>Fruit:</strong> developed ovary wall (pericarp) surrounding one or more seeds</li>
+          <li><strong>Germination:</strong> resumption of growth of embryo inside a dormant seed when conditions are favourable</li>
+          <li><strong>Self-pollination:</strong> transfer of pollen from anther to stigma of the SAME flower/plant</li>
+          <li><strong>Cross-pollination:</strong> transfer of pollen to stigma of a DIFFERENT plant of the same species</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tce" style="margin-bottom:8px;">🔬 Endocrine terms</h4>
+        <ul style="font-size:13.5px;">
+          <li><strong>Hormone:</strong> chemical messenger produced in one area, transported in blood, controls target organ elsewhere</li>
+          <li><strong>Homeostasis:</strong> maintenance of stable internal environment despite external changes</li>
+          <li><strong>Negative feedback:</strong> response that reverses/reduces the original stimulus to restore set point</li>
+          <li><strong>Glycogenesis:</strong> glucose → glycogen (insulin effect; storage)</li>
+          <li><strong>Glycogenolysis:</strong> glycogen → glucose (glucagon/adrenalin effect; release)</li>
+          <li><strong>Hyperglycaemia:</strong> blood glucose too high (diabetes)</li>
+          <li><strong>Hypoglycaemia:</strong> blood glucose too low (dangerous)</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="tcr" style="margin-bottom:8px;">🧬 Reproductive terms</h4>
+        <ul style="font-size:13.5px;">
+          <li><strong>Ovulation:</strong> release of secondary oocyte from ruptured Graafian follicle</li>
+          <li><strong>Implantation:</strong> embedding of blastocyst into endometrium of uterus</li>
+          <li><strong>Semen:</strong> fluid = sperm + secretions from accessory glands (alkaline)</li>
+          <li><strong>Menstruation:</strong> shedding of endometrium when no implantation occurs</li>
+          <li><strong>Spermatogenesis:</strong> production of sperm cells in seminiferous tubules</li>
+          <li><strong>Oogenesis:</strong> production of egg cells in the ovaries</li>
+          <li><strong>HCG:</strong> human chorionic gonadotropin — from chorionic villi; maintains corpus luteum; detected by pregnancy tests</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom:8px;">🩺 Disorder shorthand</h4>
+        <ul style="font-size:13.5px;">
+          <li><strong>Cretinism:</strong> hypo-thyroxin → child → short + slow mental development</li>
+          <li><strong>Myxoedema:</strong> hypo-thyroxin → adult → thick skin + weight gain + fatigue</li>
+          <li><strong>Grave's Disease:</strong> hyper-thyroxin → adult → weight loss + exophthalmos + rapid heart rate</li>
+          <li><strong>Goitre:</strong> iodine deficiency → neck swelling</li>
+          <li><strong>Gigantism:</strong> hyper-GH → child → very tall</li>
+          <li><strong>Acromegaly:</strong> hyper-GH → adult → enlarged face/hands/feet</li>
+          <li><strong>Diabetes Type 1:</strong> no insulin (β-cells destroyed)</li>
+          <li><strong>Diabetes Type 2:</strong> insulin resistance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+<script>
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active','p-active','e-active','r-active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const btn = [...document.querySelectorAll('.nav-btn')].find(b => b.getAttribute('onclick') === "show('" + id + "')");
+  if (btn) btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function tog(el) {
+  const ans = el.nextElementSibling;
+  const open = ans.classList.toggle('show');
+  el.querySelector('.mk').textContent = open ? '▲ hide' : el.querySelector('.mk').dataset.orig || el.querySelector('.mk').textContent;
+  if (open && !el.querySelector('.mk').dataset.orig) el.querySelector('.mk').dataset.orig = el.querySelector('.mk').textContent;
+}
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════
+   ✨ ENGAGEMENT ENGINE — progress tracking, reveal animations,
+   back-to-top and confetti rewards. Layered on top; the original
+   show()/tog() functions above are untouched.
+   ════════════════════════════════════════════════════════════════ */
+(function(){
+  var PAGES=['home','plants','endocrine','repro','menstrual','disorders','practice','tricks'];
+  var KEY='lsp2_studied_v1';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch(e){return {};}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+  var studied=load();
+
+  /* ---- build floating UI ---- */
+  var prog=document.createElement('div');
+  prog.id='lsProgress';
+  prog.innerHTML='<div class="ring"><b>0%</b></div><div class="lbl">0 / '+PAGES.length+' done<small>sections studied</small></div>';
+  document.body.appendChild(prog);
+  var ring=prog.querySelector('.ring'), ringTxt=prog.querySelector('.ring b'), lbl=prog.querySelector('.lbl');
+
+  var backTop=document.createElement('button');
+  backTop.id='backTop'; backTop.title='Back to top'; backTop.innerHTML='↑';
+  backTop.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+  document.body.appendChild(backTop);
+
+  var toast=document.createElement('div'); toast.id='toast'; document.body.appendChild(toast);
+  var cv=document.createElement('canvas'); cv.id='confettiCanvas'; document.body.appendChild(cv);
+  var ctx=cv.getContext('2d');
+  function sizeCv(){cv.width=window.innerWidth;cv.height=window.innerHeight;}
+  sizeCv(); window.addEventListener('resize',sizeCv);
+
+  /* ---- inject a "mark as studied" button into every page ---- */
+  PAGES.forEach(function(id){
+    var page=document.getElementById('page-'+id); if(!page) return;
+    var c=page.querySelector('.container'); if(!c) return;
+    var b=document.createElement('button');
+    b.className='studyBtn'; b.setAttribute('data-page',id);
+    b.onclick=function(){toggle(id);};
+    c.insertBefore(b,c.firstChild);
+  });
+
+  /* ---- add tick badges to nav buttons ---- */
+  document.querySelectorAll('.nav-btn').forEach(function(b){
+    var m=(b.getAttribute('onclick')||'').match(/show\('([^']+)'\)/);
+    if(m){ b.setAttribute('data-page',m[1]); var t=document.createElement('span'); t.className='tick'; t.textContent='✓'; b.appendChild(t); }
+  });
+
+  function count(){return PAGES.filter(function(p){return studied[p];}).length;}
+  function toggle(id){
+    studied[id]=!studied[id]; save(studied); updateAll();
+    if(studied[id]){ confetti(count()===PAGES.length?1:0.5); if(count()===PAGES.length) toastMsg('🎉 All '+PAGES.length+' sections studied — you are exam ready!'); }
+  }
+  function updateAll(){
+    PAGES.forEach(function(id){
+      var b=document.querySelector('.studyBtn[data-page="'+id+'"]');
+      if(b){ if(studied[id]){ b.classList.add('done'); b.innerHTML='✓ &nbsp;Studied — nice work!'; } else { b.classList.remove('done'); b.innerHTML='📖 &nbsp;Mark this section as studied'; } }
+    });
+    document.querySelectorAll('.nav-btn[data-page]').forEach(function(b){
+      b.classList.toggle('studied',!!studied[b.getAttribute('data-page')]);
+    });
+    var n=count(), pct=Math.round(n/PAGES.length*100);
+    ring.style.setProperty('--p',pct+'%'); ringTxt.textContent=pct+'%';
+    lbl.innerHTML=n+' / '+PAGES.length+' done<small>sections studied</small>';
+  }
+
+  /* ---- scroll-reveal cascade per page ---- */
+  function revealPage(page){
+    if(!page) return;
+    var els=page.querySelectorAll('.page-title,.sh,.card,.sc,.qa,.flow,.ab,.tl-i');
+    els.forEach(function(el){ el.classList.add('reveal'); el.classList.remove('in'); });
+    void page.offsetWidth; /* force reflow so the transition runs */
+    els.forEach(function(el,i){ el.style.transitionDelay=Math.min(i*38,460)+'ms'; el.classList.add('in'); });
+  }
+
+  /* ---- wrap the existing show() so each page animates in ---- */
+  var origShow=window.show;
+  window.show=function(id){ origShow(id); revealPage(document.getElementById('page-'+id)); };
+
+  /* ---- back-to-top visibility ---- */
+  window.addEventListener('scroll',function(){ backTop.classList.toggle('show',window.scrollY>340); });
+
+  /* ---- toast ---- */
+  var toastT;
+  function toastMsg(msg){ toast.textContent=msg; toast.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(function(){toast.classList.remove('show');},3800); }
+
+  /* ---- lightweight confetti (no library) ---- */
+  function confetti(scale){
+    scale=scale||1;
+    var colors=['#22c55e','#8b5cf6','#ec4899','#f59e0b','#3b82f6','#ef4444','#14b8a6'];
+    var N=Math.round(150*scale), p=[];
+    for(var i=0;i<N;i++){ p.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*0.35,
+      r:5+Math.random()*7,c:colors[i%colors.length],vy:2+Math.random()*4.5,vx:-2.5+Math.random()*5,
+      rot:Math.random()*6.28,vr:-0.25+Math.random()*0.5}); }
+    var f=0;
+    (function anim(){
+      f++; ctx.clearRect(0,0,cv.width,cv.height);
+      p.forEach(function(o){ o.x+=o.vx; o.y+=o.vy; o.vy+=0.05; o.rot+=o.vr;
+        ctx.save(); ctx.translate(o.x,o.y); ctx.rotate(o.rot); ctx.fillStyle=o.c;
+        ctx.fillRect(-o.r/2,-o.r/2,o.r,o.r*0.62); ctx.restore(); });
+      if(f<170){ requestAnimationFrame(anim); } else { ctx.clearRect(0,0,cv.width,cv.height); }
+    })();
+  }
+
+  /* ---- init ---- */
+  updateAll();
+  revealPage(document.querySelector('.page.active'));
+})();
+</script>
+</body></html>
